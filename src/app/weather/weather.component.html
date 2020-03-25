@@ -1,0 +1,9 @@
+<div>
+    {{location}}
+
+    <input type="text" (input)="onUserInput($event)" placeholder="Enter city...." list="locations" (change)="onUserSelection($event)">
+    <datalist id="locations"  >
+        <option [value]="location.LocalizedName"   *ngFor="let location of suggestedLocations; index as i;">{{location.LocalizedName}}, {{location.Country.LocalizedName}}</option>
+      </datalist>
+
+</div>
