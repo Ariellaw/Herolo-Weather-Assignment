@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WeatherService {
+export class LocationService {
 
   locations = [
     {
@@ -163,7 +162,7 @@ export class WeatherService {
 
 
   getLocations(){
-
+    //http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${api}&q=${keyword}
     return Promise.resolve(this.locations.slice());
   }
 }

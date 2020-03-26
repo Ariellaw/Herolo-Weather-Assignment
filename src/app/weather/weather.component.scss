@@ -1,0 +1,21 @@
+.display-container{
+    border: 1px solid darkblue;
+    width: 80vw;
+    height: 70vh;
+    border-radius: 10%;
+    margin: auto;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    .weekly-forecast-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .card{
+            border-radius: 10%;
+            width: 18%;
+        }
+    }
+}

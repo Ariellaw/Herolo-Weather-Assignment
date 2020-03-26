@@ -1,27 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import {WeatherService} from "../weather.service";
+import {LocationService} from "../services/location.service";
+import {ForecastService} from "../services/forecast.service";
+// import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss'],
-  providers:[WeatherService]
+  providers:[LocationService, ForecastService]
 })
 export class WeatherComponent implements OnInit {
-  location:string = "Tel Aviv";
+  location:string = "Tel Aviv, Israel";
+  locationKey:string = "215854";
   suggestedLocations:{ "Version": number; "Key": string; "Type": string; "Rank": number; "LocalizedName": string; "Country": { "ID": string; "LocalizedName": string; }; "AdministrativeArea": { "ID": string; "LocalizedName": string; }; }[] = [];
+  weeklyForecast:any[] = [];
 
 
+  constructor(private locationService:LocationService, private forecastService: ForecastService  ) { }
 
-  constructor(private weatherService:WeatherService) { }
-
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("nginit")
+    this.getWeeklyForecast(this.locationKey);
+  }
 
   async onUserInput($event){
     var input = $event.target.value;
     if(input.length>=3){
-      this.suggestedLocations = await this.weatherService.getLocations()
+      this.suggestedLocations = await this.locationService.getLocations()
     }
+  }
+
+  async getWeeklyForecast(locationKey){
+    this.weeklyForecast = await this.forecastService.getWeeklyForecast(locationKey);
   }
 
   onUserSelection($event){

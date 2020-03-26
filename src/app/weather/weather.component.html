@@ -1,9 +1,24 @@
 <div>
-    {{location}}
+  <input type="text" (input)="onUserInput($event)" placeholder="Enter city...." list="locations"
+    (change)="onUserSelection($event)" />
+  <datalist id="locations">
+    <option [value]="location.LocalizedName + ', ' + location.Country.LocalizedName"
+      *ngFor="let location of suggestedLocations; index as i"></option>
+  </datalist>
 
-    <input type="text" (input)="onUserInput($event)" placeholder="Enter city...." list="locations" (change)="onUserSelection($event)">
-    <datalist id="locations"  >
-        <option [value]="location.LocalizedName"   *ngFor="let location of suggestedLocations; index as i;">{{location.LocalizedName}}, {{location.Country.LocalizedName}}</option>
-      </datalist>
-
+  <div class="display-container">
+    <div class="weekly-forecast-container">
+      <div class="card" *ngFor="let forecast of weeklyForecast; index as i">
+        <img [src]='forecast.icon' class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h4 class="card-title">{{forecast.day}} - {{forecast.date}}</h4>
+          <h5 class="card-text">
+            {{forecast.min}}°/{{forecast.max}}°
+          </h5>
+          <p class="card-text">{{ forecast.description }}</p>
+          <a href="#" class="btn btn-primary"></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

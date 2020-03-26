@@ -8,9 +8,6 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { HeaderComponent } from './header/header.component';
 
 
-//CSS
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
 
 @NgModule({
   declarations: [
