@@ -1,0 +1,22 @@
+<div *ngIf="currWeather" class="main-container">
+    <div class="curr-weather-header">
+        <h1>Current Weather</h1>
+        <h2>{{currWeather.time}}</h2>
+    </div>
+
+    <div class="weather-details-container">
+        <div class="image-container">
+            <img [src]="currWeather.icon" class="curr-weather-image" />
+            <h1>{{currWeather.weatherText}}</h1>
+
+        </div>
+        <div class="curr-weather-details">
+
+            <h1 class="temp">{{currWeather.tempature}}° </h1>
+            <h2>RealFeel:{{currWeather.realFeelTemp}}° </h2>
+            <h2>RealFeel Shade:{{currWeather.realFeelTemp}}° </h2>
+
+        </div>
+    </div>
+
+</div>

@@ -10,7 +10,7 @@
   // MobileLink: "http://m.accuweather.com/en/il/tel-aviv/215854/extended-weather-forecast/215854?unit=c&lang=en-us",
   // Link: "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?unit=c&lang=en-us"
   // },
-  export DailyForecasts: [
+  const weeklyForecast: any[] = [
     {
       Date: '2020-03-26T07:00:00+02:00',
       EpochDate: 1585198800,
@@ -1187,3 +1187,6 @@
     }
   ]
 
+export {
+  weeklyForecast
+}

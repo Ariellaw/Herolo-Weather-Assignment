@@ -11,6 +11,7 @@ import {ForecastService} from "../services/forecast.service";
 })
 export class WeatherComponent implements OnInit {
   location:string = "Tel Aviv, Israel";
+  locationIsInFavorites: boolean = false;
   locationKey:string = "215854";
   suggestedLocations:{ "Version": number; "Key": string; "Type": string; "Rank": number; "LocalizedName": string; "Country": { "ID": string; "LocalizedName": string; }; "AdministrativeArea": { "ID": string; "LocalizedName": string; }; }[] = [];
   weeklyForecast:any[] = [];

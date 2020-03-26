@@ -1,21 +1,96 @@
+
+// .search-box-container{
+//     height: 10vh;
+//     text-align: center;
+//     // .search{
+//     //     width: 25rem;
+//     //     font-size: 1.5rem;
+//     //     border-bottom: 1px solid darkgray;
+//     //     margin-top: 3rem;
+//     // }
+// }
 .display-container{
     border: 1px solid darkblue;
-    width: 80vw;
-    height: 70vh;
+    width: 85vw;
+    height: 90vh;
     border-radius: 10%;
     margin: auto;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 3rem;
+    .display-header{
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        .favorites-button{
+            border-radius: 10%;
+            height: 5rem;
+            width: 15rem;
+            border: 1px solid black;
+            background-color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+    .weather-display{
+      height: 45%;  
+    }
     .weekly-forecast-container{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-evenly;
+        height: 40%;
         .card{
             border-radius: 10%;
             width: 18%;
         }
     }
 }
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 30rem;
+    height: 4rem;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 4rem;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    // color: #9DBFAF;
+    font-size: 1.5rem;
+    color:black;
+    font-weight: bold;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

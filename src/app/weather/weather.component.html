@@ -1,21 +1,50 @@
 <div>
-  <input type="text" (input)="onUserInput($event)" placeholder="Enter city...." list="locations"
-    (change)="onUserSelection($event)" />
-  <datalist id="locations">
-    <option [value]="location.LocalizedName + ', ' + location.Country.LocalizedName"
-      *ngFor="let location of suggestedLocations; index as i"></option>
-  </datalist>
+  <div class="search-box-container">
+    <!-- <input type="text" (input)="onUserInput($event)" placeholder="Enter city...." list="locations"
+      (change)="onUserSelection($event)" class="search" />
+      <datalist id="locations">
+        <option [value]="location.LocalizedName + ', ' + location.Country.LocalizedName"
+          *ngFor="let location of suggestedLocations; index as i"></option>
+      </datalist> -->
+  
 
+
+  </div>
   <div class="display-container">
+    <div class="display-header">
+      <div class="search">
+        <input type="text" class="searchTerm"  (input)="onUserInput($event)" [value]="location" placeholder="Enter city...." list="locations" (change)="onUserSelection($event)">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+       </button>
+       <datalist id="locations">
+        <option [value]="location.LocalizedName + ', ' + location.Country.LocalizedName"
+          *ngFor="let location of suggestedLocations; index as i"></option>
+      </datalist>
+     </div>
+      <button *ngIf="!locationIsInFavorites" class="favorites-button"><i
+          class="far fa-heart red"></i>Add to Favorites</button>
+      <button *ngIf="locationIsInFavorites" class="favorites-button"> <i class="fas fa-heart"></i>Remove from
+        Favorites</button>
+
+
+
+    </div>
+    <div class="weather-display">
+      <app-selected-weather></app-selected-weather>
+      <app-curr-weather></app-curr-weather>
+
+
+    </div>
     <div class="weekly-forecast-container">
       <div class="card" *ngFor="let forecast of weeklyForecast; index as i">
         <img [src]='forecast.icon' class="card-img-top" alt="..." />
         <div class="card-body">
           <h4 class="card-title">{{forecast.day}} - {{forecast.date}}</h4>
           <h5 class="card-text">
-            {{forecast.min}}°/{{forecast.max}}°
+            {{forecast.minTemp}}°/{{forecast.maxTemp}}°
           </h5>
-          <p class="card-text">{{ forecast.description }}</p>
+          <p class="card-text">{{ forecast.weatherText }}</p>
           <a href="#" class="btn btn-primary"></a>
         </div>
       </div>
