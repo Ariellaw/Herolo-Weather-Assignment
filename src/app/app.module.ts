@@ -7,7 +7,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HeaderComponent } from './header/header.component';
 import { SelectedWeatherComponent} from './weather/selected-forecast/selected-forecast.component';
-import { CurrWeatherComponent } from './weather/curr-weather/curr-weather.component';
+import { CurrentWeatherComponent } from './weather/current-weather/current-weather.component';
 
 
 
@@ -18,7 +18,7 @@ import { CurrWeatherComponent } from './weather/curr-weather/curr-weather.compon
     FavoritesComponent,
     HeaderComponent,
     SelectedWeatherComponent,
-    CurrWeatherComponent
+    CurrentWeatherComponent
   ],
   imports: [
     BrowserModule,

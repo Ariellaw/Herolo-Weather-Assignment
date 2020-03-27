@@ -1,14 +1,15 @@
+
 import { Component, OnInit } from '@angular/core';
 import {ForecastService} from '../../services/forecast.service';
-
+import {CurrentWeather} from './current-weather.model';
 
 @Component({
-  selector: 'app-curr-weather',
-  templateUrl: './curr-weather.component.html',
-  styleUrls: ['./curr-weather.component.scss']
+  selector: 'app-current-weather',
+  templateUrl: './current-weather.component.html',
+  styleUrls: ['./current-weather.component.scss']
 })
-export class CurrWeatherComponent implements OnInit {
-  currWeather:{icon:string, weatherText:string, realFeelTemp:number, tempature: number, time: string}
+export class CurrentWeatherComponent implements OnInit {
+  currWeather:CurrentWeather;
 
   constructor(private forecastService: ForecastService) { }
 

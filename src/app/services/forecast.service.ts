@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
-import {weeklyForecast} from '../mock-data/Tel-Aviv-weekly-forecast';
-import {currentWeather} from '../mock-data/currentWeather';
+import {weeklyForecast} from '../mock-data/weeklyForecast';
+import {currentWeatherMockData} from '../mock-data/currentWeather';
+import { CurrentWeather } from '../weather/current-weather/current-weather.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,25 +17,29 @@ export class ForecastService {
   constructor () {}
 
   getCurrentWeather (locationCode) {
-    let dailyWeather: {
-      icon: string
-      weatherText: string
-      realFeelTemp: number
-      tempature: number
-      time: string
-    };
-    const currWeather = currentWeather[0]
+    var currentWeather:CurrentWeather;
+
+    const currWeather = currentWeatherMockData[0];
     const icon = this.getWeatherIcon(currWeather.WeatherIcon)
     const time = this.getTime(currWeather.LocalObservationDateTime)
-    dailyWeather = {
+    currentWeather = {
       icon: icon,
       weatherText: currWeather.WeatherText,
-      realFeelTemp:Math.round(currWeather.RealFeelTemperature.Metric.Value) ,
-      tempature: Math.round(currWeather.Temperature.Metric.Value),
-      time: time
+      time: time,
+      realFeelMetric:Math.round(currWeather.RealFeelTemperature.Metric.Value),
+      realFeelImperial:Math.round(currWeather.RealFeelTemperature.Imperial.Value),
+      realFeelShadeMetric:Math.round(currWeather.RealFeelTemperatureShade.Metric.Value),
+      realFeelShadeImperial:Math.round(currWeather.RealFeelTemperatureShade.Imperial.Value),
+      tempMetric:Math.round(currWeather.Temperature.Metric.Value),
+      tempImperial:Math.round(currWeather.Temperature.Imperial.Value),
+      humidity:currWeather.RelativeHumidity.toString()+'%',
+      visibilityMetric:currWeather.Visibility.Metric.Value.toString()+currWeather.Visibility.Metric.Unit,
+      visibilityImperial:currWeather.Visibility.Imperial.Value.toString()+currWeather.Visibility.Imperial.Unit
     }
-    //`https://dataservice.accuweather.com/currentconditions/v1/${locationCode}?apikey=${apiKey}&details=true`
-    return Promise.resolve(dailyWeather)
+
+      
+
+    return Promise.resolve(currentWeather)
   }
   getWeeklyForecast (locationKey) {
    let simplifiedWeeklyForecast: {
