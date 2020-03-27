@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import {ForecastService} from '../../services/forecast.service';
-import {CurrentWeather} from './current-weather.model';
+import {CurrentWeather} from '../../models/current-weather.model';
 
 @Component({
   selector: 'app-current-weather',

@@ -10,6 +10,7 @@
     .weather-details-container{
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
         .curr-weather-details{
             .temp{
                 font-size: 4rem;

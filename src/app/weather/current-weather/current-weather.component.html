@@ -6,7 +6,7 @@
 
     <div class="weather-details-container">
         <div class="image-container">
-            <img [src]="currWeather.icon" class="curr-weather-image" />
+            <img [src]="currWeather.icon" [alt]="currWeather.weatherText" class="curr-weather-image" />
             <h1>{{currWeather.weatherText}}</h1>
 
         </div>
@@ -15,6 +15,9 @@
             <h1 class="temp">{{currWeather.tempMetric}}° </h1>
             <h2>RealFeel:{{currWeather.realFeelMetric}}° </h2>
             <h2>RealFeel Shade:{{currWeather.realFeelShadeMetric}}° </h2>
+            <h2>Humidity:{{currWeather.humidity}}</h2>
+            <h2>Visibility: {{currWeather.visibilityMetric}}</h2>
+
 
         </div>
     </div>
