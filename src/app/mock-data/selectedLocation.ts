@@ -1,7 +1,7 @@
 
     // `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${searchText}`
 
-const selectedLocation = [
+const selectedLocationMockData = [
     {
       "Version": 1,
       "Key": "2333525",
@@ -153,3 +153,7 @@ const selectedLocation = [
       }
     }
   ]
+
+  export {
+    selectedLocationMockData
+  }

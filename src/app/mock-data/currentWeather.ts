@@ -98,7 +98,7 @@ const currentWeatherMockData: any[] =[
       "Metric": {
         "Value": 16.1,
         "Unit": "km",
-        "UnitType": 6
+        "UnitType": 6,
       },
       "Imperial": {
         "Value": 10,

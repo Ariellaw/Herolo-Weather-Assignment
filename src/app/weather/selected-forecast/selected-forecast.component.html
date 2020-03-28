@@ -1,0 +1,8 @@
+<h1 class="time">{{forecast.dayofWeek}} {{forecast.date}}</h1>
+<h2 class="temp">Tempature:{{forecast.tempMin}}°-{{forecast.tempMax}}°</h2>
+<h2 class="temp">RealFeel: {{forecast.realFeelMin}}°-{{forecast.realFeelMax}}°</h2>
+<div class="forecast-display-container">
+    <app-time-of-day partOfDay="Day" [forecast]="forecast.dayTime"></app-time-of-day>
+    <app-time-of-day partOfDay="Night" [forecast]="forecast.nightTime"></app-time-of-day>
+</div>
+

@@ -8,6 +8,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { HeaderComponent } from './header/header.component';
 import { SelectedWeatherComponent} from './weather/selected-forecast/selected-forecast.component';
 import { CurrentWeatherComponent } from './weather/current-weather/current-weather.component';
+import { TimeOfDayComponent } from './weather/current-weather/time-of-day/time-of-day.component';
 
 
 
@@ -18,7 +19,8 @@ import { CurrentWeatherComponent } from './weather/current-weather/current-weath
     FavoritesComponent,
     HeaderComponent,
     SelectedWeatherComponent,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    TimeOfDayComponent
   ],
   imports: [
     BrowserModule,

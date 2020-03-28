@@ -6,24 +6,22 @@
         <option [value]="location.LocalizedName + ', ' + location.Country.LocalizedName"
           *ngFor="let location of suggestedLocations; index as i"></option>
       </datalist> -->
-  
-
-
   </div>
   <div class="display-container">
     <div class="display-header">
       <div class="search">
-        <input type="text" class="searchTerm"  (input)="onUserInput($event)" [value]="location" placeholder="Enter city...." list="locations" (change)="onUserSelection($event)">
+        <input type="text" class="searchTerm" (input)="onUserInput($event)" [value]="location"
+          placeholder="Enter city...." list="locations" (change)="onUserSelection($event)">
         <button type="submit" class="searchButton">
           <i class="fa fa-search"></i>
-       </button>
-       <datalist id="locations">
-        <option [value]="location.LocalizedName + ', ' + location.Country.LocalizedName"
-          *ngFor="let location of suggestedLocations; index as i"></option>
-      </datalist>
-     </div>
-      <button *ngIf="!locationIsInFavorites" class="favorites-button"><i
-          class="far fa-heart red"></i>Add to Favorites</button>
+        </button>
+        <datalist id="locations">
+          <option 
+            *ngFor="let location of suggestedLocations; index as i" [value]="location.cityName + ', ' + location.countryName"></option>
+        </datalist>
+      </div>
+      <button *ngIf="!locationIsInFavorites" class="favorites-button"><i class="far fa-heart red"></i>Add to
+        Favorites</button>
       <button *ngIf="locationIsInFavorites" class="favorites-button"> <i class="fas fa-heart"></i>Remove from
         Favorites</button>
 
@@ -31,21 +29,21 @@
 
     </div>
     <div class="weather-display">
-      <app-selected-weather></app-selected-weather>
-      <app-current-weather></app-current-weather>
+      <app-selected-forecast *ngIf="displayedDayForecast"  [forecast]="displayedDayForecast"></app-selected-forecast>
+      <app-current-weather *ngIf="displayedDayForecast===null"></app-current-weather>
 
 
     </div>
     <div class="weekly-forecast-container">
-      <div class="card" *ngFor="let forecast of weeklyForecast; index as i">
-        <img [src]='forecast.icon' class="card-img-top" alt="..." />
+      <div class="card btn" (click)="displayForecast(i)"
+        *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i">
+        <img [src]='forecast.dayTime.icon' [alt]='forecast.dayTime.iconPhrase' class="card-img-top" />
         <div class="card-body">
-          <h4 class="card-title">{{forecast.day}} - {{forecast.date}}</h4>
-          <h5 class="card-text">
-            {{forecast.minTemp}}°/{{forecast.maxTemp}}°
+          <h4 class="card-title">{{forecast.dayofWeek}}-{{forecast.date}}</h4>
+          <h5 class="card-sub-title">
+            {{forecast.tempMin}}°/{{forecast.tempMax}}°
           </h5>
-          <p class="card-text">{{ forecast.weatherText }}</p>
-          <a href="#" class="btn btn-primary"></a>
+          <p class="card-text">{{ forecast.dayTime.shortText }}</p>
         </div>
       </div>
     </div>

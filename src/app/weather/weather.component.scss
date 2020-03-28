@@ -45,6 +45,16 @@
         .card{
             border-radius: 10%;
             width: 18%;
+            height: auto;
+            .card-title{
+              font-size: 2rem;
+            }
+            .card-sub-title{
+              font-size:1.8rem;
+            }
+            .card-text{
+              font-size:1.5rem;
+            }
         }
     }
 }

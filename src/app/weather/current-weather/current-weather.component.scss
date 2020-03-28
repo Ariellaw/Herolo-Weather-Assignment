@@ -1,20 +1,20 @@
-.main-container{
+.main-container {
+  display: flex;
+  flex-direction: column;
+  .image-container {
+    .forecast-image {
+      width: 30rem;
+      height: auto;
+    }
+  }
+  .weather-details-container {
     display: flex;
-    flex-direction: column;
-    .image-container{
-        .curr-weather-image{
-            width: 30rem;
-            height: auto;
-        }
+    flex-direction: row;
+    justify-content: space-evenly;
+    .curr-weather-details {
+      .temp {
+        font-size: 4rem;
+      }
     }
-    .weather-details-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        .curr-weather-details{
-            .temp{
-                font-size: 4rem;
-            }
-        }
-    }
+  }
 }

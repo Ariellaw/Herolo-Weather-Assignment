@@ -7,7 +7,7 @@ import { TimeOfDayForecast } from 'src/app/models/time-of-day-forecast.model';
   styleUrls: ['./time-of-day.component.scss']
 })
 export class TimeOfDayComponent implements OnInit {
-  @Input() timeOfDay:string;
+  @Input() partOfDay:string;
   @Input() forecast:TimeOfDayForecast
 
   constructor() { }

@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import {ForecastService} from '../../services/forecast.service';
+import { Component, OnInit, Input } from '@angular/core'
+import { ForecastService } from '../../services/forecast.service'
+import {DailyForecast} from '../../models/daily-forecast.model';
 
 @Component({
-  selector: 'app-selected-weather',
+  selector: 'app-selected-forecast',
   templateUrl: './selected-forecast.component.html',
   styleUrls: ['./selected-forecast.component.scss']
 })
 export class SelectedWeatherComponent implements OnInit {
-  constructor(private forecastService: ForecastService) { }
+  @Input() forecast:DailyForecast;
 
-  ngOnInit() {
+  constructor (private forecastService: ForecastService) {
+  }
+
+  ngOnInit () {
     // this.getCurrentWeather(55);
   }
-  
 
- async getCurrentWeather(locationCode){
-  // this.currWeather = await this.forecastService.getCurrentWeather(locationCode);
- }
+  async getCurrentWeather (locationCode) {
+    // this.currWeather = await this.forecastService.getCurrentWeather(locationCode);
+  }
 }
