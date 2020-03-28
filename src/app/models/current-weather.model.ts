@@ -66,4 +66,3 @@ export class CurrentWeather {
     }
   } 
 }
-//`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}&details=true`
