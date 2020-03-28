@@ -29,8 +29,8 @@
 
     </div>
     <div class="weather-display">
-      <app-selected-forecast *ngIf="displayedDayForecast" [forecast]="displayedDayForecast"></app-selected-forecast>
-      <app-current-weather [currentWeather]="currentWeather"  *ngIf="currentWeather"></app-current-weather>
+      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast" [forecast]="displayedDayForecast"></app-selected-forecast>
+      <app-current-weather [currentWeather]="currentWeather"  *ngIf="currentWeatherDisplayed && currentWeather"></app-current-weather>
 
     </div>
     <div class="weekly-forecast-container">

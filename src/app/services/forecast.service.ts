@@ -29,7 +29,6 @@ export class ForecastService {
 
     return dataPromise.then(data => {
       const currWeather = data[0]
-      console.log('data', currWeather)
 
       // const currWeather = currentWeatherMockData[0]
       const icon = this.getWeatherIcon(currWeather.WeatherIcon)
