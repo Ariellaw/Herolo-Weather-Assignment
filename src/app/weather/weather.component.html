@@ -16,8 +16,8 @@
           <i class="fa fa-search"></i>
         </button>
         <datalist id="locations">
-          <option 
-            *ngFor="let location of suggestedLocations; index as i" [value]="location.cityName + ', ' + location.countryName"></option>
+          <option *ngFor="let location of suggestedLocations; index as i" attr.data-value="{{location.key}}"
+            [value]="location.cityName + ', ' + location.countryName">
         </datalist>
       </div>
       <button *ngIf="!locationIsInFavorites" class="favorites-button"><i class="far fa-heart red"></i>Add to
@@ -29,7 +29,7 @@
 
     </div>
     <div class="weather-display">
-      <app-selected-forecast *ngIf="displayedDayForecast"  [forecast]="displayedDayForecast"></app-selected-forecast>
+      <app-selected-forecast *ngIf="displayedDayForecast" [forecast]="displayedDayForecast"></app-selected-forecast>
       <app-current-weather *ngIf="displayedDayForecast===null"></app-current-weather>
 
 
