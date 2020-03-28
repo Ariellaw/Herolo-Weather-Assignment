@@ -34,7 +34,7 @@ export class WeatherComponent implements OnInit {
   }
 
   async onUserInput ($event) {
-    var input = $event.target.value
+    const input = $event.target.value
     if (input.length >= 2) {
       try {
         this.suggestedLocations = await this.locationService.getSuggestedLocations(

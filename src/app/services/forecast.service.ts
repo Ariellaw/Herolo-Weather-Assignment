@@ -17,7 +17,7 @@ export class ForecastService {
 
   getCurrentWeather (locationKey: string): Promise<CurrentWeather> {
     let currentWeather: CurrentWeather
-    var dataPromise: Promise<any>
+    let dataPromise: Promise<any>
 
     if (this.useMockData) {
       dataPromise = Promise.resolve(currentWeatherMockData)
@@ -29,46 +29,13 @@ export class ForecastService {
 
     return dataPromise.then(data => {
       const currWeather = data[0]
-
-      // const currWeather = currentWeatherMockData[0]
-      const icon = this.getWeatherIcon(currWeather.WeatherIcon)
-      const time = this.getTime(currWeather.LocalObservationDateTime)
-      currentWeather = {
-        icon: icon,
-        weatherText: currWeather.WeatherText,
-        time: time,
-        link: currWeather.Link,
-        mobileLink: currWeather.MobileLink,
-        realFeelMetric: Math.round(
-          currWeather.RealFeelTemperature.Metric.Value
-        ),
-        realFeelImperial: Math.round(
-          currWeather.RealFeelTemperature.Imperial.Value
-        ),
-        realFeelShadeMetric: Math.round(
-          currWeather.RealFeelTemperatureShade.Metric.Value
-        ),
-        realFeelShadeImperial: Math.round(
-          currWeather.RealFeelTemperatureShade.Imperial.Value
-        ),
-        tempMetric: Math.round(currWeather.Temperature.Metric.Value),
-        tempImperial: Math.round(currWeather.Temperature.Imperial.Value),
-        humidity: currWeather.RelativeHumidity.toString() + '%',
-
-        visibilityMetric:
-          Math.round(currWeather.Visibility.Metric.Value).toString() +
-          currWeather.Visibility.Metric.Unit,
-
-        visibilityImperial:
-          Math.round(currWeather.Visibility.Imperial.Value).toString() +
-          currWeather.Visibility.Imperial.Unit
-      }
-      return currentWeather
+                
+      return CurrentWeather.fromJson(currWeather);
     })
   }
 
   getWeeklyForecast (locationKey: string): Promise<WeeklyForecast> {
-    var dataPromise: Promise<any>
+    let dataPromise: Promise<any>
     if (this.useMockData) {
       dataPromise = Promise.resolve(weeklyForecastMockData)
     } else {
@@ -152,12 +119,12 @@ export class ForecastService {
   }
 
   getShortDate (fullDate: string): string {
-    var date = new Date(fullDate)
+    const date = new Date(fullDate)
     return `${date.getDate()}/${date.getMonth() + 1}`
   }
 
   getTime (fullDate: string): string {
-    var date = new Date(fullDate)
+    const date = new Date(fullDate)
     const minutes = date
       .getMinutes()
       .toString()

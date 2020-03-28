@@ -16,10 +16,12 @@ describe('CurrentWeatherComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CurrentWeatherComponent);
     component = fixture.componentInstance;
+    component.currentWeather = ;
     fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

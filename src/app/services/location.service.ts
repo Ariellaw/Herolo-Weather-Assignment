@@ -14,7 +14,7 @@ export class LocationService {
 
   getSuggestedLocations (keyword: string): Promise<Locations[]> {
     let suggestLocations: Locations[] = []
-    var dataPromise: Promise<any>
+    let dataPromise: Promise<any>
 
     if (this.useMockData) {
       dataPromise = Promise.resolve(selectedLocationMockData)

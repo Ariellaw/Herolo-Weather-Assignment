@@ -10,7 +10,7 @@
   <div class="display-container">
     <div class="display-header">
       <div class="search">
-        <input type="text" class="searchTerm" (input)="onUserInput($event)" [value]="location"
+        <input type="text" id="locationInput" class="searchTerm" (input)="onUserInput($event)" [value]="location"
           placeholder="Enter city...." list="locations" (change)="onUserSelection($event)">
         <button type="submit" class="searchButton">
           <i class="fa fa-search"></i>
