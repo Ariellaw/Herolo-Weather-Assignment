@@ -2,7 +2,7 @@
 <div class="main-container">
     <div class="image-container">
         <img class='forecast-image' [src]="forecast.icon" [alt]="forecast.iconPhrase">
-        <!-- <h5 class="forecast-text"{{forecast.longText}}></h5> -->
+        <h5 class="forecast-text">{{forecast.longText}}</h5>
     </div>
     <div class="forecast-details-container">
         <p class="forecast-details">PrecipitationProbability: {{forecast.precipitationProbability}}</p>
@@ -10,6 +10,6 @@
         <p class="forecast-details">Rain: {{forecast.rainProbability}}mm</p>
         <p class="forecast-details">Snow: {{forecast.snowProbability}}mm</p>
         <p class="forecast-details">Ice: {{forecast.iceProbability}}mm</p>
-        <p class="forecast-details">WindGusts: {{forecast.windGusts}}mm</p>
+        <p class="forecast-details">WindGusts: {{forecast.windGusts}}</p>
     </div>
 </div>

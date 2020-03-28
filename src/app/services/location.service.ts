@@ -6,17 +6,24 @@ import { Locations } from '../models/locations.model'
   providedIn: 'root'
 })
 export class LocationService {
-  apiKey="u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y"
+   // apiKey = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
+   apiKey = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
+   useMockData = true;
+ 
   constructor () {}
 
   getSuggestedLocations (keyword: string): Promise<Locations[]> {
     let suggestLocations: Locations[] = []
+    var dataPromise: Promise<any>
 
-    // fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${keyword}`).then(resp =>resp.json())
+    if (this.useMockData) {
+      dataPromise = Promise.resolve(selectedLocationMockData)
+    } else {
+      dataPromise = fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${keyword}`).then(resp =>resp.json())
 
+    }
       // Call the fetch function passing the url of the API as a parameter
-      Promise.resolve(selectedLocationMockData)
-      .then(data=>{
+      return dataPromise.then(data=>{
 
         data.forEach((location, idx) => {
           suggestLocations[idx] = {
@@ -25,12 +32,10 @@ export class LocationService {
             key: location.Key
           }
         })
-      })
-      .catch(function () {
-        // This is where you run code if the server returns any errors
+        return suggestLocations
+
       })
 
-    return Promise.resolve(suggestLocations)
   }
 }
 

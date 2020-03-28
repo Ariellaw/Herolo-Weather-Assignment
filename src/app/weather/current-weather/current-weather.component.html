@@ -1,22 +1,22 @@
-<div *ngIf="currWeather" class="main-container">
+<div class="main-container">
   <div class="curr-weather-header">
     <h1>Current Weather</h1>
-    <h2>{{currWeather.time}}</h2>
+    <h2>{{currentWeather.time}}</h2>
   </div>
 
   <div class="weather-details-container">
     <div class="image-container">
-      <img [src]="currWeather.icon" [alt]="currWeather.weatherText" class="forecast-image" />
-      <h1>{{currWeather.weatherText}}</h1>
+      <img [src]="currentWeather.icon" [alt]="currentWeather.weatherText" class="forecast-image" />
+      <h1>{{currentWeather.weatherText}}</h1>
 
     </div>
     <div class="curr-weather-details">
 
-      <h1 class="temp">{{currWeather.tempMetric}}° </h1>
-      <h2>RealFeel:{{currWeather.realFeelMetric}}° </h2>
-      <h2>RealFeel Shade:{{currWeather.realFeelShadeMetric}}° </h2>
-      <h2>Humidity:{{currWeather.humidity}}</h2>
-      <h2>Visibility: {{currWeather.visibilityMetric}}</h2>
+      <h1 class="temp">{{currentWeather.tempMetric}}° </h1>
+      <h2>RealFeel:{{currentWeather.realFeelMetric}}° </h2>
+      <h2>RealFeel Shade:{{currentWeather.realFeelShadeMetric}}° </h2>
+      <h2>Humidity:{{currentWeather.humidity}}</h2>
+      <h2>Visibility: {{currentWeather.visibilityMetric}}</h2>
 
 
     </div>

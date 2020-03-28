@@ -11,4 +11,4 @@ export class WeeklyForecast {
     this.dailyForecasts = dailyForecasts
   }
 }
-//`https://dataservice.accuweather.com/currentconditions/v1/${locationCode}?apikey=${apiKey}&details=true`
+//`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}&details=true`

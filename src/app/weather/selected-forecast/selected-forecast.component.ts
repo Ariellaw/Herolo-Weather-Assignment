@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { ForecastService } from '../../services/forecast.service'
-import {DailyForecast} from '../../models/daily-forecast.model';
+import { DailyForecast } from '../../models/daily-forecast.model'
 
 @Component({
   selector: 'app-selected-forecast',
@@ -8,16 +8,15 @@ import {DailyForecast} from '../../models/daily-forecast.model';
   styleUrls: ['./selected-forecast.component.scss']
 })
 export class SelectedWeatherComponent implements OnInit {
-  @Input() forecast:DailyForecast;
+  @Input() forecast: DailyForecast
 
-  constructor (private forecastService: ForecastService) {
-  }
+  constructor (private forecastService: ForecastService) {}
 
   ngOnInit () {
     // this.getCurrentWeather(55);
   }
 
-  async getCurrentWeather (locationCode) {
-    // this.currWeather = await this.forecastService.getCurrentWeather(locationCode);
+  async getCurrentWeather (locationKey) {
+    // this.currWeather = await this.forecastService.getCurrentWeather(locationKey);
   }
 }

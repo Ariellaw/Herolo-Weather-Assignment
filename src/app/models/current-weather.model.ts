@@ -16,6 +16,8 @@ export class CurrentWeather {
     public readonly icon: string,
     public readonly weatherText: string,
     public readonly time: string,
+    public readonly link: string,
+    public readonly mobileLink: string,
     public readonly realFeelMetric: number,
     public readonly realFeelImperial: number,
     public readonly realFeelShadeMetric: number,
@@ -40,4 +42,4 @@ export class CurrentWeather {
     // this.visibilityImperial = visibilityImperial
   }
 }
-//`https://dataservice.accuweather.com/currentconditions/v1/${locationCode}?apikey=${apiKey}&details=true`
+//`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}&details=true`

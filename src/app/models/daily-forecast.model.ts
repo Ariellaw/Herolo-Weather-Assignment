@@ -11,9 +11,9 @@ export class DailyForecast {
     public readonly realFeelShadeMax: number,
     public readonly realFeelShadeMin: number,
     public readonly mobileLink: string,
-    public readonly link:string,
+    public readonly link: string,
     public readonly dayTime: TimeOfDayForecast,
-    public readonly nightTime: TimeOfDayForecast,
+    public readonly nightTime: TimeOfDayForecast
   ) {}
 }
-//`https://dataservice.accuweather.com/currentconditions/v1/${locationCode}?apikey=${apiKey}&details=true`
+//`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}&details=true`

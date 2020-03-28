@@ -4,6 +4,7 @@ import { ForecastService } from '../services/forecast.service'
 import { WeeklyForecast } from '../models/weekly-forecast.model'
 import { DailyForecast } from '../models/daily-forecast.model'
 import { Locations } from '../models/locations.model'
+import {CurrentWeather} from '../models/current-weather.model'
 // import {InputEvent } from '@types/dom-inputevent';
 @Component({
   selector: 'app-weather',
@@ -17,7 +18,8 @@ export class WeatherComponent implements OnInit {
   locationKey: string = '215854'
   suggestedLocations: Locations[]
   weeklyForecast: WeeklyForecast = new WeeklyForecast([])
-  displayedDayForecast: DailyForecast = null
+  displayedDayForecast: DailyForecast = null;
+  currentWeather:CurrentWeather=null;
   index: number
   constructor (
     private locationService: LocationService,
@@ -25,7 +27,8 @@ export class WeatherComponent implements OnInit {
   ) {}
 
   ngOnInit () {
-    this.getWeeklyForecast(this.locationKey)
+    this.getWeeklyForecast(this.locationKey);
+    this.getCurrentWeather(this.locationKey);
   }
 
   async onUserInput ($event) {
@@ -38,11 +41,15 @@ export class WeatherComponent implements OnInit {
   }
 
   async getWeeklyForecast (locationKey: string) {
-    console.log("test getWeeklyForecast",locationKey)
     this.weeklyForecast = await this.forecastService.getWeeklyForecast(
       locationKey
     )
-    console.log("test the link", this.weeklyForecast[0].link)
+  }
+
+  async getCurrentWeather(locationKey){
+    this.currentWeather = await this.forecastService.getCurrentWeather(locationKey);
+    console.log("this.currentWeather",this.currentWeather)
+
   }
 
   onUserSelection ($event) {
@@ -52,8 +59,8 @@ export class WeatherComponent implements OnInit {
       "#locations option[value='" + location + "']"
     )
     const locationKey = option.getAttribute('data-value')
-    console.log("locationKey",locationKey)
-    this.getWeeklyForecast(locationKey)
+    this.getWeeklyForecast(locationKey);
+    this.getCurrentWeather(locationKey);
   }
 
   displayForecast (idx: number) {

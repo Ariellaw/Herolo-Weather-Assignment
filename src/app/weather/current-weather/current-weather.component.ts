@@ -1,7 +1,6 @@
-
-import { Component, OnInit } from '@angular/core';
-import {ForecastService} from '../../services/forecast.service';
-import {CurrentWeather} from '../../models/current-weather.model';
+import { Component, OnInit, Input } from '@angular/core'
+import { ForecastService } from '../../services/forecast.service'
+import { CurrentWeather } from '../../models/current-weather.model'
 
 @Component({
   selector: 'app-current-weather',
@@ -9,15 +8,14 @@ import {CurrentWeather} from '../../models/current-weather.model';
   styleUrls: ['./current-weather.component.scss']
 })
 export class CurrentWeatherComponent implements OnInit {
-  currWeather:CurrentWeather;
+  @Input() currentWeather: CurrentWeather
 
-  constructor(private forecastService: ForecastService) { }
 
-  ngOnInit(): void {
-   this.getCurrentWeather(55); 
+  constructor (private forecastService: ForecastService) {}
+
+  ngOnInit (): void {
   }
 
-  async getCurrentWeather(locationCode){
-    this.currWeather = await this.forecastService.getCurrentWeather(locationCode);
-   }
+  async getCurrentWeather (locationKey) {
+  }
 }
