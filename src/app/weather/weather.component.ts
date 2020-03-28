@@ -38,21 +38,22 @@ export class WeatherComponent implements OnInit {
   }
 
   async getWeeklyForecast (locationKey: string) {
+    console.log("test getWeeklyForecast",locationKey)
     this.weeklyForecast = await this.forecastService.getWeeklyForecast(
       locationKey
     )
-    this.displayedDayForecast = this.weeklyForecast.dailyForecasts[1]
+    console.log("test the link", this.weeklyForecast[0].link)
   }
 
   onUserSelection ($event) {
-    // console.log("$event.target.locationKey",$event.target.value); 
+    // console.log("$event.target.locationKey",$event.target.value);
     const location = $event.target.value
     const option = document.querySelector(
       "#locations option[value='" + location + "']"
     )
     const locationKey = option.getAttribute('data-value')
-
-
+    console.log("locationKey",locationKey)
+    this.getWeeklyForecast(locationKey)
   }
 
   displayForecast (idx: number) {

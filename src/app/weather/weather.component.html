@@ -44,6 +44,7 @@
             {{forecast.tempMin}}°/{{forecast.tempMax}}°
           </h5>
           <p class="card-text">{{ forecast.dayTime.shortText }}</p>
+          <a [href]="forecast.link" target="_blank" class="btn btn-primary">Go to website</a>
         </div>
       </div>
     </div>
