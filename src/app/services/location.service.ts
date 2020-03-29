@@ -29,7 +29,7 @@ export class LocationService {
           suggestLocations[idx] = {
             cityName: location.LocalizedName,
             countryName: location.Country.LocalizedName,
-            key: location.Key
+            locationKey: location.Key
           }
         })
         return suggestLocations

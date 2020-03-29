@@ -1,11 +1,5 @@
 <div>
   <div class="search-box-container">
-    <!-- <input type="text" (input)="onUserInput($event)" placeholder="Enter city...." list="locations"
-      (change)="onUserSelection($event)" class="search" />
-      <datalist id="locations">
-        <option [value]="location.LocalizedName + ', ' + location.Country.LocalizedName"
-          *ngFor="let location of suggestedLocations; index as i"></option>
-      </datalist> -->
   </div>
   <div class="display-container">
     <div class="display-header">
@@ -16,13 +10,13 @@
           <i class="fa fa-search"></i>
         </button>
         <datalist id="locations">
-          <option *ngFor="let location of suggestedLocations; index as i" attr.data-value="{{location.key}}"
+          <option *ngFor="let location of suggestedLocations; index as i" attr.data-value="{{location.locationKey}}"
             [value]="location.cityName + ', ' + location.countryName">
         </datalist>
       </div>
-      <button *ngIf="!locationIsInFavorites" class="favorites-button"><i class="far fa-heart red"></i>Add to
+      <button *ngIf="!locationIsInFavorites" (click)="addLocationToFavorites()" class="favorites-button"><i class="far fa-heart red"></i> Add to
         Favorites</button>
-      <button *ngIf="locationIsInFavorites" class="favorites-button"> <i class="fas fa-heart"></i>Remove from
+      <button *ngIf="locationIsInFavorites" (click)="removeLocationFromFavorites()" class="favorites-button"> <i class="fas fa-heart red"></i> Remove from
         Favorites</button>
 
 
