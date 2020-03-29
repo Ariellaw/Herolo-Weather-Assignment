@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-enum Pages{
-  weather = 'weather',
-  favorites = 'favorites'
-}
 
 @Component({
   selector: 'app-root',
@@ -11,12 +7,7 @@ enum Pages{
 })
 export class AppComponent {
   title = 'herolo-weather-assignment';
-  loadedPage:string = Pages.weather
 
-
-  loadNewPage($event){
-    this.loadedPage = $event;
-  }
 }
 
 

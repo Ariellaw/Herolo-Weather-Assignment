@@ -6,6 +6,7 @@ import { DailyForecast } from '../models/daily-forecast.model'
 import { Locations } from '../models/locations.model'
 import { CurrentWeather } from '../models/current-weather.model'
 import { FavoritesService } from '../services/favorites.service'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-weather',
@@ -27,15 +28,15 @@ export class WeatherComponent implements OnInit {
   constructor (
     private locationService: LocationService,
     private forecastService: ForecastService,
-    private favoritesService: FavoritesService
+    private favoritesService: FavoritesService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit () {
-    this.getWeeklyForecast(this.locationKey)
-    this.getCurrentWeather(this.locationKey)
-    this.isLocationInFavorites(this.locationKey)
-
-  }
+    this.loadForecast();
+    }
+  
 
   async onUserInput ($event) {
     const input = $event.target.value
@@ -65,23 +66,22 @@ export class WeatherComponent implements OnInit {
       this.currentWeather = await this.forecastService.getCurrentWeather(
         locationKey
       )
-
     } catch (e) {
       alert('please try again' + e)
     }
   }
 
   onUserSelection ($event) {
-    this.currentWeatherDisplayed = true;
+    this.currentWeatherDisplayed = true
     this.location = $event.target.value
     const option = document.querySelector(
       "#locations option[value='" + this.location + "']"
     )
-    this.locationKey = option.getAttribute('data-value');
+    this.locationKey = option.getAttribute('data-value')
     this.getWeeklyForecast(this.locationKey)
     this.getCurrentWeather(this.locationKey)
     this.isLocationInFavorites(this.locationKey)
-
+    this.router.navigate(['/', this.location, this.locationKey])
   }
 
   displayForecast (idx: number) {
@@ -89,16 +89,37 @@ export class WeatherComponent implements OnInit {
     this.displayedDayForecast = this.weeklyForecast.dailyForecasts[idx]
   }
 
-  addLocationToFavorites(){
-    this.favoritesService.addLocationToFavorites({cityName:this.location.split(',')[0], countryName:this.location.split(',')[1], locationKey:this.locationKey})
-    this.locationIsInFavorites=true;
+  addLocationToFavorites () {
+    this.favoritesService.addLocationToFavorites({
+      cityName: this.location.split(',')[0],
+      countryName: this.location.split(',')[1],
+      locationKey: this.locationKey
+    })
+    this.locationIsInFavorites = true
   }
 
-  removeLocationFromFavorites(){
+  removeLocationFromFavorites () {
     this.favoritesService.removeLocationFromFavorites(this.locationKey)
-    this.locationIsInFavorites=false;
+    this.locationIsInFavorites = false
   }
-  isLocationInFavorites(locationKey:string){
-    this.locationIsInFavorites = this.favoritesService.isLocationInFavorites(locationKey) 
+  isLocationInFavorites (locationKey: string) {
+    this.locationIsInFavorites = this.favoritesService.isLocationInFavorites(
+      locationKey
+    )
+  }
+
+  loadForecast(){      
+    const id = this.route.snapshot.paramMap.get('id')
+    const cityName = this.route.snapshot.paramMap.get('locationName')
+    if (id) {
+      this.location = cityName;
+      this.getCurrentWeather(id)
+      this.isLocationInFavorites(id)
+      this.getWeeklyForecast(id)
+    } else {
+      this.getWeeklyForecast(this.locationKey)
+      this.getCurrentWeather(this.locationKey)
+      this.isLocationInFavorites(this.locationKey)
+    }
   }
 }

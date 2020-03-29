@@ -1,3 +1,4 @@
-<app-header (loadNewPage)="loadNewPage($event)"></app-header>
-<app-weather *ngIf="loadedPage==='weather'" ></app-weather>
-<app-favorites *ngIf="loadedPage==='favorites'"></app-favorites>
+<app-header></app-header>
+<!-- <app-weather *ngIf="loadedPage==='weather'" ></app-weather>
+<app-favorites *ngIf="loadedPage==='favorites'"></app-favorites> -->
+<router-outlet></router-outlet>
