@@ -11,6 +11,17 @@
     font-size: 10px;
     box-sizing: border-box;
     font-family: Georgia, "Times New Roman", Times, serif;
+    @media screen and (max-width: 900px) {
+      font-size: 9px;  
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 8px;  
+    }
+    @media screen and (max-width: 300px) {
+      font-size: 7px;  
+    }
+
+
   }
 
   .red{
