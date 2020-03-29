@@ -1,56 +1,56 @@
 import { Injectable } from '@angular/core'
 import { Locations } from '../models/locations.model'
 
+enum Location {
+  favorite = 'favorite'
+}
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritesService {
-  favorites: Locations[] = [
-    {
-      cityName: 'New Taipei cityName',
-      countryName: 'Taiwan',
-      locationKey: '2515397'
-    },
-    {
-      cityName: 'New Delhi',
-      countryName: 'India',
-      locationKey: '187745'
-    },
-
-    {
-      cityName: 'Newcastle upon Tyne',
-      countryName: 'United Kingdom',
-      locationKey: '329683'
-    },
-
-    {
-      cityName: 'Newport',
-      countryName: 'United Kingdom',
-      locationKey: '2530492'
-    }
-  ]
-
-  //TODO save to cach
 
   constructor () {}
 
   addLocationToFavorites (location: Locations) {
-    this.favorites.splice(0, 0, location)
+    let favorites = this.getFavoritesFromLocalStorage();
+    favorites.splice(0, 0, location)
+    this.storeFavoritesInLocalStorage(favorites)
+    console.log("favorites", favorites)
   }
 
   removeLocationFromFavorites (locationKey: string) {
-    var idx = this.favorites.findIndex(favorite => {
-      locationKey === favorite.locationKey
-    })
-    if (idx >= 0) {
-      this.favorites.splice(idx, 1)
-    }
-  }
-  isLocationInFavorites(locationKey:string):boolean{
-    var idx = this.favorites.findIndex(favorite => {
-     return locationKey === favorite.locationKey
-    })
-    return idx>=0;
+    let favorites = this.getFavoritesFromLocalStorage();
 
+    const idx = favorites.findIndex(favorite => locationKey === favorite.locationKey)
+
+    if (idx >= 0) {
+      favorites.splice(idx, 1)
+    }
+    this.storeFavoritesInLocalStorage(favorites)
+    console.log("favorites", favorites)
+
+  }
+
+  isLocationInFavorites (locationKey: string): boolean {
+    let favorites = this.getFavoritesFromLocalStorage();
+
+    var idx = favorites.findIndex(favorite => locationKey === favorite.locationKey)
+    return idx >= 0
+  }
+
+  storeFavoritesInLocalStorage (favorites) {
+    const favoritesStr = JSON.stringify(favorites)
+    localStorage.setItem(Location.favorite, favoritesStr)
+  }
+
+  getFavoritesFromLocalStorage (): Locations[] {
+    const favoritesStr = localStorage.getItem(Location.favorite)
+
+    if (favoritesStr) {
+      return JSON.parse(favoritesStr)
+    } else {
+      let favorites: Locations[] = []
+      return favorites
+    }
   }
 }

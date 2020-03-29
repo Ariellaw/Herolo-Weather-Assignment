@@ -73,9 +73,9 @@ export class WeatherComponent implements OnInit {
 
   onUserSelection ($event) {
     this.currentWeatherDisplayed = true;
-    const location = $event.target.value
+    this.location = $event.target.value
     const option = document.querySelector(
-      "#locations option[value='" + location + "']"
+      "#locations option[value='" + this.location + "']"
     )
     this.locationKey = option.getAttribute('data-value');
     this.getWeeklyForecast(this.locationKey)
