@@ -1,43 +1,80 @@
 <div>
-  <div class="search-box-container">
-  </div>
+  <div class="search-box-container"></div>
   <div class="display-container">
     <div class="display-header">
       <div class="search">
-        <input type="text" id="locationInput" class="searchTerm" (input)="onUserInput($event)" [value]="location"
-          placeholder="Enter city...." list="locations" (change)="onUserSelection($event)">
+        <input
+          type="text"
+          id="locationInput"
+          class="searchTerm"
+          (input)="onUserInput($event)"
+          [value]="location"
+          placeholder="Enter city...."
+          list="locations"
+          (change)="onUserSelection($event)"
+        />
         <button type="submit" class="searchButton">
           <i class="fa fa-search"></i>
         </button>
         <datalist id="locations">
-          <option *ngFor="let location of suggestedLocations; index as i" attr.data-value="{{location.locationKey}}"
-            [value]="location.cityName + ', ' + location.countryName">
+          <option
+            *ngFor="let location of suggestedLocations; index as i"
+            attr.data-value="{{ location.locationKey }}"
+            [value]="location.cityName + ', ' + location.countryName"
+          >
+          </option>
         </datalist>
       </div>
-      <button *ngIf="!locationIsInFavorites" (click)="addLocationToFavorites()" class="favorites-button"><i class="far fa-heart red"></i> Add to
-        Favorites</button>
-      <button *ngIf="locationIsInFavorites" (click)="removeLocationFromFavorites()" class="favorites-button"> <i class="fas fa-heart red"></i> Remove from
-        Favorites</button>
-
-
-
+      <!-- <button class="current-weather-btn" (click)='currentWeatherDisplayed=true'>See current weather</button> -->
+      <button
+        *ngIf="!locationIsInFavorites"
+        (click)="addLocationToFavorites()"
+        class="favorites-button"
+      >
+        <i class="far fa-heart red"></i>
+        <span class="btn-text">Add to Favorites</span>
+      </button>
+      <button
+        *ngIf="locationIsInFavorites"
+        (click)="removeLocationFromFavorites()"
+        class="favorites-button"
+      >
+        <i class="fas fa-heart red"></i>
+        <span class="btn-text">Remove from Favorites </span>
+      </button>
     </div>
     <div class="weather-display">
-      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast" [forecast]="displayedDayForecast"></app-selected-forecast>
-      <app-current-weather [currentWeather]="currentWeather"  *ngIf="currentWeatherDisplayed && currentWeather"></app-current-weather>
-
+      <app-selected-forecast
+        *ngIf="!currentWeatherDisplayed && displayedDayForecast"
+        [forecast]="displayedDayForecast"
+      ></app-selected-forecast>
+      <app-current-weather
+        [currentWeather]="currentWeather"
+        *ngIf="currentWeatherDisplayed && currentWeather"
+      ></app-current-weather>
     </div>
     <div class="weekly-forecast-container">
-      <div class="card btn" (click)="displayForecast(i)"
-        *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i"  [id]="'weekly-forecast-'+i">
-        <img [src]='forecast.dayTime.icon' [alt]='forecast.dayTime.iconPhrase' class="card-img-top" />
+      <div
+        class="card btn"
+        (click)="displayForecast(i)"
+        *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i"
+        [id]="'weekly-forecast-' + i"
+      >
+        <img
+          [src]="forecast.dayTime.icon"
+          [alt]="forecast.dayTime.iconPhrase"
+          class="card-img-top"
+        />
         <div class="card-body">
-          <h4 class="card-title" class="forecast-date"><span class="forecast-day">{{forecast.dayofWeek}} </span><span> {{forecast.date}}</span></h4>
-          <h5 class="card-sub-title">
-            {{forecast.tempMin}}°/{{forecast.tempMax}}°
-          </h5>
+          <h4 class="card-title" class="forecast-date">
+            <span class="forecast-day">{{ forecast.dayofWeek }} </span
+            ><span> {{ forecast.date }}</span>
+          </h4>
+          <h4 class="card-sub-title">
+            {{ forecast.tempMin }}°/{{ forecast.tempMax }}°
+          </h4>
           <p class="card-text">{{ forecast.dayTime.shortText }}</p>
-          <a [href]="forecast.link" target="_blank" class="btn btn-primary">Go to website</a>
+          <!-- <a [href]="forecast.link" target="_blank" class="btn btn-primary">Go to website</a> -->
         </div>
       </div>
     </div>

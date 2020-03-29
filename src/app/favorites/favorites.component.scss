@@ -1,11 +1,9 @@
-.favorites-container{
-    display: flex;
-    flex-direction: column;
-    @media screen and (min-width:800px) {
-        justify-content: start;
-        flex-wrap: wrap;
-        flex-direction: row;
-
-        
-    }       
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 700px) {
+    justify-content: start;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
