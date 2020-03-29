@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeatherComponent } from './weather.component';
+import { WeeklyForecast } from '../models/weekly-forecast.model';
+import { weeklyForecastMockData } from '../mock-data/weeklyForecast';
 
 describe('WeatherComponent', () => {
   let component: WeatherComponent;
@@ -16,6 +18,7 @@ describe('WeatherComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WeatherComponent);
     component = fixture.componentInstance;
+    component.weeklyForecast=WeeklyForecast.fromJson(weeklyForecastMockData)
     fixture.detectChanges();
   });
 
@@ -23,13 +26,17 @@ describe('WeatherComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('choose new location and verify that it loaded', () => {
+ it('choose new location and verify that it loaded', () => {
     
     //choose new location
     let compiled = fixture.nativeElement;
     const locationInput = compiled.querySelector('#locationInput');
-    locationInput.value = "New York";
-    //make sure that current weather is there
+    locationInput.value = "New York, United States";
+    fixture.detectChanges();
+
+    fixture.whenStable().then(()=>{
+      expect(component.weeklyForecast[2].dayofWeek).toBe()
+    })
 
     //make sure that 5 day forecast is there
 

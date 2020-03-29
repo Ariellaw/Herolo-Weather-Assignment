@@ -26,4 +26,8 @@ describe('CurrentWeatherComponent', () => {
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+  it('verify tempature', ()=>{
+    fixture.detectChanges();
+    expect(component.currentWeather.tempMetric.toString()+'°').toBe( document.querySelector("#current-weather-temp").innerHTML)
+  })
 });
