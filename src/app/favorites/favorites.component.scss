@@ -4,49 +4,5 @@
     flex-wrap: wrap;
     @media screen and (max-width:1440px) {
         flex-direction: row;
-    }
-        
-    
-    .card{
-        width:40rem;
-        height: auto;
-        flex-direction: row;
-        @media screen and (max-width:1440px) {
-            width:100vw;
-            height: auto;
-            align-items: center;
-        }
-        .card-img-top{
-            @media screen and (max-width:1440px) {
-                width:15%;
-                height: 100%;
-            }   
-        }
-        .card-body{
-            @media screen and (max-width:1440px) {
-                display: flex;
-                flex-direction: row;
-                width:83%;
-                padding:.5rem;
-                flex:1,1,40%;
-
-            }
-            .header-text{
-                display: flex;
-                flex-direction: column;
-                flex-basis: auto;
-
-            }
-            .card-sub-title{
-                flex-basis: auto;
-                    
-            }
-            .card-text{
-                width: fit-content;
-
-            }
-
-        }
-
-    }
+    }       
 }

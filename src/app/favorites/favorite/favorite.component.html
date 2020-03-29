@@ -1,0 +1,14 @@
+<div class="card btn"  *ngIf="currentWeather && favorite">
+    <img [src]="currentWeather.icon"
+        alt='currentWeather.weatherText' class="card-img-top" />
+    <div class="card-body">
+        <div class="header-text">
+            <h4>{{favorite.cityName}}</h4>  
+            <h4>{{favorite.countryName}}</h4> 
+        </div>
+        <div class="card-sub-title">
+            <h4 class="card-title" class="forecast-date">{{currentWeather.tempMetric}}°</h4>
+        </div>
+        <p class="card-text">{{currentWeather.weatherText}}</p>
+    </div>
+</div>

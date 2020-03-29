@@ -1,18 +1,5 @@
 <div class="favorites-container">
-    <div class="card btn">
-        <img src='https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-            alt='forecast.dayTime.iconPhrase' class="card-img-top" />
-        <div class="card-body">
-            <div class="header-text">
-                <h4 class="card-title" class="forecast-date">DATE DATE</h4>
-                <h4 class="card-title" class="forecast-date">TEMP TEMP TEMP</h4>
-            </div>
-
-            <h5 class="card-sub-title">
-                CITY NAME
-            </h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem deleniti cum, possimus quia similique perferendis fuga rem est quam explicabo ad cumque! Deserunt recusandae magni incidunt autem totam quo mollitia!</p>
-        </div>
-    </div>
+    
+    <app-favorite *ngFor="let favorite of favorites; index as i"  [favorite]="favorite"></app-favorite>
     
 </div>
