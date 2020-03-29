@@ -10,6 +10,7 @@ import { SelectedWeatherComponent} from './weather/selected-forecast/selected-fo
 import { CurrentWeatherComponent } from './weather/current-weather/current-weather.component';
 import { TimeOfDayComponent } from './weather/current-weather/time-of-day/time-of-day.component';
 import { FavoriteComponent } from './favorites/favorite/favorite.component';
+import { RouterModule } from '@angular/router';
 
 
 
