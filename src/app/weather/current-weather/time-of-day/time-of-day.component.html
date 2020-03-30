@@ -1,15 +1,16 @@
-<h1>{{partOfDay}}</h1>
+
 <div class="main-container">
-    <div class="image-container">
-        <img class='forecast-image' [src]="forecast.icon" [alt]="forecast.iconPhrase">
-        <h5 class="forecast-text">{{forecast.longText}}</h5>
-    </div>
-    <div class="forecast-details-container">
-        <p class="forecast-details">PrecipitationProbability: {{forecast.precipitationProbability}}</p>
-        <p class="forecast-details">ThunderstormProbability: {{forecast.thunderstormProbability}}</p>
-        <p class="forecast-details">Rain: {{forecast.rainProbability}}mm</p>
-        <p class="forecast-details">Snow: {{forecast.snowProbability}}mm</p>
-        <p class="forecast-details">Ice: {{forecast.iceProbability}}mm</p>
-        <p class="forecast-details">WindGusts: {{forecast.windGusts}}</p>
-    </div>
+  <h1>{{partOfDay}}</h1>
+  <div class="image-container">
+    <img class='forecast-image' [src]="forecast.icon" [alt]="forecast.iconPhrase">
+    <p class="forecast-text">{{forecast.longText}}</p>
+  </div>
+  <div class="forecast-details-container">
+    <p class="forecast-details">Probability of Precipitation: {{forecast.precipitationProbability}}%</p>
+    <p class="forecast-details">Probability of Thunderstorms: {{forecast.thunderstormProbability}}%</p>
+    <p class="forecast-details">Rain: {{forecast.rain}}mm</p>
+    <p class="forecast-details">Snow: {{forecast.snow}}mm</p>
+    <p class="forecast-details">Ice: {{forecast.ice}}mm</p>
+    <p class="forecast-details">WindGusts: {{forecast.windGusts}}</p>
+  </div>
 </div>

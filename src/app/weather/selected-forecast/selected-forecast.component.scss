@@ -1,14 +1,18 @@
-.weather-details-container{
-    display:flex;
-    flex-direction: row;
+.weather-details-container {
+  display: flex;
+  flex-direction: row;
 }
 
-
-
-.forecast-display-container{
-    display:flex;
-    flex-direction: row;
-    width:100%;
-    justify-content:space-around;
-    flex-wrap:wrap;
+.forecast-display-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+  justify-content: space-evenly;
+  :first-child {
+    border-right:1px solid black;
+  }
+  @media screen and (min-width: 700px) {
+  
+  }
 }

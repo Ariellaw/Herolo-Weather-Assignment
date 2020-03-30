@@ -57,15 +57,11 @@ export class WeeklyForecast {
           iconPhrase: forecast.Day.IconPhrase,
           shortText: forecast.Day.ShortPhrase,
           longText: forecast.Day.LongPhrase,
-          precipitationProbability: this.fixFormatting(
-            forecast.Day.PrecipitationProbability
-          ),
-          thunderstormProbability: this.fixFormatting(
-            forecast.Day.ThunderstormProbability
-          ),
-          rainProbability: this.fixFormatting(forecast.Day.RainProbability),
-          snowProbability: this.fixFormatting(forecast.Day.SnowProbability),
-          iceProbability: this.fixFormatting(forecast.Day.IceProbability),
+          precipitationProbability: forecast.Day.PrecipitationProbability,
+          thunderstormProbability: forecast.Day.ThunderstormProbability,
+          rain: forecast.Day.Rain.Value,
+          snow: forecast.Day.Snow.Value,
+          ice: forecast.Day.Ice.Value,
           windGusts:
             forecast.Day.Wind.Speed.Value.toString() +
             forecast.Day.Wind.Speed.Unit
@@ -81,9 +77,9 @@ export class WeeklyForecast {
           thunderstormProbability: this.fixFormatting(
             forecast.Night.ThunderstormProbability
           ),
-          rainProbability: this.fixFormatting(forecast.Night.RainProbability),
-          snowProbability: this.fixFormatting(forecast.Night.SnowProbability),
-          iceProbability: this.fixFormatting(forecast.Night.IceProbability),
+          rain: forecast.Night.Rain.Value,
+          snow: forecast.Night.Snow.Value,
+          ice: forecast.Night.Ice.Value,
           windGusts:
             forecast.Night.Wind.Speed.Value.toString() +
             forecast.Night.Wind.Speed.Unit
@@ -91,6 +87,6 @@ export class WeeklyForecast {
       }
     })
 
-    return weeklyForecast;
+    return weeklyForecast
   }
 }

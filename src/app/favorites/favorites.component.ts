@@ -9,11 +9,22 @@ import { Locations } from '../models/locations.model';
 })
 export class FavoritesComponent implements OnInit {
   favorites:Locations[] = [];
+  errorMessageDisplayed:boolean = false;
+  loading = false;
 
   constructor(private favoritesService:FavoritesService) { }
 
   ngOnInit() {
-   this.favorites = this.favoritesService.getFavoritesFromLocalStorage();
+   
+   //TODO does this need a try catch?
   }
 
+  getFavorites(){
+    this.favorites = this.favoritesService.getFavoritesFromLocalStorage();
+    if(this.favorites){
+      this.loading = false;
+    }
+
+  }
+  
 }

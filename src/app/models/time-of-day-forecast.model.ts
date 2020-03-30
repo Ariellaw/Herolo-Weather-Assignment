@@ -6,9 +6,9 @@ export class TimeOfDayForecast {
     public readonly longText: string,
     public readonly precipitationProbability: string,
     public readonly thunderstormProbability: string,
-    public readonly rainProbability: string,
-    public readonly snowProbability: string,
-    public readonly iceProbability: string,
+    public readonly rain: string,
+    public readonly snow: string,
+    public readonly ice: string,
     public readonly windGusts: string
   ) {}
 }

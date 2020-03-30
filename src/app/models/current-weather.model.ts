@@ -34,6 +34,7 @@ export class CurrentWeather {
   static fromJson(currWeather: any) : CurrentWeather {
     const icon = this.getWeatherIcon(currWeather.WeatherIcon)
     const time = this.getTime(currWeather.LocalObservationDateTime)
+
     return {
       icon: icon,
       weatherText: currWeather.WeatherText,

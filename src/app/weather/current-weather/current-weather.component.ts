@@ -9,6 +9,7 @@ import { CurrentWeather } from '../../models/current-weather.model'
 })
 export class CurrentWeatherComponent implements OnInit {
   @Input() currentWeather: CurrentWeather
+  loading:boolean
 
 
   constructor (private forecastService: ForecastService) {}
@@ -16,6 +17,5 @@ export class CurrentWeatherComponent implements OnInit {
   ngOnInit (): void {
   }
 
-  async getCurrentWeather (locationKey) {
-  }
+
 }

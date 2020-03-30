@@ -23,7 +23,9 @@ export class WeatherComponent implements OnInit {
   displayedDayForecast: DailyForecast = null
   currentWeather: CurrentWeather = null
   currentWeatherDisplayed: boolean = true
-  errorMessageDisplayed:boolean = true;
+  errorMessageDisplayed: boolean = false
+  isLoadingCurrentWeather: boolean = true
+  isLoadingWeeklyForecast: boolean = true
 
   constructor (
     private locationService: LocationService,
@@ -34,9 +36,10 @@ export class WeatherComponent implements OnInit {
   ) {}
 
   ngOnInit () {
-    this.loadForecast();
-    }
-  
+    let id = this.route.snapshot.paramMap.get('id')
+    let location = this.route.snapshot.paramMap.get('locationName')
+    this.loadForecast(id, location)
+  }
 
   async onUserInput ($event) {
     const input = $event.target.value
@@ -46,41 +49,43 @@ export class WeatherComponent implements OnInit {
           input
         )
       } catch (e) {
-        alert('please try again' + e)
+        this.errorMessageDisplayed = true
       }
     }
   }
-
   async getWeeklyForecast (locationKey: string) {
     try {
       this.weeklyForecast = await this.forecastService.getWeeklyForecast(
         locationKey
       )
     } catch (e) {
-      alert('please try again' + e)
+      this.errorMessageDisplayed = true
+    } finally {
+      this.isLoadingWeeklyForecast = false
     }
   }
 
-  async getCurrentWeather (locationKey) {
+  async getCurrentWeather (locationKey: string) {
     try {
       this.currentWeather = await this.forecastService.getCurrentWeather(
         locationKey
       )
     } catch (e) {
-      alert('please try again' + e)
+      this.errorMessageDisplayed = true
+    } finally {
+      this.isLoadingCurrentWeather = false
     }
   }
 
   onUserSelection ($event) {
     this.currentWeatherDisplayed = true
-    this.location = $event.target.value
+    const location = $event.target.value
     const option = document.querySelector(
-      "#locations option[value='" + this.location + "']"
+      "#locations option[value='" + location + "']"
     )
-    this.locationKey = option.getAttribute('data-value')
-    this.getWeeklyForecast(this.locationKey)
-    this.getCurrentWeather(this.locationKey)
-    this.isLocationInFavorites(this.locationKey)
+    const locationKey = option.getAttribute('data-value')
+    this.loadForecast(locationKey, location)
+
     this.router.navigate(['/', this.location, this.locationKey])
   }
 
@@ -108,18 +113,19 @@ export class WeatherComponent implements OnInit {
     )
   }
 
-  loadForecast(){      
-    const id = this.route.snapshot.paramMap.get('id')
-    const cityName = this.route.snapshot.paramMap.get('locationName')
-    if (id) {
-      this.location = cityName;
-      this.getCurrentWeather(id)
-      this.isLocationInFavorites(id)
-      this.getWeeklyForecast(id)
-    } else {
-      this.getWeeklyForecast(this.locationKey)
-      this.getCurrentWeather(this.locationKey)
-      this.isLocationInFavorites(this.locationKey)
+  loadForecast (
+    id: string = this.locationKey,
+    location: string = this.location
+  ) {
+    this.isLoadingWeeklyForecast = true
+    this.isLoadingCurrentWeather = true
+
+    if (id && location) {
+      this.locationKey = id
+      this.location = location
     }
+    this.getCurrentWeather(this.locationKey)
+    this.isLocationInFavorites(this.locationKey)
+    this.getWeeklyForecast(this.locationKey)
   }
 }
