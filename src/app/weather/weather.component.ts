@@ -42,9 +42,16 @@ export class WeatherComponent implements OnInit {
 
     this.route.queryParams.subscribe(queryParams => {
       this.units = queryParams.units
+      console.log("this.units",this.units)
+      this.loadForecast (
+        this.locationKey,
+        location,
+        this.units
+        
+      )
     })
 
-    this.loadForecast(id, location)
+    this.loadForecast(id, location, this.units)
   }
 
   async onUserInput ($event) {
@@ -59,10 +66,10 @@ export class WeatherComponent implements OnInit {
       }
     }
   }
-  async getWeeklyForecast (locationKey: string) {
+  async getWeeklyForecast (locationKey: string, unitsOfMeasurment:string) {
     try {
       this.weeklyForecast = await this.forecastService.getWeeklyForecast(
-        locationKey
+        locationKey, unitsOfMeasurment
       )
     } catch (e) {
       this.errorMessageDisplayed = true
@@ -90,7 +97,7 @@ export class WeatherComponent implements OnInit {
       "#locations option[value='" + location + "']"
     )
     const locationKey = option.getAttribute('data-value')
-    this.loadForecast(locationKey, location)
+    this.loadForecast(locationKey, location, this.units)
 
     this.router.navigate(['/', this.location, this.locationKey])
   }
@@ -121,7 +128,8 @@ export class WeatherComponent implements OnInit {
 
   loadForecast (
     id: string = this.locationKey,
-    location: string = this.location
+    location: string = this.location,
+    unitsOfMeasurment:string
   ) {
     this.isLoadingWeeklyForecast = true
     this.isLoadingCurrentWeather = true
@@ -132,6 +140,6 @@ export class WeatherComponent implements OnInit {
     }
     this.getCurrentWeather(this.locationKey)
     this.isLocationInFavorites(this.locationKey)
-    this.getWeeklyForecast(this.locationKey)
+    this.getWeeklyForecast(this.locationKey, unitsOfMeasurment)
   }
 }

@@ -3,20 +3,19 @@ import { weeklyForecastMockData } from '../mock-data/weeklyForecast'
 import { currentWeatherMockData } from '../mock-data/currentWeather'
 import { CurrentWeather } from '../models/current-weather.model'
 import { WeeklyForecast } from '../models/weekly-forecast.model'
-import { DailyForecast } from '../models/daily-forecast.model'
-
+import {weeklyForecastMockData2} from '../mock-data/weeklyForecast2';
 @Injectable({
   providedIn: 'root'
 })
 export class ForecastService {
   // apiKey = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
   apiKey = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
-  useMockData = true;
+  useMockData = true
 
   constructor () {}
 
   getCurrentWeather (locationKey: string): Promise<CurrentWeather> {
-    let currentWeather: CurrentWeather
+    // let currentWeather: CurrentWeather
     let dataPromise: Promise<any>
 
     if (this.useMockData) {
@@ -29,24 +28,33 @@ export class ForecastService {
 
     return dataPromise.then(data => {
       const currWeather = data[0]
-                
-      return CurrentWeather.fromJson(currWeather);
+
+      return CurrentWeather.fromJson(currWeather)
     })
   }
 
-  getWeeklyForecast (locationKey: string): Promise<WeeklyForecast> {
+  getWeeklyForecast (
+    locationKey: string,
+    unitsOfMeasurment: string
+  ): Promise<WeeklyForecast> {
     let dataPromise: Promise<any>
+    const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false'
 
     if (this.useMockData) {
-      dataPromise = Promise.resolve(weeklyForecastMockData)
+      if( unitsOfMeasurment === 'celsius'){
+        dataPromise = Promise.resolve(weeklyForecastMockData)
+      }else{
+        dataPromise = Promise.resolve(weeklyForecastMockData2)
+      }
+      
     } else {
       dataPromise = fetch(
-        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${this.apiKey}&details=true&metric=true`
+        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${this.apiKey}&details=true&metric=${isMetric}`
       ).then(resp => resp.json())
     }
-    
+
     return dataPromise.then(data => {
-      var forecasts = data.DailyForecasts;
+      var forecasts = data.DailyForecasts
 
       return WeeklyForecast.fromJson(forecasts)
     })
