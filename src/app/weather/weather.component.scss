@@ -8,15 +8,19 @@
 //     //     margin-top: 3rem;
 //     // }
 // }
+
 .display-container {
-  width: 85vw;
+  width: 100vw;
   height: 90vh;
   border-radius: 10%;
   margin: auto;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 1rem;
+  @media screen and (min-width:700px) {
+    padding:3rem;
+  }
   .display-header {
     height: 4rem;
     display: flex;
@@ -76,6 +80,7 @@
       height: 20%;
       align-items: center;
       flex-direction: row;
+      
       @media screen and (min-width:700px) {
       flex-direction: column;
       border-radius: 10%;
@@ -107,7 +112,7 @@
             height: 22rem;
         }
         h4 {
-            font-size: 1rem;
+            font-size: 1.5rem;
           @media screen and (min-width: 700px) {
             font-size: 1.5rem;  
             padding:.5rem     

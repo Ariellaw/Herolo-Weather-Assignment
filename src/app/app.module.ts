@@ -10,7 +10,8 @@ import { SelectedWeatherComponent } from './weather/selected-forecast/selected-f
 import { CurrentWeatherComponent } from './weather/current-weather/current-weather.component'
 import { TimeOfDayComponent } from './weather/current-weather/time-of-day/time-of-day.component'
 import { FavoriteComponent } from './favorites/favorite/favorite.component'
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
+import { ErrorMessageComponent } from './error-message/error-message.component'
 
 const appRoutes: Routes = [
   { path: 'favorites', component: FavoritesComponent },
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     SelectedWeatherComponent,
     CurrentWeatherComponent,
     TimeOfDayComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,

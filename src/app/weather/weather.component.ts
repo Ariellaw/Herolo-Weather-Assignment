@@ -23,7 +23,7 @@ export class WeatherComponent implements OnInit {
   displayedDayForecast: DailyForecast = null
   currentWeather: CurrentWeather = null
   currentWeatherDisplayed: boolean = true
-  index: number
+  errorMessageDisplayed:boolean = true;
 
   constructor (
     private locationService: LocationService,
