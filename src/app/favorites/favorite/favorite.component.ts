@@ -28,5 +28,5 @@ export class FavoriteComponent implements OnInit {
       alert('please try again' + e)
     }
   }
-  seeFullForecast (locationKey: string) {}
+  
 }

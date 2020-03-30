@@ -1,5 +1,4 @@
 export class CurrentWeather {
-
   constructor (
     public readonly icon: string,
     public readonly weatherText: string,
@@ -15,7 +14,7 @@ export class CurrentWeather {
     public readonly humidity: string,
     public readonly visibilityMetric: string,
     public readonly visibilityImperial: string
-  ) {  }
+  ) {}
 
   private static getWeatherIcon (iconIdx: number): string {
     const idx = iconIdx.toString().padStart(2, '0')
@@ -31,39 +30,41 @@ export class CurrentWeather {
     return `${date.getHours()}:${minutes}`
   }
 
-  static fromJson(currWeather: any) : CurrentWeather {
+  static fromJson (
+    currWeather: any,
+  ): CurrentWeather {
     const icon = this.getWeatherIcon(currWeather.WeatherIcon)
     const time = this.getTime(currWeather.LocalObservationDateTime)
 
-    return {
-      icon: icon,
-      weatherText: currWeather.WeatherText,
-      time: time,
-      link: currWeather.Link,
-      mobileLink: currWeather.MobileLink,
-      realFeelMetric: Math.round(
-        currWeather.RealFeelTemperature.Metric.Value
-      ),
-      realFeelImperial: Math.round(
-        currWeather.RealFeelTemperature.Imperial.Value
-      ),
-      realFeelShadeMetric: Math.round(
-        currWeather.RealFeelTemperatureShade.Metric.Value
-      ),
-      realFeelShadeImperial: Math.round(
-        currWeather.RealFeelTemperatureShade.Imperial.Value
-      ),
-      tempMetric: Math.round(currWeather.Temperature.Metric.Value),
-      tempImperial: Math.round(currWeather.Temperature.Imperial.Value),
-      humidity: currWeather.RelativeHumidity.toString() + '%',
+      return {
+        icon: icon,
+        weatherText: currWeather.WeatherText,
+        time: time,
+        link: currWeather.Link,
+        mobileLink: currWeather.MobileLink,
+        realFeelMetric: Math.round(
+          currWeather.RealFeelTemperature.Metric.Value
+        ),
+        realFeelImperial: Math.round(
+          currWeather.RealFeelTemperature.Imperial.Value
+        ),
+        realFeelShadeMetric: Math.round(
+          currWeather.RealFeelTemperatureShade.Metric.Value
+        ),
+        realFeelShadeImperial: Math.round(
+          currWeather.RealFeelTemperatureShade.Imperial.Value
+        ),
+        tempMetric: Math.round(currWeather.Temperature.Metric.Value),
+        tempImperial: Math.round(currWeather.Temperature.Imperial.Value),
+        humidity: currWeather.RelativeHumidity.toString() + '%',
 
-      visibilityMetric:
-        Math.round(currWeather.Visibility.Metric.Value).toString() +
-        currWeather.Visibility.Metric.Unit,
+        visibilityMetric:
+          Math.round(currWeather.Visibility.Metric.Value).toString() +
+          currWeather.Visibility.Metric.Unit,
 
-      visibilityImperial:
-        Math.round(currWeather.Visibility.Imperial.Value).toString() +
-        currWeather.Visibility.Imperial.Unit
-    }
-  } 
+        visibilityImperial:
+          Math.round(currWeather.Visibility.Imperial.Value).toString() +
+          currWeather.Visibility.Imperial.Unit
+      }
+    } 
 }

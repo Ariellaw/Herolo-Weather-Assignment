@@ -1,10 +1,37 @@
-.navbar{
-    // background-image: url('../../assets/images/nav-background.jpg');
-    background-repeat: no-repeat;
-    background-color: blue;
-    height:7vh;
-    .navbar-brand{
-        color:white;
-        font-weight: bold;
+.navbar {
+  background-image: url('../../assets/images/images/nav-background.jpg');
+  background-repeat: repeat;
+  background-color: #bfd8d5;
+  height: 15vh;
+  border-bottom: 4px solid darken(#b1bed5, 5%);
+  display:flex;
+  align-content: center;
+
+  .nav-btn {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    margin-right: 2rem;
+  }
+
+  .active {
+    color: darken(#b1bed5, 5%);
+  }
+
+  .celsius-fahrenheit-container {
+    margin-right: 3rem;
+
+    .celsius-fahrenheit {
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      cursor: pointer;
     }
-}
+  }
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+      font-size: 2rem;
+      margin-left: 2rem;
+    }
+  }

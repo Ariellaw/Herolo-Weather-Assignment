@@ -10,6 +10,7 @@ import { CurrentWeather } from '../../models/current-weather.model'
 export class CurrentWeatherComponent implements OnInit {
   @Input() currentWeather: CurrentWeather
   loading:boolean
+  @Input() units:string
 
 
   constructor (private forecastService: ForecastService) {}

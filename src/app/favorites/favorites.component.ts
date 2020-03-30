@@ -15,16 +15,12 @@ export class FavoritesComponent implements OnInit {
   constructor(private favoritesService:FavoritesService) { }
 
   ngOnInit() {
-   
+    this.getFavorites();
    //TODO does this need a try catch?
   }
 
   getFavorites(){
     this.favorites = this.favoritesService.getFavoritesFromLocalStorage();
-    if(this.favorites){
-      this.loading = false;
-    }
-
   }
   
 }

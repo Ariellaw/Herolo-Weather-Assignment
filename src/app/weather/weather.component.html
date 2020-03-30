@@ -21,7 +21,7 @@
       </button>
       <button *ngIf="locationIsInFavorites" (click)="removeLocationFromFavorites()" class="favorites-button">
         <i class="fas fa-heart red"></i>
-        <span class="btn-text">Remove from Favorites </span>
+        <span class="btn-text"> Remove from Favorites </span>
       </button>
     </div>
 
@@ -32,7 +32,7 @@
 
       <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast && !errorMessageDisplayed"
         [forecast]="displayedDayForecast" (errorMessageWasClosed)='errorMessageDisplayed'></app-selected-forecast>
-      <app-current-weather [currentWeather]="currentWeather"
+      <app-current-weather [currentWeather]="currentWeather"  [units]='units'
         *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></app-current-weather>
     </div>
     <div class="weekly-forecast-container">
