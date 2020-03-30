@@ -22,10 +22,11 @@
     padding: 3rem;
   }
   .display-header {
-    height: 4rem;
+    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 2rem;
     @media screen and (min-width: 700px) {
       justify-content: space-between;
     }
@@ -34,6 +35,7 @@
       width: fit-content;
       background-color: white;
       font-size: 3rem;
+      margin-right: 3rem;
       @media screen and (min-width: 700px) {
         border-radius: 10%;
         height: 5rem;
@@ -62,20 +64,19 @@
   }
   .weekly-forecast-container {
     display: flex;
-    height: 50%;
+    height: 40%;
     flex-direction: column;
     padding: 0.5rem;
     margin: 0.5rem;
     @media screen and (min-width: 700px) {
-      height: 45%;
-    }
-
-    @media screen and (min-width: 700px) {
-      flex-wrap: wrap;
+      height: 35%;
+      // flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-evenly;
       height: 40%;
     }
+
+
     .card {
       display: flex;
       width: 100%;
@@ -92,7 +93,7 @@
       }
       .card-img-top {
         width: 15%;
-        height: 100%;
+        height: 5rem;
         @media screen and (min-width: 700px) {
           width: 100%;
           height: 8rem;
@@ -143,8 +144,8 @@
           width: fit-content;
           font-size: 1rem;
           width: 35%;
+          font-size: 1.5rem;
           @media screen and (min-width: 700px) {
-            font-size: 1.5rem;
             width: 100%;
             height: 7rem;
           }
@@ -163,10 +164,9 @@
 .searchTerm {
   width: 30rem;
   height: 4rem;
-  border: 3px solid #00b4cc;
+  border-bottom: 3px solid black;
   border-right: none;
   padding: 5px;
-  border-radius: 5px 0 0 5px;
   outline: none;
   font-size: 1.5rem;
   color: black;
@@ -180,11 +180,10 @@
 .searchButton {
   width: 4rem;
   height: 4rem;
-  border: 1px solid #00b4cc;
-  background: #00b4cc;
+  border-bottom: 3px solid black;
+  background: white;
   text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
+  color: black;
   cursor: pointer;
   font-size: 20px;
 }
