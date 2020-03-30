@@ -4,7 +4,7 @@
     <h2 id="current-weather-time">{{currentWeather.time}}</h2>
   </div>
 
-  <div class="weather-details-container"  *ngIf="units==='celsius'">
+  <div class="weather-details-container"  *ngIf="units!=='fahrenheit'">
     <div class="image-container">
       <img id="current-weather-img" [src]="currentWeather.icon" [alt]="currentWeather.weatherText"
         class="forecast-image" />
