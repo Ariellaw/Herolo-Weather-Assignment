@@ -12,7 +12,7 @@
     <p class="forecast-details">Ice: {{forecast.ice}}mm</p>
     <p class="forecast-details">WindGusts: {{forecast.windGusts}}</p>
   </div>
-  <a (click)='windowOpened=true' href="#" class="forecast-details-window">More</a>
-  <app-forecast-details [forecast]='forecast' *ngIf="windowOpened" (windowClosed)="windowOpened=false">
+  <a (click)='windowOpened=true' href="#" class="more-link">More</a>
+  <app-forecast-details  class='forecast-details-window' windowOpened="true ? 'display-flex' : 'display-none'" [forecast]='forecast' *ngIf="windowOpened" (windowClosed)="windowOpened=false">
   </app-forecast-details>
 </div>

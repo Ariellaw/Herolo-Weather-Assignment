@@ -36,7 +36,7 @@
         *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></app-current-weather>
     </div>
     <div class="weekly-forecast-container">
-      <div class="card btn" (click)="displayForecast(i)"
+      <div class="card btn" [ngClass]="{'bg-dark text-white':darkmode}" (click)="displayForecast(i)"
         *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i" [id]="'weekly-forecast-' + i">
         <img [src]="forecast.dayTime.icon" [alt]="forecast.dayTime.iconPhrase" class="card-img-top" />
         <div class="card-body">
@@ -47,7 +47,6 @@
             {{ forecast.tempMin }}°/{{ forecast.tempMax }}°
           </h4>
           <p class="card-text">{{ forecast.dayTime.shortText }}</p>
-          <!-- <a [href]="forecast.link" target="_blank" class="btn btn-primary">Go to website</a> -->
         </div>
       </div>
     </div>

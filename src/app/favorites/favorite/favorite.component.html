@@ -1,4 +1,4 @@
-<div class="card btn" *ngIf="currentWeather && favorite"
+<div class="card btn" [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="currentWeather && favorite"
     [routerLink]="['/'+favorite.cityName+','+favorite.countryName+'/'+favorite.locationKey]">
     <img [src]="currentWeather.icon" alt='currentWeather.weatherText' class="card-img-top" />
     <div class="card-body">
@@ -12,3 +12,4 @@
         <p class="card-text">{{currentWeather.weatherText}}</p>
     </div>
 </div>
+

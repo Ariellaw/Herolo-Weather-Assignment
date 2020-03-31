@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core'
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 import { Locations } from '../../models/locations.model'
 import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from 'src/app/models/current-weather.model'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-favorite',
@@ -13,11 +14,20 @@ export class FavoriteComponent implements OnInit {
   @Output() errorMessageOpened = new EventEmitter<void>()
   @Input() favorite: Locations
   currentWeather: CurrentWeather
+  darkmode:boolean = false;
 
-  constructor (private forecastServices: ForecastService) {}
+  constructor (
+    private forecastServices: ForecastService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit (): void {
     this.getCurrentWeather(this.favorite.locationKey)
+
+    this.route.queryParams.subscribe(queryParams => {
+      const mode = queryParams.mode
+      this.darkmode = mode === 'dark-mode'? true:false; 
+    })
   }
 
   async getCurrentWeather (locationKey: string) {
@@ -29,5 +39,4 @@ export class FavoriteComponent implements OnInit {
       this.errorMessageOpened.emit()
     }
   }
-  
 }

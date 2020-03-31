@@ -1,16 +1,16 @@
 .navbar {
-  background-image: url('../../assets/images/images/nav-background.jpg');
+  background-image: url("../../assets/images/images/nav-background.jpg");
   background-repeat: repeat;
   background-color: #bfd8d5;
   border-bottom: 4px solid darken(#b1bed5, 5%);
-  display:flex;
+  display: flex;
   align-content: center;
   justify-content: flex-end;
   height: 10vh;
-  @media screen and (min-width:700px){
+
+  @media screen and (min-width: 700px) {
     height: 15vh;
     justify-content: space-between;
-    
   }
 
   .nav-btn {
@@ -21,32 +21,46 @@
   }
 
   .active {
-    color: lighten(#8b006e, 30%)
+    color: lighten(#8b006e, 30%);
   }
 
-  .celsius-fahrenheit-container {
+  .header-container {
     margin-right: 3rem;
+    color: white;
+    font-size: 2rem;
+    a {
+      font-weight: bold;
+      cursor: pointer;
+    }
 
     .celsius-fahrenheit {
       color: white;
-      font-size: 3rem;
-      font-weight: bold;
-      cursor: pointer;
- 
-    }
-    .active {
-      color: lighten(#8b006e, 30%)
-    }
-  }
-    .navbar-brand {
-      color: white;
-      font-weight: bold;
-      font-size: 2rem;
-      margin-left: 2rem;
-      display: none;
-      @media screen and (min-width:700px){
-        display: block;
-      }
 
     }
+
+    .celsius-fahrenheit.active {
+      color: lighten(#8b006e, 30%);
+    }
+
+
+    .light-darkmode{
+      color: white;
+    }
+
+    .light-darkmode.active {
+      color: lighten(#8b006e, 30%);
+    }
   }
+
+  .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 2rem;
+    display: none;
+
+    @media screen and (min-width: 700px) {
+      display: block;
+    }
+  }
+}

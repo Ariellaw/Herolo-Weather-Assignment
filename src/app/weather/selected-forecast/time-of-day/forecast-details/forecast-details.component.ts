@@ -15,6 +15,7 @@ export class ForecastDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   closeWindow(){
+    console.log("closeWindow")
     this.windowClosed.emit();
   }
 }

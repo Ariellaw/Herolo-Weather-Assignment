@@ -41,3 +41,25 @@
     margin:auto;
     display: block;
   }
+
+  .display-none{
+    display:none
+  }
+  .display-block{
+    display:block
+  }
+  .display-flex{
+    display:flex
+  }
+
+  body{
+    
+  }
+  .dark-mode{
+    color:white;
+    background-color: #343a40;
+  }
+  .light-mode{
+    background-color: white;
+    color: black;
+  }

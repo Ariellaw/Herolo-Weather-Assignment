@@ -26,7 +26,8 @@ export class WeatherComponent implements OnInit {
   errorMessageDisplayed: boolean = false
   isLoadingCurrentWeather: boolean = true
   isLoadingWeeklyForecast: boolean = true
-  units: string = 'fahrenheit'
+  units: string = 'fahrenheit';
+  darkmode:boolean
 
   constructor (
     private locationService: LocationService,
@@ -39,14 +40,18 @@ export class WeatherComponent implements OnInit {
   ngOnInit () {
     let id = this.route.snapshot.paramMap.get('id')
     let location = this.route.snapshot.paramMap.get('locationName')
+    
+
 
     this.route.queryParams.subscribe(queryParams => {
       this.units = queryParams.units
+      const mode = queryParams.mode
+      this.darkmode = mode === 'dark-mode'? true:false; 
+
       this.loadForecast (
         this.locationKey,
         location,
-        this.units
-        
+        this.units      
       )
     })
 

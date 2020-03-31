@@ -17,37 +17,45 @@
     align-items: flex-start;
 
     .forecast-image {
-      width: 100%;
+      width: 15rem;
       height: auto;
       margin-bottom: 1rem;
       margin-top: 1rem;
     }
+
     .forecast-text {
       font-size: 1.5rem;
       font-weight: bold;
     }
   }
 
-  .forecast-image {
-    width: 15rem;
-    height: auto;
+  .forecast-details-container {
+    display:none;
+    @media screen and (min-width: 800px) {
+      display: block;
+    }
+
+    .forecast-details {
+      font-size: 1.3rem;
+    }
   }
-  .forecast-details-window {
+
+  .more-link {
     display: block;
     font-size: 2rem;
     text-decoration: underline;
+
     @media screen and (min-width: 800px) {
       display: none;
     }
   }
-  .forecast-details-container {
-    display: none;
+
+  .forecast-details-window {
+
     @media screen and (min-width: 800px) {
       display: block;
       width: fit-content;
     }
-    .forecast-details {
-      font-size: 1.3rem;
-    }
+
   }
 }
