@@ -1,9 +1,11 @@
 <div class="favorites-container">
 
-    <app-error-message class="full-screen-width" *ngIf="errorMessageDisplayed" (errorMessageWasClosed)='errorMessageDisplayed=false'>
+    <app-error-message class="full-screen-width" *ngIf="errorMessage" (errorMessageWasClosed)='errorMessage=false'>
     </app-error-message>
-    <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"  *ngIf="loading" class="loading-image">
-    
-    <app-favorite (errorMessageOpened)='errorMessageDisplayed=true' *ngFor="let favorite of favorites; index as i"  [favorite]="favorite"></app-favorite>
-    <h1 class="no-favorites-message" *ngIf="displayMessage">Looks like you did not save any cities to your favorites!</h1>
+    <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image" *ngIf="loading" class="loading-image">
+
+    <app-favorite (errorMessageOpened)='errorMessage=true' *ngFor="let favorite of favorites; index as i"
+        [favorite]="favorite"></app-favorite>
+    <h1 class="no-favorites-message" *ngIf="displayMessage">Looks like you did not save any cities to your favorites!
+    </h1>
 </div>

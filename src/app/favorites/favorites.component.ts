@@ -9,7 +9,7 @@ import { Locations } from '../models/locations.model'
 })
 export class FavoritesComponent implements OnInit {
   favorites: Locations[] = null
-  errorMessageDisplayed: boolean = false
+  errorMessage: boolean = false
   loading: boolean = true
   displayMessage: boolean = false
 

@@ -23,7 +23,7 @@ export class WeatherComponent implements OnInit {
   displayedDayForecast: DailyForecast = null
   currentWeather: CurrentWeather = null
   currentWeatherDisplayed: boolean = true
-  errorMessageDisplayed: boolean = false
+  errorMessage: string = null
   isLoadingCurrentWeather: boolean = true
   isLoadingWeeklyForecast: boolean = true
   units: string = 'fahrenheit'
@@ -50,16 +50,17 @@ export class WeatherComponent implements OnInit {
     })
   }
 
-  async onUserInput ($event) {
+  onUserInput ($event) {
     const input = $event.target.value
     if (input.length >= 2) {
-      try {
-        this.suggestedLocations = await this.locationService.getSuggestedLocations(
-          input
-        )
-      } catch (e) {
-        this.errorMessageDisplayed = true
-      }
+      this.locationService
+        .getSuggestedLocations(input)
+        .then(locations => {
+          this.suggestedLocations = locations
+        })
+        .catch(error => {
+          this.errorMessage = error
+        })
     }
   }
   getWeeklyForecast (locationKey: string, unitsOfMeasurment: string) {
@@ -70,7 +71,7 @@ export class WeatherComponent implements OnInit {
         this.isLoadingWeeklyForecast = false
       })
       .catch(error => {
-        this.errorMessageDisplayed = true
+        this.errorMessage = error
         this.isLoadingWeeklyForecast = false
       })
   }
@@ -83,7 +84,7 @@ export class WeatherComponent implements OnInit {
         this.isLoadingCurrentWeather = false
       })
       .catch(error => {
-        this.errorMessageDisplayed = true
+        this.errorMessage = error
         this.isLoadingCurrentWeather = false
       })
   }

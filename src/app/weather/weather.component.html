@@ -2,8 +2,9 @@
   <div class="display-container">
     <div class="header">
       <div class="search">
-        <input type="text" [ngClass]="{'bg-dark text-white':darkmode}"  id="locationInput" class="autocomplete" (input)="onUserInput($event)" [value]="location"
-          placeholder="Enter city...." list="locations" (change)="onUserSelection($event)" />
+        <input type="text" [ngClass]="{'bg-dark text-white':darkmode}" id="locationInput" class="autocomplete"
+          (input)="onUserInput($event)" [value]="location" placeholder="Enter city...." list="locations"
+          (change)="onUserSelection($event)" />
         <button type="submit" class="searchButton" [ngClass]="{'bg-dark text-white':darkmode}">
           <i class="fa fa-search"></i>
         </button>
@@ -14,25 +15,27 @@
         </datalist>
       </div>
 
-      <button [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="!locationIsInFavorites" (click)="addLocationToFavorites()" class="favorites-button">
+      <button [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="!locationIsInFavorites"
+        (click)="addLocationToFavorites()" class="favorites-button">
         <i class="far fa-heart red"></i>
         <span class="btn-text">Add to Favorites</span>
       </button>
-      <button [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="locationIsInFavorites" (click)="removeLocationFromFavorites()" class="favorites-button">
+      <button [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="locationIsInFavorites"
+        (click)="removeLocationFromFavorites()" class="favorites-button">
         <i class="fas fa-heart red"></i>
         <span class="btn-text"> Remove from Favorites </span>
       </button>
     </div>
 
     <div class="weather-display">
-      <app-error-message *ngIf="errorMessageDisplayed" (errorMessageWasClosed)='errorMessageDisplayed=false'>
+      <app-error-message [errorMessage]='errorMessage'>
       </app-error-message>
       <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"
         *ngIf="isLoadingCurrentWeather || isLoadingWeeklyForecast" class="loading-image">
 
-      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast && !errorMessageDisplayed"
-        [forecast]="displayedDayForecast" (errorMessageWasClosed)='errorMessageDisplayed'></app-selected-forecast>
-     <app-current-weather [currentWeather]="currentWeather" [units]='units' 
+      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast && !errorMessage"
+        [forecast]="displayedDayForecast" ></app-selected-forecast>
+      <app-current-weather [currentWeather]="currentWeather" [units]='units'
         *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></app-current-weather>
     </div>
     <div class="weekly-forecast-container">
