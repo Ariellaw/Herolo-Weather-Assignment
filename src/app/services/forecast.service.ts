@@ -3,7 +3,7 @@ import { weeklyForecastMockData } from '../mock-data/weeklyForecast'
 import { currentWeatherMockData } from '../mock-data/currentWeather'
 import { CurrentWeather } from '../models/current-weather.model'
 import { WeeklyForecast } from '../models/weekly-forecast.model'
-import {weeklyForecastMockData2} from '../mock-data/weeklyForecast2';
+import { weeklyForecastMockDataFahrenheit } from '../mock-data/weeklyForecast2'
 @Injectable({
   providedIn: 'root'
 })
@@ -41,12 +41,11 @@ export class ForecastService {
     const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false'
 
     if (this.useMockData) {
-      if( unitsOfMeasurment === 'celsius'){
+      if (unitsOfMeasurment === 'celsius') {
         dataPromise = Promise.resolve(weeklyForecastMockData)
-      }else{
-        dataPromise = Promise.resolve(weeklyForecastMockData2)
+      } else {
+        dataPromise = Promise.resolve(weeklyForecastMockDataFahrenheit)
       }
-      
     } else {
       dataPromise = fetch(
         `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${this.apiKey}&details=true&metric=${isMetric}`

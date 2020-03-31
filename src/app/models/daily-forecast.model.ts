@@ -16,4 +16,3 @@ export class DailyForecast {
     public readonly nightTime: TimeOfDayForecast
   ) {}
 }
-//`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}&details=true`

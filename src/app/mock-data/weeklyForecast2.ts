@@ -1,6 +1,5 @@
-// `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}&details=true&metric=true`
 
-const weeklyForecastMockData2: any = {
+const weeklyForecastMockDataFahrenheit: any = {
   Headline: {
     EffectiveDate: '2020-03-28T14:00:00-04:00',
     EffectiveEpochDate: 1585418400,
@@ -1191,4 +1190,4 @@ const weeklyForecastMockData2: any = {
   ]
 }
 
-export { weeklyForecastMockData2  }
+export { weeklyForecastMockDataFahrenheit }
