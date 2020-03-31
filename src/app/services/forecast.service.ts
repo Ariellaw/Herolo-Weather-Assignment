@@ -8,15 +8,16 @@ import { weeklyForecastMockDataFahrenheit } from '../mock-data/weeklyForecast2'
   providedIn: 'root'
 })
 export class ForecastService {
-  // apiKey = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
-  apiKey = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
-  useMockData = true
+  private apiKey: string = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
+  private useMockData: boolean = true
 
-  constructor () {}
+  constructor (
+
+  ) {}
 
   getCurrentWeather (locationKey: string): Promise<CurrentWeather> {
-    // let currentWeather: CurrentWeather
     let dataPromise: Promise<any>
+    // let forecastService:ForecastService = new ForecastService();
 
     if (this.useMockData) {
       dataPromise = Promise.resolve(currentWeatherMockData)
@@ -28,7 +29,7 @@ export class ForecastService {
 
     return dataPromise.then(data => {
       const currWeather = data[0]
-
+      //as strange as it seems, the API returns an array with one element
       return CurrentWeather.fromJson(currWeather)
     })
   }
@@ -57,36 +58,4 @@ export class ForecastService {
       return WeeklyForecast.fromJson(forecasts)
     })
   }
-
-  getWeatherIcon (iconIdx: number): string {
-    const idx = iconIdx.toString().padStart(2, '0')
-    return `https://developer.accuweather.com/sites/default/files/${idx}-s.png`
-  }
-
-  getDayOfWeek (date) {
-    return new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
-      new Date(date)
-    )
-  }
-
-  getShortDate (fullDate: string): string {
-    const date = new Date(fullDate)
-    return `${date.getDate()}/${date.getMonth() + 1}`
-  }
-
-  getTime (fullDate: string): string {
-    const date = new Date(fullDate)
-    const minutes = date
-      .getMinutes()
-      .toString()
-      .padStart(2, '0')
-    return `${date.getHours()}:${minutes}`
-  }
-
-  fixFormatting (value) {
-    return value.toString().padStart(2, '0')
-  }
 }
-
-// https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=${api}&details=false&metric=true
-// https://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=${api}&details=true&metric=true

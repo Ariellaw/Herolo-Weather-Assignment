@@ -22,7 +22,6 @@ export class LocationService {
       dataPromise = fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${keyword}`).then(resp =>resp.json())
 
     }
-      // Call the fetch function passing the url of the API as a parameter
       return dataPromise.then(data=>{
 
         data.forEach((location, idx) => {
@@ -39,4 +38,3 @@ export class LocationService {
   }
 }
 
-//http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=%09${api}&q=${keyword}

@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
       {
         relativeTo: this.activatedRoute,
         queryParams: queryParams, 
-        queryParamsHandling: 'merge', // remove to replace all query params by provided
+        queryParamsHandling: 'merge',
       });
   }
   togglefahrenheitCelsius(units:string){

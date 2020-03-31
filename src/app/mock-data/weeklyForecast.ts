@@ -1,4 +1,3 @@
-// `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}&details=true&metric=true`
 
 const weeklyForecastMockData: any = {
   Headline: {

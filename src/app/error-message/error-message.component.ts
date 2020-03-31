@@ -10,9 +10,7 @@ export class ErrorMessageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log("ERROR", this.errorMessage)
-  }
+  ngOnInit(): void {}
 
   closeErrorMessage(){
     this.errorMessage=null;

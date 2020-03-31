@@ -2,10 +2,6 @@ import { DailyForecast } from './daily-forecast.model'
 import { TimeOfDayForecast } from './time-of-day-forecast.model'
 
 export class WeeklyForecast {
-  // constructor (
-  //   public readonly dailyForecasts: DailyForecast[]
-  // ) {}
-
   public readonly dailyForecasts: DailyForecast[]
 
   constructor (dailyForecasts: DailyForecast[]) {
@@ -37,11 +33,13 @@ export class WeeklyForecast {
     forecasts.forEach((forecast, idx) => {
       const dayofWeek = WeeklyForecast.getDayOfWeek(forecast.Date)
       const date = WeeklyForecast.getShortDate(forecast.Date)
-      const dayTimeData:TimeOfDayForecast = TimeOfDayForecast.fromJson(forecast.Day)
-      const nightTimeData:TimeOfDayForecast = TimeOfDayForecast.fromJson(forecast.Night)
+      const dayTimeData: TimeOfDayForecast = TimeOfDayForecast.fromJson(
+        forecast.Day
+      )
+      const nightTimeData: TimeOfDayForecast = TimeOfDayForecast.fromJson(
+        forecast.Night
+      )
       weeklyForecast.dailyForecasts[idx] = {
-
-
         dayofWeek: dayofWeek,
         date: date,
         tempMax: Math.round(forecast.Temperature.Maximum.Value),
