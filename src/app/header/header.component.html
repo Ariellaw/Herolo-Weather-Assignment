@@ -1,22 +1,22 @@
 <nav class="navbar">
   <a class="navbar-brand">Ariella's Weather App</a>
-  <form class="form-inline">
-    <a class="nav-btn" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" (click)="togglePage('')"
+  <form class=nav-buttons>
+    <a class="nav-btn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="togglePage('')"
       type="button">Home</a>
-    <a class="nav-btn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  (click)="togglePage('favorites')"
-      type="button">Favorites</a>
+    <a class="nav-btn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+      (click)="togglePage('favorites')" type="button">Favorites</a>
     <div class="header-container">
-      <a href="#" class="celsius-fahrenheit" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
-        routerLink='celsius' (click)="togglefahrenheitCelsius('celsius')">&#8451;</a><span class="celsius-fahrenheit">/</span>
-      <a href="#" class="celsius-fahrenheit" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
-        routerLink='fahrenheit' (click)="togglefahrenheitCelsius('fahrenheit')">&#8457;</a>
+      <a href="#" class="celsius-fahrenheit" [ngClass]="{'selected-link':units==='celsius'}" routerLink='celsius'
+        (click)="togglefahrenheitCelsius('celsius')">&#8451;</a><span class="celsius-fahrenheit">/</span>
+      <a href="#" class="celsius-fahrenheit" [ngClass]="{'selected-link':units==='fahrenheit'}" routerLink='fahrenheit'
+        (click)="togglefahrenheitCelsius('fahrenheit')">&#8457;</a>
     </div>
     <div class="header-container">
-      <a href="#" class="light-darkmode" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
-        [routerLink]="['']" (click)="toggleLightDarkMode('light-mode')">LightMode</a><span class="light-darkmode">/</span>
-     
-        <a href="#" class="light-darkmode" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
-        [routerLink]="['']" (click)="toggleLightDarkMode('dark-mode')">DarkMode</a>
+      <a href="#" class="light-darkmode" [ngClass]="{'selected-link':!darkmode}" [routerLink]="['']"
+        (click)="toggleLightDarkMode('light-mode')">LightMode</a><span class="light-darkmode">/</span>
+
+      <a href="#" class="light-darkmode" [ngClass]="{'selected-link':darkmode}" [routerLink]="['']"
+        (click)="toggleLightDarkMode('dark-mode')">DarkMode</a>
     </div>
   </form>
 </nav>

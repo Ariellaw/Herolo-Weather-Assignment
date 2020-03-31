@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,22 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  units:string
+  darkmode:boolean
 
   constructor(  private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // let id = this.activatedRoute.snapshot.paramMap.get('id')
+    // let location = this.activatedRoute.snapshot.paramMap.get('locationName')
+
+    this.activatedRoute.queryParams.subscribe(queryParams => {
+      this.units = queryParams.units
+      const mode = queryParams.mode
+      this.darkmode = mode === 'dark-mode' ? true : false
+
+    })
   }
   toggleLightDarkMode(mode:string) {
     const queryParams: Params = { mode: mode };
