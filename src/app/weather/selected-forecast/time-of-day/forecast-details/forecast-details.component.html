@@ -1,10 +1,10 @@
 <div class="forecast-details-container" [ngClass]="{'bg-dark text-white':darkmode}">
-  <i class="fas fa-times" (click)="closeWindow()"></i>
+  <i class="fas fa-times" (click)="closeWindow($event)"></i>
   <p class="forecast-details">Probability of Precipitation: {{forecast.precipitationProbability}}%</p>
   <p class="forecast-details">Probability of Thunderstorms: {{forecast.thunderstormProbability}}%</p>
   <p class="forecast-details">Rain: {{forecast.rain}}mm</p>
   <p class="forecast-details">Snow: {{forecast.snow}}mm</p>
   <p class="forecast-details">Ice: {{forecast.ice}}mm</p>
   <p class="forecast-details">WindGusts: {{forecast.windGusts}}</p>
-  <a href="#" class="close-window-btn" (click)="closeWindow()">Close Window</a>
+  <a href="#" class="close-window-btn" (click)="closeWindow($event)">Close Window</a>
 </div>

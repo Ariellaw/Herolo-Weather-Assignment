@@ -71,12 +71,8 @@ export class WeeklyForecast {
           iconPhrase: forecast.Night.IconPhrase,
           shortText: forecast.Night.ShortPhrase,
           longText: forecast.Night.LongPhrase,
-          precipitationProbability: this.fixFormatting(
-            forecast.Night.PrecipitationProbability
-          ),
-          thunderstormProbability: this.fixFormatting(
-            forecast.Night.ThunderstormProbability
-          ),
+          precipitationProbability: forecast.Night.PrecipitationProbability,
+          thunderstormProbability: forecast.Night.ThunderstormProbability,
           rain: forecast.Night.Rain.Value,
           snow: forecast.Night.Snow.Value,
           ice: forecast.Night.Ice.Value,

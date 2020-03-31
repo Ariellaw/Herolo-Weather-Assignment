@@ -19,8 +19,8 @@ export class ForecastDetailsComponent implements OnInit {
       this.darkmode = mode === 'dark-mode' ? true : false
     })
   }
-  closeWindow () {
-    console.log('closeWindow')
+  closeWindow ($event) {
+    $event.preventDefault()
     this.windowClosed.emit()
   }
 }
