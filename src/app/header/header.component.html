@@ -1,9 +1,9 @@
 <nav class="navbar">
   <a class="navbar-brand">Ariella's Weather App</a>
   <form class=nav-buttons>
-    <a class="nav-btn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="togglePage('')"
+    <a class="nav-btn" (click)="togglePage('')" routerLink="/home" routerLinkActive="selected-link" [routerLinkActiveOptions]="{exact: false}"
       type="button">Home</a>
-    <a class="nav-btn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+    <a class="nav-btn" routerLink="/favorites" routerLinkActive="selected-link"
       (click)="togglePage('favorites')" type="button">Favorites</a>
     <div class="header-container">
       <a href="#" class="celsius-fahrenheit" [ngClass]="{'selected-link':units==='celsius'}" routerLink='celsius'
@@ -20,3 +20,5 @@
     </div>
   </form>
 </nav>
+
+<!-- <a class="nav-btn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="togglePage('')" -->
