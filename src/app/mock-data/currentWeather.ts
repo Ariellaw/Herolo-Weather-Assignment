@@ -1,6 +1,4 @@
-//TODO: add type
 
-// `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}&details=true`
 const currentWeatherMockData: any[] =[
   {
     "LocalObservationDateTime": "2020-03-27T03:17:00-04:00",

@@ -4,7 +4,7 @@
       <div class="search">
         <input type="text" [ngClass]="{'bg-dark text-white':darkmode}"  id="locationInput" class="autocomplete" (input)="onUserInput($event)" [value]="location"
           placeholder="Enter city...." list="locations" (change)="onUserSelection($event)" />
-        <button type="submit" class="searchButton">
+        <button type="submit" class="searchButton" [ngClass]="{'bg-dark text-white':darkmode}">
           <i class="fa fa-search"></i>
         </button>
         <datalist id="locations">
@@ -14,7 +14,7 @@
         </datalist>
       </div>
 
-      <button *ngIf="!locationIsInFavorites" (click)="addLocationToFavorites()" class="favorites-button">
+      <button [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="!locationIsInFavorites" (click)="addLocationToFavorites()" class="favorites-button">
         <i class="far fa-heart red"></i>
         <span class="btn-text">Add to Favorites</span>
       </button>

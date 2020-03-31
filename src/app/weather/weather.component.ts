@@ -26,8 +26,8 @@ export class WeatherComponent implements OnInit {
   errorMessageDisplayed: boolean = false
   isLoadingCurrentWeather: boolean = true
   isLoadingWeeklyForecast: boolean = true
-  units: string = 'fahrenheit';
-  darkmode:boolean
+  units: string = 'fahrenheit'
+  darkmode: boolean
 
   constructor (
     private locationService: LocationService,
@@ -40,22 +40,14 @@ export class WeatherComponent implements OnInit {
   ngOnInit () {
     let id = this.route.snapshot.paramMap.get('id')
     let location = this.route.snapshot.paramMap.get('locationName')
-    
-
 
     this.route.queryParams.subscribe(queryParams => {
       this.units = queryParams.units
       const mode = queryParams.mode
-      this.darkmode = mode === 'dark-mode'? true:false; 
+      this.darkmode = mode === 'dark-mode' ? true : false
 
-      this.loadForecast (
-        this.locationKey,
-        location,
-        this.units      
-      )
+      this.loadForecast(id, location, this.units)
     })
-
-    this.loadForecast(id, location, this.units)
   }
 
   async onUserInput ($event) {
@@ -70,28 +62,30 @@ export class WeatherComponent implements OnInit {
       }
     }
   }
-  async getWeeklyForecast (locationKey: string, unitsOfMeasurment:string) {
-    try {
-      this.weeklyForecast = await this.forecastService.getWeeklyForecast(
-        locationKey, unitsOfMeasurment
-      )
-    } catch (e) {
-      this.errorMessageDisplayed = true
-    } finally {
-      this.isLoadingWeeklyForecast = false
-    }
+  getWeeklyForecast (locationKey: string, unitsOfMeasurment: string) {
+    this.forecastService
+      .getWeeklyForecast(locationKey, unitsOfMeasurment)
+      .then(weeklyForecast => {
+        this.weeklyForecast = weeklyForecast
+        this.isLoadingWeeklyForecast = false
+      })
+      .catch(error => {
+        this.errorMessageDisplayed = true
+        this.isLoadingWeeklyForecast = false
+      })
   }
 
   async getCurrentWeather (locationKey: string) {
-    try {
-      this.currentWeather = await this.forecastService.getCurrentWeather(
-        locationKey
-      )
-    } catch (e) {
-      this.errorMessageDisplayed = true
-    } finally {
-      this.isLoadingCurrentWeather = false
-    }
+    this.forecastService
+      .getCurrentWeather(locationKey)
+      .then(currentWeather => {
+        this.currentWeather = currentWeather
+        this.isLoadingCurrentWeather = false
+      })
+      .catch(error => {
+        this.errorMessageDisplayed = true
+        this.isLoadingCurrentWeather = false
+      })
   }
 
   onUserSelection ($event) {
@@ -133,7 +127,7 @@ export class WeatherComponent implements OnInit {
   loadForecast (
     id: string = this.locationKey,
     location: string = this.location,
-    unitsOfMeasurment:string
+    unitsOfMeasurment: string
   ) {
     this.isLoadingWeeklyForecast = true
     this.isLoadingCurrentWeather = true

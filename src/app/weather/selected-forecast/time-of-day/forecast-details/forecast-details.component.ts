@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TimeOfDayForecast } from 'src/app/models/time-of-day-forecast.model';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
+import { TimeOfDayForecast } from 'src/app/models/time-of-day-forecast.model'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-forecast-details',
@@ -7,15 +8,19 @@ import { TimeOfDayForecast } from 'src/app/models/time-of-day-forecast.model';
   styleUrls: ['./forecast-details.component.scss']
 })
 export class ForecastDetailsComponent implements OnInit {
-  @Input() forecast:TimeOfDayForecast
+  @Input() forecast: TimeOfDayForecast
   @Output() windowClosed = new EventEmitter()
+  darkmode: boolean = false
+  constructor (private route: ActivatedRoute) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
+    this.route.queryParams.subscribe(queryParams => {
+      const mode = queryParams.mode
+      this.darkmode = mode === 'dark-mode' ? true : false
+    })
   }
-  closeWindow(){
-    console.log("closeWindow")
-    this.windowClosed.emit();
+  closeWindow () {
+    console.log('closeWindow')
+    this.windowClosed.emit()
   }
 }

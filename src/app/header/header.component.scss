@@ -7,60 +7,46 @@
   align-content: center;
   justify-content: flex-end;
   height: 10vh;
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+  height: 10vh;
+
+  a {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
 
   @media screen and (min-width: 700px) {
-    height: 15vh;
     justify-content: space-between;
   }
 
-  .nav-btn {
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-    margin-right: 2rem;
-  }
-
-  .active {
-    color: lighten(#8b006e, 30%);
-  }
-
-  .header-container {
-    margin-right: 3rem;
-    color: white;
-    font-size: 2rem;
-    a {
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .celsius-fahrenheit {
-      color: white;
-
-    }
-
-    .celsius-fahrenheit.active {
-      color: lighten(#8b006e, 30%);
-    }
-
-
-    .light-darkmode{
-      color: white;
-    }
-
-    .light-darkmode.active {
-      color: lighten(#8b006e, 30%);
-    }
-  }
-
   .navbar-brand {
-    color: white;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-left: 2rem;
     display: none;
 
     @media screen and (min-width: 700px) {
       display: block;
+    }
+  }
+
+  .form-inline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .nav-btn {
+      margin-right: 1rem;
+    }
+
+    .active {
+      color: lighten(#8b006e, 30%);
+    }
+
+    .header-container {
+      @media screen and (min-width: 700px) {
+        font-size: 2rem;
+      }
     }
   }
 }

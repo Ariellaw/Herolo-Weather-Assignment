@@ -46,8 +46,7 @@ export class FavoriteComponent implements OnInit {
       [`/${this.favorite.cityName} , ${this.favorite.countryName}/${this.favorite.locationKey}`], 
       {
         relativeTo: this.activatedRoute,
-        // queryParams: queryParams, 
-        queryParamsHandling: 'merge', // remove to replace all query params by provided
+        queryParamsHandling: 'merge',
       });
   }
 

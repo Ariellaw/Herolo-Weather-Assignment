@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  toggleLightDarkMode(mode) {
+  toggleLightDarkMode(mode:string) {
     const queryParams: Params = { mode: mode };
   
     this.router.navigate(
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
         queryParamsHandling: 'merge', // remove to replace all query params by provided
       });
   }
-  togglefahrenheitCelsius(units){
+  togglefahrenheitCelsius(units:string){
     const queryParams: Params = { units: units };
   
     this.router.navigate(
@@ -32,17 +32,16 @@ export class HeaderComponent implements OnInit {
       {
         relativeTo: this.activatedRoute,
         queryParams: queryParams, 
-        queryParamsHandling: 'merge', // remove to replace all query params by provided
+        queryParamsHandling: 'merge',
       });
   }
-  togglePage(page){
+  togglePage(page:string){
   
     this.router.navigate(
       [page], 
       {
         relativeTo: this.activatedRoute,
-        // queryParams: queryParams, 
-        queryParamsHandling: 'merge', // remove to replace all query params by provided
+        queryParamsHandling: 'merge', 
       });
   }
 }
