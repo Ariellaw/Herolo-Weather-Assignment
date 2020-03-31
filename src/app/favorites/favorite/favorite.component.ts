@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 import { Locations } from '../../models/locations.model'
 import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from 'src/app/models/current-weather.model'
-import { ActivatedRoute, Router } from '@angular/router'
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-favorite',
@@ -18,13 +18,14 @@ export class FavoriteComponent implements OnInit {
 
   constructor (
     private forecastServices: ForecastService,
-    private route: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {}
 
   ngOnInit (): void {
     this.getCurrentWeather(this.favorite.locationKey)
 
-    this.route.queryParams.subscribe(queryParams => {
+    this.activatedRoute.queryParams.subscribe(queryParams => {
       const mode = queryParams.mode
       this.darkmode = mode === 'dark-mode'? true:false; 
     })
@@ -39,4 +40,15 @@ export class FavoriteComponent implements OnInit {
       this.errorMessageOpened.emit()
     }
   }
+  seeFullForecast(){
+  
+    this.router.navigate(
+      [`/${this.favorite.cityName} , ${this.favorite.countryName}/${this.favorite.locationKey}`], 
+      {
+        relativeTo: this.activatedRoute,
+        // queryParams: queryParams, 
+        queryParamsHandling: 'merge', // remove to replace all query params by provided
+      });
+  }
+
 }

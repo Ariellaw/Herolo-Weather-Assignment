@@ -24,5 +24,25 @@ export class HeaderComponent implements OnInit {
         queryParamsHandling: 'merge', // remove to replace all query params by provided
       });
   }
-
+  togglefahrenheitCelsius(units){
+    const queryParams: Params = { units: units };
+  
+    this.router.navigate(
+      [], 
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: queryParams, 
+        queryParamsHandling: 'merge', // remove to replace all query params by provided
+      });
+  }
+  togglePage(page){
+  
+    this.router.navigate(
+      [page], 
+      {
+        relativeTo: this.activatedRoute,
+        // queryParams: queryParams, 
+        queryParamsHandling: 'merge', // remove to replace all query params by provided
+      });
+  }
 }

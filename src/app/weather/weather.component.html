@@ -2,7 +2,7 @@
   <div class="display-container">
     <div class="header">
       <div class="search">
-        <input type="text" id="locationInput" class="autocomplete" (input)="onUserInput($event)" [value]="location"
+        <input type="text" [ngClass]="{'bg-dark text-white':darkmode}"  id="locationInput" class="autocomplete" (input)="onUserInput($event)" [value]="location"
           placeholder="Enter city...." list="locations" (change)="onUserSelection($event)" />
         <button type="submit" class="searchButton">
           <i class="fa fa-search"></i>
@@ -18,7 +18,7 @@
         <i class="far fa-heart red"></i>
         <span class="btn-text">Add to Favorites</span>
       </button>
-      <button *ngIf="locationIsInFavorites" (click)="removeLocationFromFavorites()" class="favorites-button">
+      <button [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="locationIsInFavorites" (click)="removeLocationFromFavorites()" class="favorites-button">
         <i class="fas fa-heart red"></i>
         <span class="btn-text"> Remove from Favorites </span>
       </button>
