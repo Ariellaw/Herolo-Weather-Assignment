@@ -32,8 +32,8 @@
 
       <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast && !errorMessageDisplayed"
         [forecast]="displayedDayForecast" (errorMessageWasClosed)='errorMessageDisplayed'></app-selected-forecast>
-      <!-- <app-current-weather [currentWeather]="currentWeather" [units]='units' 
-        *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></!-->
+     <app-current-weather [currentWeather]="currentWeather" [units]='units' 
+        *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></app-current-weather>
     </div>
     <div class="weekly-forecast-container">
       <div class="card btn" (click)="displayForecast(i)"

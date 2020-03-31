@@ -1,7 +1,6 @@
-
 <div class="main-container">
-  <h1>{{partOfDay}}</h1>
   <div class="image-container">
+    <h1>{{partOfDay}}</h1>
     <img class='forecast-image' [src]="forecast.icon" [alt]="forecast.iconPhrase">
     <p class="forecast-text">{{forecast.longText}}</p>
   </div>
@@ -13,4 +12,7 @@
     <p class="forecast-details">Ice: {{forecast.ice}}mm</p>
     <p class="forecast-details">WindGusts: {{forecast.windGusts}}</p>
   </div>
+  <a (click)='windowOpened=true' href="#" class="forecast-details-window">More</a>
+  <app-forecast-details [forecast]='forecast' *ngIf="windowOpened" (windowClosed)="windowOpened=false">
+  </app-forecast-details>
 </div>
