@@ -3,41 +3,20 @@
     <h1 id="current-weather-title">Current Weather</h1>
     <h2 id="current-weather-time">{{currentWeather.time}}</h2>
   </div>
-
-  <div class="weather-details-container" *ngIf="units!=='fahrenheit'">
+  <div class="weather-details-container">
     <div class="image-container">
       <img id="current-weather-img" [src]="currentWeather.icon" [alt]="currentWeather.weatherText"
         class="forecast-image" />
       <h1>{{currentWeather.weatherText}}</h1>
-
     </div>
     <div class="curr-weather-details">
-
-      <h1 class="temp" id="current-weather-temp">{{currentWeather.tempMetric}}°</h1>
-      <h2>RealFeel:{{currentWeather.realFeelMetric}}° </h2>
-      <h2>RealFeel Shade:{{currentWeather.realFeelShadeMetric}}° </h2>
+      <h1 class="temp" id="current-weather-temp">
+        {{units==='fahrenheit'? currentWeather.tempImperial:currentWeather.tempMetric}}°</h1>
+      <h2>RealFeel:{{ units==='fahrenheit'? currentWeather.realFeelImperial:currentWeather.realFeelMetric}}° </h2>
+      <h2>RealFeel
+        Shade:{{units==='fahrenheit'? currentWeather.realFeelShadeImperial:currentWeather.realFeelShadeMetric}}° </h2>
       <h2>Humidity:{{currentWeather.humidity}}</h2>
-      <h2>Visibility: {{currentWeather.visibilityMetric}}</h2>  
-
-
-    </div>
-  </div>
-  <div class="weather-details-container" *ngIf="units==='fahrenheit'">
-    <div class="image-container">
-      <img id="current-weather-img" [src]="currentWeather.icon" [alt]="currentWeather.weatherText"
-        class="forecast-image" />
-      <h1>{{currentWeather.weatherText}}</h1>
-
-    </div>
-    <div class="curr-weather-details">
-
-      <h1 class="temp" id="current-weather-temp">{{currentWeather.tempImperial}}°</h1>
-      <h2>RealFeel:{{currentWeather.realFeelImperial}}° </h2>
-      <h2>RealFeel Shade:{{currentWeather.realFeelShadeImperial}}° </h2>
-      <h2>Humidity:{{currentWeather.humidity}}</h2>
-      <h2>Visibility: {{currentWeather.visibilityImperial}}</h2>
-
-
+      <h2>Visibility: {{units==='fahrenheit'? currentWeather.visibilityImperial:currentWeather.visibilityMetric}}</h2>
     </div>
   </div>
 </div>

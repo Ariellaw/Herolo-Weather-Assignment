@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core'
-import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from '../../models/current-weather.model'
 
 @Component({
@@ -9,11 +8,10 @@ import { CurrentWeather } from '../../models/current-weather.model'
 })
 export class CurrentWeatherComponent implements OnInit {
   @Input() currentWeather: CurrentWeather
-  loading:boolean
   @Input() units:string
 
 
-  constructor (private forecastService: ForecastService) {}
+  constructor () {}
 
   ngOnInit (): void {
   }
