@@ -54,8 +54,7 @@ export class ForecastService {
     }
 
     return dataPromise.then(data => {
-      var forecasts = data.DailyForecasts
-
+      const forecasts = data.DailyForecasts
       return WeeklyForecast.fromJson(forecasts)
     })
   }

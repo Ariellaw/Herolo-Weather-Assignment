@@ -4,7 +4,7 @@
     <h2 id="current-weather-time">{{currentWeather.time}}</h2>
   </div>
 
-  <div class="weather-details-container"  *ngIf="units!=='fahrenheit'">
+  <div class="weather-details-container" *ngIf="units!=='fahrenheit'">
     <div class="image-container">
       <img id="current-weather-img" [src]="currentWeather.icon" [alt]="currentWeather.weatherText"
         class="forecast-image" />
@@ -17,12 +17,12 @@
       <h2>RealFeel:{{currentWeather.realFeelMetric}}° </h2>
       <h2>RealFeel Shade:{{currentWeather.realFeelShadeMetric}}° </h2>
       <h2>Humidity:{{currentWeather.humidity}}</h2>
-      <h2>Visibility: {{currentWeather.visibilityMetric}}</h2>
+      <h2>Visibility: {{currentWeather.visibilityMetric}}</h2>  
 
 
     </div>
   </div>
-  <div class="weather-details-container" *ngIf="units==='fahrenheit'"     >  
+  <div class="weather-details-container" *ngIf="units==='fahrenheit'">
     <div class="image-container">
       <img id="current-weather-img" [src]="currentWeather.icon" [alt]="currentWeather.weatherText"
         class="forecast-image" />

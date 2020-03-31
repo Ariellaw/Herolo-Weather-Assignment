@@ -21,7 +21,7 @@
   }
 
   .active {
-    color: darken(#b1bed5, 5%);
+    color: lighten(#8b006e, 30%)
   }
 
   .celsius-fahrenheit-container {
@@ -32,6 +32,10 @@
       font-size: 3rem;
       font-weight: bold;
       cursor: pointer;
+ 
+    }
+    .active {
+      color: lighten(#8b006e, 30%)
     }
   }
     .navbar-brand {

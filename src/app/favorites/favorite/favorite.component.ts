@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core'
 import { Locations } from '../../models/locations.model'
 import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from 'src/app/models/current-weather.model'
@@ -10,6 +10,7 @@ import { CurrentWeather } from 'src/app/models/current-weather.model'
   providers: [ForecastService]
 })
 export class FavoriteComponent implements OnInit {
+  @Output() errorMessageOpened = new EventEmitter<void>()
   @Input() favorite: Locations
   currentWeather: CurrentWeather
 
@@ -25,7 +26,7 @@ export class FavoriteComponent implements OnInit {
         locationKey
       )
     } catch (e) {
-      alert('please try again' + e)
+      this.errorMessageOpened.emit()
     }
   }
   

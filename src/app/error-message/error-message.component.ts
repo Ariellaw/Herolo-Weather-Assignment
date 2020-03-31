@@ -13,8 +13,6 @@ export class ErrorMessageComponent implements OnInit {
   }
 
   closeErrorMessage(){
-    console.log("closeErrorMessage")
     this.errorMessageWasClosed.emit();
-
   }
 }

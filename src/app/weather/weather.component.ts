@@ -42,7 +42,6 @@ export class WeatherComponent implements OnInit {
 
     this.route.queryParams.subscribe(queryParams => {
       this.units = queryParams.units
-      console.log("this.units",this.units)
       this.loadForecast (
         this.locationKey,
         location,

@@ -15,7 +15,6 @@ export class FavoritesService {
     let favorites = this.getFavoritesFromLocalStorage();
     favorites.splice(0, 0, location)
     this.storeFavoritesInLocalStorage(favorites)
-    console.log("favorites", favorites)
   }
 
   removeLocationFromFavorites (locationKey: string) {
@@ -27,14 +26,13 @@ export class FavoritesService {
       favorites.splice(idx, 1)
     }
     this.storeFavoritesInLocalStorage(favorites)
-    console.log("favorites", favorites)
 
   }
 
   isLocationInFavorites (locationKey: string): boolean {
     let favorites = this.getFavoritesFromLocalStorage();
 
-    var idx = favorites.findIndex(favorite => locationKey === favorite.locationKey)
+    const idx = favorites.findIndex(favorite => locationKey === favorite.locationKey)
     return idx >= 0
   }
 

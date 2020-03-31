@@ -1,8 +1,8 @@
 <div>
   <div class="display-container">
-    <div class="display-header">
+    <div class="header">
       <div class="search">
-        <input type="text" id="locationInput" class="searchTerm" (input)="onUserInput($event)" [value]="location"
+        <input type="text" id="locationInput" class="autocomplete" (input)="onUserInput($event)" [value]="location"
           placeholder="Enter city...." list="locations" (change)="onUserSelection($event)" />
         <button type="submit" class="searchButton">
           <i class="fa fa-search"></i>
@@ -14,7 +14,6 @@
         </datalist>
       </div>
 
-      <!-- <button class="current-weather-btn" (click)='currentWeatherDisplayed=true'>See current weather</button> -->
       <button *ngIf="!locationIsInFavorites" (click)="addLocationToFavorites()" class="favorites-button">
         <i class="far fa-heart red"></i>
         <span class="btn-text">Add to Favorites</span>
@@ -28,12 +27,13 @@
     <div class="weather-display">
       <app-error-message *ngIf="errorMessageDisplayed" (errorMessageWasClosed)='errorMessageDisplayed=false'>
       </app-error-message>
-      <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"  *ngIf="isLoadingCurrentWeather || isLoadingWeeklyForecast" class="loading-image">
+      <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"
+        *ngIf="isLoadingCurrentWeather || isLoadingWeeklyForecast" class="loading-image">
 
       <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast && !errorMessageDisplayed"
         [forecast]="displayedDayForecast" (errorMessageWasClosed)='errorMessageDisplayed'></app-selected-forecast>
-      <app-current-weather [currentWeather]="currentWeather"  [units]='units'
-        *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></app-current-weather>
+      <!-- <app-current-weather [currentWeather]="currentWeather" [units]='units' 
+        *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></!-->
     </div>
     <div class="weekly-forecast-container">
       <div class="card btn" (click)="displayForecast(i)"
