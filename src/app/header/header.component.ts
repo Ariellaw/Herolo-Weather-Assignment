@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
     })
   }
   toggleLightDarkMode ($event) {
-    console.log($event.target.checked, this.darkmode)
     const mode = $event.target.checked ? 'dark-mode' : 'light-mode'
     const queryParams: Params = { mode: mode }
 
@@ -35,7 +34,6 @@ export class HeaderComponent implements OnInit {
     })
   }
   togglefahrenheitCelsius ($event) {
-    console.log($event.target.checked, this.units)
     const units = $event.target.checked ? 'fahrenheit' : 'celsius'
 
     const queryParams: Params = { units: units }

@@ -5,25 +5,14 @@
       type="button">Home</a>
     <a class="nav-btn" routerLink="/favorites" routerLinkActive="selected-link" (click)="togglePage('favorites')"
       type="button">Favorites</a>
-
     <div class="header-container">
-      <!-- <a href="#" class="celsius-fahrenheit" [ngClass]="{'selected-link':units==='celsius'}" routerLink='celsius'
-        (click)="togglefahrenheitCelsius('celsius')">&#8451;</a><span class="celsius-fahrenheit">/</span>
-      <a href="#" class="celsius-fahrenheit" [ngClass]="{'selected-link':units==='fahrenheit'}" routerLink='fahrenheit'
-        (click)="togglefahrenheitCelsius('fahrenheit')">&#8457;</a>
-    </div> -->
-    <h4>Fahrenheit</h4>
+    <h4>C° - F°</h4>
     <label class="switch"> 
       <input type="checkbox" (click)="togglefahrenheitCelsius($event)" [checked]="units==='fahrenheit'">
       <span class="slider round"></span>
     </label>
   </div>
     <div class="header-container">
-      <!-- <a href="#" class="light-darkmode" [ngClass]="{'selected-link':!darkmode}" [routerLink]="['']"
-        (click)="toggleLightDarkMode('light-mode')">LightMode</a><span class="light-darkmode">/</span>
-
-      <a href="#" class="light-darkmode" [ngClass]="{'selected-link':darkmode}" [routerLink]="['']"
-        (click)="toggleLightDarkMode('dark-mode')">DarkMode</a> -->
       <h4>Dark Mode</h4>
       <label class="switch"> 
         <input type="checkbox" (click)="toggleLightDarkMode($event)" [checked]='darkmode===true'>
@@ -32,5 +21,3 @@
     </div>
   </form>
 </nav>
-
-<!-- <a class="nav-btn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="togglePage('')" -->

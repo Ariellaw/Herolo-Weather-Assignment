@@ -51,6 +51,9 @@ $emphasis-color:#b00ecd;
     }
 
     .header-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
       @media screen and (min-width: 700px) {
         font-size: 2rem;
       }

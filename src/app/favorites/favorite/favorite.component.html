@@ -7,7 +7,7 @@
             <h4>{{favorite.countryName}}</h4>
         </div>
         <div class="card-subtitle">
-            <h4>{{currentWeather.tempMetric}}°</h4>
+            <h4>{{units==='fahrenheit'?currentWeather.tempImperial : currentWeather.tempMetric}}°</h4>
         </div>
         <p class="card-text">{{currentWeather.weatherText}}</p>
     </div>

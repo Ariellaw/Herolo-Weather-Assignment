@@ -45,7 +45,6 @@ export class WeatherComponent implements OnInit {
       this.units = queryParams.units
       const mode = queryParams.mode
       this.darkmode = mode === 'dark-mode' ? true : false
-
       this.loadForecast(id, location, this.units)
     })
   }

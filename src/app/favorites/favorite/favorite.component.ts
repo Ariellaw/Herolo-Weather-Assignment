@@ -15,6 +15,7 @@ export class FavoriteComponent implements OnInit {
   @Output() errorOccurred = new EventEmitter<{ errorMessage: string }>()
   @Output() loadingWeatherComplete = new EventEmitter<void>()
   @Input() favorite: Locations
+  @Input() units:string
   currentWeather: CurrentWeather
   darkmode: boolean = false
 

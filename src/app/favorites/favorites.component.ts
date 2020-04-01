@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FavoritesService } from '../services/favorites.service'
 import { Locations } from '../models/locations.model'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-favorites',
@@ -13,11 +14,19 @@ export class FavoritesComponent implements OnInit {
   isLoadingFavorites: boolean = false
   isLoadingWeather: boolean = false
   displayMessage: boolean = false
+  units:string
 
-  constructor (private favoritesService: FavoritesService) {}
+  constructor (
+    private favoritesService: FavoritesService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit () {
     this.getFavorites()
+
+    this.route.queryParams.subscribe(queryParams => {
+      this.units = queryParams.units === 'fahrenheit'? 'fahrenheit':'celsius'
+    })
   }
 
   errorOccurred ($event) {
@@ -30,7 +39,7 @@ export class FavoritesComponent implements OnInit {
     if (this.favorites) {
       this.isLoadingFavorites = false
       if (this.favorites.length === 0) {
-        this.isLoadingWeather=false;
+        this.isLoadingWeather = false
         this.displayMessage = true
       }
     }
