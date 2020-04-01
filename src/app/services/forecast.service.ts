@@ -8,8 +8,9 @@ import { weeklyForecastMockDataFahrenheit } from '../mock-data/weeklyForecastMoc
   providedIn: 'root'
 })
 export class ForecastService {
-  private apiKey: string = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
-  private useMockData: boolean = false;
+  // apiKey: string = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
+  apiKey:string = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
+  useMockData: boolean = false;
 
   constructor (
 
@@ -17,8 +18,6 @@ export class ForecastService {
 
   getCurrentWeather (locationKey: string): Promise<CurrentWeather> {
     let dataPromise: Promise<any>
-    // let forecastService:ForecastService = new ForecastService();
-
     if (this.useMockData) {
       dataPromise = Promise.resolve(currentWeatherMockData)
     } else {
