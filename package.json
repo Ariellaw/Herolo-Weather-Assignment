@@ -26,6 +26,7 @@
     "@types/dom-inputevent": "^1.0.5",
     "bootstrap": "^4.4.1",
     "bootstrap-toggle": "^2.2.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
