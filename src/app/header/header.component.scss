@@ -1,3 +1,5 @@
+$emphasis-color:#b00ecd;
+
 .navbar {
   background-image: url("../../assets/images/images/nav-background.jpg");
   background-repeat: repeat;
@@ -16,11 +18,10 @@
     cursor: pointer;
     font-size: 2rem;
     @media screen and (min-width: 700px) {
-      font-size: 1.5rem;
     }
   }
   a:active {
-    color: hotpink;
+    color: $emphasis-color;
   }
 
   @media screen and (min-width: 700px) {
@@ -46,7 +47,7 @@
       width: 50%;
     }
     .selected-link {
-      color: lighten(#8b006e, 30%);
+      color: lighten($emphasis-color, 30%);
     }
 
     .header-container {

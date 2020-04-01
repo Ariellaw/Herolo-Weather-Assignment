@@ -76,7 +76,7 @@ export class WeatherComponent implements OnInit {
       })
   }
 
-   getCurrentWeather (locationKey: string) {
+  getCurrentWeather (locationKey: string) {
     this.forecastService
       .getCurrentWeather(locationKey)
       .then(currentWeather => {
@@ -98,7 +98,10 @@ export class WeatherComponent implements OnInit {
     const locationKey = option.getAttribute('data-value')
     this.loadForecast(locationKey, location, this.units)
 
-    this.router.navigate(['/', this.location, this.locationKey])
+    this.router.navigate(['/', this.location, locationKey], {
+      relativeTo: this.route,
+      queryParamsHandling: 'merge'
+    })
   }
 
   displayForecast (idx: number) {

@@ -19,7 +19,7 @@ import { ForecastDetailsComponent } from './weather/selected-forecast/time-of-da
 const appRoutes: Routes = [
   { path: 'favorites', component: FavoritesComponent },
   { path: ':locationName/:id', component: WeatherComponent },
-  { path: 'home', pathMatch: 'full', component: WeatherComponent },
+  { path: 'home', component: WeatherComponent },
   {
     path: '',
     redirectTo: '/home',
