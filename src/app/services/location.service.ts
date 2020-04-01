@@ -19,7 +19,7 @@ export class LocationService {
     if (this.useMockData) {
       dataPromise = Promise.resolve(selectedLocationMockData)
     } else {
-      dataPromise = fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${keyword}`).then(resp =>resp.json())
+      dataPromise = fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${keyword}`).then(resp =>resp.json())
 
     }
       return dataPromise.then(data=>{

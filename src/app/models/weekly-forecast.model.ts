@@ -22,11 +22,6 @@ export class WeeklyForecast {
     return value.toString().padStart(2, '0')
   }
 
-  private static getWeatherIcon (iconIdx: number): string {
-    const idx = iconIdx.toString().padStart(2, '0')
-    return `https://developer.accuweather.com/sites/default/files/${idx}-s.png`
-  }
-
   static fromJson (forecasts: any): WeeklyForecast {
     let weeklyForecast: WeeklyForecast = new WeeklyForecast([])
 

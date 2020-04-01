@@ -372,8 +372,8 @@ const currentWeatherMockData: any[] =[
         }
       }
     },
-    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us"
+    "MobileLink": "https://m.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us",
+    "Link": "https://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us"
   }
 ]
 

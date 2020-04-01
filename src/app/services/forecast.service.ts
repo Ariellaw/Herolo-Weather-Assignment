@@ -49,7 +49,7 @@ export class ForecastService {
       }
     } else {
       dataPromise = fetch(
-        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${this.apiKey}&details=true&metric=${isMetric}`
+        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${this.apiKey}&details=true&metric=${isMetric}`
       ).then(resp => resp.json())
     }
 
