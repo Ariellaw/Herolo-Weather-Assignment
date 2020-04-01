@@ -8,6 +8,7 @@ import { DailyForecast } from '../../models/daily-forecast.model'
 })
 export class SelectedWeatherComponent implements OnInit {
   @Input() forecast: DailyForecast
+  @Input() locationName:string
 
   constructor () {}
 

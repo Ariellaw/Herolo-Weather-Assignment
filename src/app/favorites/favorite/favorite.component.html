@@ -1,4 +1,4 @@
-<div class="card btn" [ngClass]="{'bg-dark text-white':darkmode}" *ngIf="currentWeather && favorite"
+<div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}" *ngIf="currentWeather && favorite"
     (click)="seeFullForecast()">
     <img [src]="currentWeather.icon" alt='currentWeather.weatherText' class="card-img-top" />
     <div class="card-body">

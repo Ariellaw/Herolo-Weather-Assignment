@@ -1,4 +1,4 @@
-$emphasis-color:#b00ecd;
+$emphasis-color: #b00ecd;
 
 .navbar {
   background-image: url("../../assets/images/images/nav-background.jpg");
@@ -8,30 +8,37 @@ $emphasis-color:#b00ecd;
   display: flex;
   align-content: center;
   justify-content: flex-end;
-  height: 10vh;
   color: white;
   font-size: 2rem;
   height: 10vh;
+  width:100vw;
+  @media screen and (min-width: 750px) {
+    height: 10vh;
+  }
+  @media screen and (max-height: 500px) {
+    height: 17vh;
+  }
 
   a {
     color: white;
     cursor: pointer;
     font-size: 2rem;
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 750px) {
     }
   }
   a:active {
     color: $emphasis-color;
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 750px) {
     justify-content: space-between;
   }
 
   .navbar-brand {
     display: none;
+    margin-left: 2rem;
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 750px) {
       display: block;
     }
   }
@@ -43,7 +50,7 @@ $emphasis-color:#b00ecd;
     justify-content: space-evenly;
     width: 100%;
     align-items: center;
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 750px) {
       width: 50%;
     }
     .selected-link {
@@ -54,16 +61,14 @@ $emphasis-color:#b00ecd;
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
-      @media screen and (min-width: 700px) {
+      @media screen and (min-width: 750px) {
         font-size: 2rem;
       }
     }
   }
 }
 
-
 //Toggles
-
 
 .switch {
   position: relative;
@@ -109,15 +114,12 @@ $emphasis-color:#b00ecd;
 
 input:checked + .slider {
   // background-color: #2196f3;
-  background-color: $emphasis-color
-;
-
+  background-color: $emphasis-color;
 }
 
 input:focus + .slider {
   // box-shadow: 0 0 1px #2196f3;
   box-shadow: 0 0 1px $emphasis-color;
-
 }
 
 input:checked + .slider:before {

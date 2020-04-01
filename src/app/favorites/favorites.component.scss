@@ -1,12 +1,12 @@
 .favorites-container {
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 750px) {
     justify-content: start;
     flex-wrap: wrap;
     flex-direction: row;
   }
-  .no-favorites-message{
-    margin:2rem
+  .no-favorites-message {
+    margin: 2rem;
   }
 }

@@ -4,14 +4,17 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  .selected-forecast-details{
-    font-size: 2rem;
-
+  @media screen and (min-width: 700px) {
   }
-  // .weather-details-container {
-  //   display: flex;
-  //   flex-direction: row;
-  // }
+
+  @media screen and (max-height: 820px) and (min-width: 700px) {
+    flex-wrap: wrap;
+  }
+
+  .selected-forecast-details {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
   .forecast-display-container {
     display: flex;
@@ -27,6 +30,7 @@
       margin-left: 2rem;
     }
 
-    @media screen and (min-width: 700px) {}
+    @media screen and (min-width: 750px) {
+    }
   }
 }
