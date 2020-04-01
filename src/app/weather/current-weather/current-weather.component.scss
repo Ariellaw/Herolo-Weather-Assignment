@@ -1,15 +1,17 @@
+@import '../../../variables.scss';
+
 .main-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: $smaller-mobile-screen-width) {
   }
   .image-container {
     .forecast-image {
       width: 18rem;
-      @media screen and (min-width: 750px) {
+      @media screen and (min-width: $smaller-mobile-screen-width) {
         width: 20rem;
         height: auto;
         margin-bottom: 1rem;
@@ -25,16 +27,16 @@
     align-content: center;
     justify-content: space-evenly;
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $smaller-mobile-screen-width) {
       justify-content: space-evenly;
     }
     .curr-weather-details {
       font-size: 1.5rem;
-      @media screen and (min-width: 750px) {
+      @media screen and (min-width: $smaller-mobile-screen-width) {
       }
       .temp {
         font-size: 3rem;
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: $smaller-mobile-screen-width) {
           font-size: 4rem;
         }
       }

@@ -1,7 +1,9 @@
+@import '../../variables.scss';
+
 .favorites-container {
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: $smaller-mobile-screen-width) {
     justify-content: start;
     flex-wrap: wrap;
     flex-direction: row;

@@ -8,8 +8,8 @@ import { weeklyForecastMockDataFahrenheit } from '../mock-data/weeklyForecastMoc
   providedIn: 'root'
 })
 export class ForecastService {
-  private apiKey: string = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
-  private useMockData: boolean = true
+  private apiKey: string = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
+  private useMockData: boolean = false;
 
   constructor (
 

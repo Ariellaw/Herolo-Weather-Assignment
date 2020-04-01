@@ -1,4 +1,6 @@
+@import '../../variables.scss';
 $emphasis-color: #b00ecd;
+
 
 .navbar {
   background-image: url("../../assets/images/images/nav-background.jpg");
@@ -11,8 +13,8 @@ $emphasis-color: #b00ecd;
   color: white;
   font-size: 2rem;
   height: 10vh;
-  width:100vw;
-  @media screen and (min-width: 750px) {
+  width: 100vw;
+  @media screen and (min-width: $smaller-mobile-screen-width) {
     height: 10vh;
   }
   @media screen and (max-height: 500px) {
@@ -23,14 +25,14 @@ $emphasis-color: #b00ecd;
     color: white;
     cursor: pointer;
     font-size: 2rem;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $smaller-mobile-screen-width) {
     }
   }
   a:active {
     color: $emphasis-color;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: $smaller-mobile-screen-width) {
     justify-content: space-between;
   }
 
@@ -38,7 +40,7 @@ $emphasis-color: #b00ecd;
     display: none;
     margin-left: 2rem;
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $smaller-mobile-screen-width) {
       display: block;
     }
   }
@@ -50,7 +52,7 @@ $emphasis-color: #b00ecd;
     justify-content: space-evenly;
     width: 100%;
     align-items: center;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $smaller-mobile-screen-width) {
       width: 50%;
     }
     .selected-link {
@@ -61,7 +63,7 @@ $emphasis-color: #b00ecd;
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
-      @media screen and (min-width: 750px) {
+      @media screen and (min-width: $smaller-mobile-screen-width) {
         font-size: 2rem;
       }
     }

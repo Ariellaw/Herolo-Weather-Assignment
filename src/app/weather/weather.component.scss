@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .display-container {
   width: 95vw;
   height: 88vh;
@@ -7,11 +9,11 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: $smaller-mobile-screen-width) {
     padding: 3rem;
     height: 85vh;
   }
-  @media screen and (max-height: 650px) and (min-width: 750px) {
+  @media screen and (max-height: 650px) and (min-width: $smaller-mobile-screen-width) {
     height: 110vh;
   }
   @media screen and (max-height: 600px) {
@@ -28,7 +30,7 @@
     margin-bottom: 1rem;
     flex-wrap: wrap;
     padding: 1rem;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $smaller-mobile-screen-width) {
       align-content: space-between;
       align-items: end;
     }
@@ -40,7 +42,7 @@
       margin-right: 1rem;
       margin-left: 6rem;
       background-color: white;
-      @media screen and (min-width: 750px) {
+      @media screen and (min-width: $smaller-mobile-screen-width) {
         border-radius: 10%;
         height: 5rem;
         width: 15rem;
@@ -51,7 +53,7 @@
       .btn-text {
         display: none;
 
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: $smaller-mobile-screen-width) {
           display: inline;
         }
       }
@@ -61,7 +63,7 @@
     height: 50%;
     justify-content: center;
     padding: 0.5rem;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $smaller-mobile-screen-width) {
       height: 53%;
     }
   }
@@ -72,7 +74,7 @@
     padding: 0.5rem;
     margin: 0.5rem;
 
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $smaller-mobile-screen-width) {
       height: 40%;
       flex-direction: row;
       justify-content: space-evenly;
@@ -84,24 +86,23 @@
       height: 20%;
       align-items: center;
       flex-direction: row;
-      @media screen and (min-width: 750px) {
+      @media screen and (min-width: $smaller-mobile-screen-width) {
         flex-direction: column;
         border-radius: 10%;
         width: 17rem;
         height: 22rem;
         margin: 1rem;
       }
-      @media screen and (max-height: 750px) and (min-width: 750px) {
+      @media screen and (max-height: $smaller-mobile-screen-width) and (min-width: $smaller-mobile-screen-width) {
       }
       .card-img-top {
         width: auto;
         height: 90%;
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: $smaller-mobile-screen-width) {
           height: 6rem;
           width: auto;
           padding: 0.5rem;
         }
-
       }
       .card-body {
         display: flex;
@@ -110,7 +111,7 @@
         padding: 0.5rem;
         flex: 1, 1, 40%;
         align-items: center;
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: $smaller-mobile-screen-width) {
           flex-direction: column;
           width: 100%;
           height: 16rem;
@@ -118,7 +119,7 @@
         h4 {
           font-size: 1.5rem;
           padding: 0.5rem;
-          @media screen and (min-width: 750px) {
+          @media screen and (min-width: $smaller-mobile-screen-width) {
           }
         }
         .forecast-date {
@@ -132,7 +133,7 @@
           @media screen and (min-width: 450px) {
             width: 25%;
           }
-          @media screen and (min-width: 750px) {
+          @media screen and (min-width: $smaller-mobile-screen-width) {
             width: 100%;
             height: 4rem;
           }
@@ -145,7 +146,7 @@
             margin-right: 1rem;
             display: block;
           }
-          @media screen and (min-width: 750px) {
+          @media screen and (min-width: $smaller-mobile-screen-width) {
             width: 100%;
             height: 2rem;
           }
@@ -161,7 +162,7 @@
             width: fit-content;
             max-width: 55%;
           }
-          @media screen and (min-width: 750px) {
+          @media screen and (min-width: $smaller-mobile-screen-width) {
             width: 100%;
             max-width: 100%;
             height: 10rem;
@@ -178,7 +179,7 @@
   position: relative;
   display: flex;
   float: left;
-  @media screen and(min-width:750px) {
+  @media screen and(min-width:$smaller-mobile-screen-width) {
     width: 40rem;
   }
 }
@@ -193,7 +194,7 @@
   outline: none;
   font-size: 2rem;
   font-weight: bold;
-  @media screen and(min-width:750px) {
+  @media screen and(min-width:$smaller-mobile-screen-width) {
     width: 40rem;
   }
 }

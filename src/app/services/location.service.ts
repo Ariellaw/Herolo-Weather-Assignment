@@ -6,9 +6,9 @@ import { Locations } from '../models/locations.model'
   providedIn: 'root'
 })
 export class LocationService {
-   // apiKey = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
-   apiKey:string = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
-   useMockData:boolean = true;
+   apiKey:string = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
+  //  apiKey:string = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
+   useMockData:boolean = false;
  
   constructor () {}
 

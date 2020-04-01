@@ -1,11 +1,13 @@
+@import '../../../../variables.scss';
+
 .main-container {
   flex-direction: column;
   align-items: flex-start;
   display: flex;
   width: 18rem;
-  padding:1rem;
+  padding: 1rem;
   height: fit-content;
-    @media screen and (min-width: 850px) {
+  @media screen and (min-width: $large-mobile-screen-width) {
     max-width: 100%;
     max-height: 100%;
     height: fit-content;
@@ -31,7 +33,7 @@
       height: auto;
       margin-bottom: 1rem;
       margin-top: 1rem;
-      @media screen and (min-width: 850px) {
+      @media screen and (min-width: $large-mobile-screen-width) {
         width: 15rem;
       }
     }
@@ -41,20 +43,20 @@
     }
     .forecast-text.long {
       display: none;
-      @media screen and (min-width: 850px) {
+      @media screen and (min-width: $large-mobile-screen-width) {
         display: block;
       }
     }
     .forecast-text.short {
       display: block;
-      @media screen and (min-width: 850px) {
+      @media screen and (min-width: $large-mobile-screen-width) {
         display: none;
       }
     }
   }
   .forecast-details-container-big-screen {
     display: none;
-    @media screen and (min-width: 850px) {
+    @media screen and (min-width: $large-mobile-screen-width) {
       display: block;
     }
 
@@ -68,7 +70,7 @@
   font-size: 2rem;
   text-decoration: underline;
 
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: $large-mobile-screen-width) {
     display: none;
   }
 }
