@@ -23,7 +23,7 @@ export class ForecastService {
       dataPromise = Promise.resolve(currentWeatherMockData)
     } else {
       dataPromise = fetch(
-        `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${this.apiKey}&details=true`
+        ` https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${this.apiKey}&details=true`
       ).then(resp => resp.json())
     }
 
@@ -49,7 +49,7 @@ export class ForecastService {
       }
     } else {
       dataPromise = fetch(
-        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${this.apiKey}&details=true&metric=${isMetric}`
+        ` https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${this.apiKey}&details=true&metric=${isMetric}`
       ).then(resp => resp.json())
     }
 
