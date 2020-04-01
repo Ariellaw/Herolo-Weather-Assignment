@@ -2,7 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 import { Locations } from '../../models/locations.model'
 import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from 'src/app/models/current-weather.model'
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router'
+import { throwError } from 'rxjs'
 
 @Component({
   selector: 'app-favorite',
@@ -11,15 +12,16 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   providers: [ForecastService]
 })
 export class FavoriteComponent implements OnInit {
-  @Output() errorMessageOpened = new EventEmitter<void>()
+  @Output() errorOccurred = new EventEmitter<{ errorMessage: string }>()
+  @Output() loadingWeatherComplete = new EventEmitter<void>()
   @Input() favorite: Locations
   currentWeather: CurrentWeather
-  darkmode:boolean = false;
+  darkmode: boolean = false
 
   constructor (
-    private forecastServices: ForecastService,
+    private forecastService: ForecastService,
     private activatedRoute: ActivatedRoute,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit (): void {
@@ -27,27 +29,31 @@ export class FavoriteComponent implements OnInit {
 
     this.activatedRoute.queryParams.subscribe(queryParams => {
       const mode = queryParams.mode
-      this.darkmode = mode === 'dark-mode'? true:false; 
+      this.darkmode = mode === 'dark-mode' ? true : false
     })
   }
 
-  async getCurrentWeather (locationKey: string) {
-    try {
-      this.currentWeather = await this.forecastServices.getCurrentWeather(
-        locationKey
-      )
-    } catch (e) {
-      this.errorMessageOpened.emit()
-    }
-  }
-  seeFullForecast(){
-  
-    this.router.navigate(
-      [`/${this.favorite.cityName} , ${this.favorite.countryName}/${this.favorite.locationKey}`], 
-      {
-        relativeTo: this.activatedRoute,
-        queryParamsHandling: 'merge',
-      });
+  getCurrentWeather (locationKey: string) {
+    this.forecastService
+      .getCurrentWeather(locationKey)
+      .then(currentWeather => {
+        this.currentWeather = currentWeather
+        this.loadingWeatherComplete.emit()
+      })
+      .catch(error => {
+        this.errorOccurred.emit({ errorMessage: error })
+      })
   }
 
+  seeFullForecast () {
+    this.router.navigate(
+      [
+        `/${this.favorite.cityName} , ${this.favorite.countryName}/${this.favorite.locationKey}`
+      ],
+      {
+        relativeTo: this.activatedRoute,
+        queryParamsHandling: 'merge'
+      }
+    )
+  }
 }

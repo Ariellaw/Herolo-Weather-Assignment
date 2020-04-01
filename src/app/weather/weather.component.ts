@@ -76,7 +76,7 @@ export class WeatherComponent implements OnInit {
       })
   }
 
-  async getCurrentWeather (locationKey: string) {
+   getCurrentWeather (locationKey: string) {
     this.forecastService
       .getCurrentWeather(locationKey)
       .then(currentWeather => {

@@ -1,11 +1,11 @@
 <div class="favorites-container">
-
-    <app-error-message class="full-screen-width" *ngIf="errorMessage" (errorMessageWasClosed)='errorMessage=false'>
+    <app-error-message class="full-screen-width" [errorMessage]='errorMessage'>
     </app-error-message>
-    <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image" *ngIf="loading" class="loading-image">
 
-    <app-favorite (errorMessageOpened)='errorMessage=true' *ngFor="let favorite of favorites; index as i"
-        [favorite]="favorite"></app-favorite>
+    <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image" *ngIf="isLoadingFavorites||isLoadingWeather" class="loading-image">
+
+    <app-favorite *ngFor="let favorite of favorites; index as i"
+        [favorite]="favorite" (errorOccurred)="errorOccurred($event)" (loadingWeatherComplete)="isLoadingWeather=false" ></app-favorite>
     <h1 class="no-favorites-message" *ngIf="displayMessage">Looks like you did not save any cities to your favorites!
     </h1>
 </div>
