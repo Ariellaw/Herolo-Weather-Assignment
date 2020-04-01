@@ -10,8 +10,9 @@
     .forecast-image {
       width: 18rem;
       @media screen and (min-width: 700px) {
-        width: 30rem;
+        width: 20rem;
         height: auto;
+        margin-bottom: 1rem;
       }
     }
   }

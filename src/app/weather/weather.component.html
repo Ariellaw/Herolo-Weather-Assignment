@@ -43,10 +43,10 @@
         *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i" [id]="'weekly-forecast-' + i">
         <img [src]="forecast.dayTime.icon" [alt]="forecast.dayTime.iconPhrase" class="card-img-top" />
         <div class="card-body">
-          <h4 class="card-title" class="forecast-date">
+          <h4 class="forecast-date">
             <span class="forecast-day">{{ forecast.dayofWeek }} </span><span> {{ forecast.date }}</span>
           </h4>
-          <h4 class="card-sub-title">
+          <h4 class="card-temp">
             {{ forecast.tempMin }}°/{{ forecast.tempMax }}°
           </h4>
           <p class="card-text">{{ forecast.dayTime.shortText }}</p>

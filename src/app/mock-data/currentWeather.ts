@@ -1,58 +1,58 @@
 
 const currentWeatherMockData: any[] =[
   {
-    "LocalObservationDateTime": "2020-03-27T03:17:00-04:00",
-    "EpochTime": 1585293420,
-    "WeatherText": "Cloudy",
-    "WeatherIcon": 7,
-    "HasPrecipitation": false,
-    "PrecipitationType": null,
-    "IsDayTime": false,
+    "LocalObservationDateTime": "2020-04-01T09:46:00+03:00",
+    "EpochTime": 1585723560,
+    "WeatherText": "Rain",
+    "WeatherIcon": 18,
+    "HasPrecipitation": true,
+    "PrecipitationType": "Rain",
+    "IsDayTime": true,
     "Temperature": {
       "Metric": {
-        "Value": 10.6,
+        "Value": 17.1,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 51,
+        "Value": 63,
         "Unit": "F",
         "UnitType": 18
       }
     },
     "RealFeelTemperature": {
       "Metric": {
-        "Value": 8.3,
+        "Value": 14.4,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 47,
+        "Value": 58,
         "Unit": "F",
         "UnitType": 18
       }
     },
     "RealFeelTemperatureShade": {
       "Metric": {
-        "Value": 8.3,
+        "Value": 14.4,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 47,
+        "Value": 58,
         "Unit": "F",
         "UnitType": 18
       }
     },
-    "RelativeHumidity": 68,
+    "RelativeHumidity": 87,
     "DewPoint": {
       "Metric": {
-        "Value": 5,
+        "Value": 15,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 41,
+        "Value": 59,
         "Unit": "F",
         "UnitType": 18
       }
@@ -65,12 +65,12 @@ const currentWeatherMockData: any[] =[
       },
       "Speed": {
         "Metric": {
-          "Value": 13,
+          "Value": 29.6,
           "Unit": "km/h",
           "UnitType": 7
         },
         "Imperial": {
-          "Value": 8.1,
+          "Value": 18.4,
           "Unit": "mi/h",
           "UnitType": 9
         }
@@ -79,53 +79,53 @@ const currentWeatherMockData: any[] =[
     "WindGust": {
       "Speed": {
         "Metric": {
-          "Value": 13,
+          "Value": 44.6,
           "Unit": "km/h",
           "UnitType": 7
         },
         "Imperial": {
-          "Value": 8.1,
+          "Value": 27.7,
           "Unit": "mi/h",
           "UnitType": 9
         }
       }
     },
-    "UVIndex": 0,
+    "UVIndex": 1,
     "UVIndexText": "Low",
     "Visibility": {
       "Metric": {
-        "Value": 16.1,
+        "Value": 11.3,
         "Unit": "km",
-        "UnitType": 6,
+        "UnitType": 6
       },
       "Imperial": {
-        "Value": 10,
+        "Value": 7,
         "Unit": "mi",
         "UnitType": 2
       }
     },
-    "ObstructionsToVisibility": "",
-    "CloudCover": 100,
+    "ObstructionsToVisibility": "R-",
+    "CloudCover": 75,
     "Ceiling": {
       "Metric": {
-        "Value": 3414,
+        "Value": 518,
         "Unit": "m",
         "UnitType": 5
       },
       "Imperial": {
-        "Value": 11200,
+        "Value": 1700,
         "Unit": "ft",
         "UnitType": 0
       }
     },
     "Pressure": {
       "Metric": {
-        "Value": 1008.7,
+        "Value": 1012,
         "Unit": "mb",
         "UnitType": 14
       },
       "Imperial": {
-        "Value": 29.79,
+        "Value": 29.88,
         "Unit": "inHg",
         "UnitType": 12
       }
@@ -136,60 +136,60 @@ const currentWeatherMockData: any[] =[
     },
     "Past24HourTemperatureDeparture": {
       "Metric": {
-        "Value": 6.7,
+        "Value": -5.5,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 12,
+        "Value": -10,
         "Unit": "F",
         "UnitType": 18
       }
     },
     "ApparentTemperature": {
       "Metric": {
-        "Value": 12.8,
+        "Value": 18.9,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 55,
+        "Value": 66,
         "Unit": "F",
         "UnitType": 18
       }
     },
     "WindChillTemperature": {
       "Metric": {
-        "Value": 10.6,
+        "Value": 17.2,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 51,
+        "Value": 63,
         "Unit": "F",
         "UnitType": 18
       }
     },
     "WetBulbTemperature": {
       "Metric": {
-        "Value": 7.9,
+        "Value": 15.8,
         "Unit": "C",
         "UnitType": 17
       },
       "Imperial": {
-        "Value": 46,
+        "Value": 61,
         "Unit": "F",
         "UnitType": 18
       }
     },
     "Precip1hr": {
       "Metric": {
-        "Value": 0.3,
+        "Value": 0.5,
         "Unit": "mm",
         "UnitType": 3
       },
       "Imperial": {
-        "Value": 0.01,
+        "Value": 0.02,
         "Unit": "in",
         "UnitType": 1
       }
@@ -209,84 +209,84 @@ const currentWeatherMockData: any[] =[
       },
       "PastHour": {
         "Metric": {
-          "Value": 0.3,
+          "Value": 0.5,
           "Unit": "mm",
           "UnitType": 3
         },
         "Imperial": {
-          "Value": 0.01,
+          "Value": 0.02,
           "Unit": "in",
           "UnitType": 1
         }
       },
       "Past3Hours": {
         "Metric": {
-          "Value": 0.3,
+          "Value": 1.8,
           "Unit": "mm",
           "UnitType": 3
         },
         "Imperial": {
-          "Value": 0.01,
+          "Value": 0.07,
           "Unit": "in",
           "UnitType": 1
         }
       },
       "Past6Hours": {
         "Metric": {
-          "Value": 0.3,
+          "Value": 1.8,
           "Unit": "mm",
           "UnitType": 3
         },
         "Imperial": {
-          "Value": 0.01,
+          "Value": 0.07,
           "Unit": "in",
           "UnitType": 1
         }
       },
       "Past9Hours": {
         "Metric": {
-          "Value": 0.3,
+          "Value": 1.8,
           "Unit": "mm",
           "UnitType": 3
         },
         "Imperial": {
-          "Value": 0.01,
+          "Value": 0.07,
           "Unit": "in",
           "UnitType": 1
         }
       },
       "Past12Hours": {
         "Metric": {
-          "Value": 0.3,
+          "Value": 1.8,
           "Unit": "mm",
           "UnitType": 3
         },
         "Imperial": {
-          "Value": 0.01,
+          "Value": 0.07,
           "Unit": "in",
           "UnitType": 1
         }
       },
       "Past18Hours": {
         "Metric": {
-          "Value": 0.3,
+          "Value": 1.8,
           "Unit": "mm",
           "UnitType": 3
         },
         "Imperial": {
-          "Value": 0.01,
+          "Value": 0.07,
           "Unit": "in",
           "UnitType": 1
         }
       },
       "Past24Hours": {
         "Metric": {
-          "Value": 0.3,
+          "Value": 1.8,
           "Unit": "mm",
           "UnitType": 3
         },
         "Imperial": {
-          "Value": 0.01,
+          "Value": 0.07,
           "Unit": "in",
           "UnitType": 1
         }
@@ -296,24 +296,24 @@ const currentWeatherMockData: any[] =[
       "Past6HourRange": {
         "Minimum": {
           "Metric": {
-            "Value": 8.9,
+            "Value": 15.8,
             "Unit": "C",
             "UnitType": 17
           },
           "Imperial": {
-            "Value": 48,
+            "Value": 60,
             "Unit": "F",
             "UnitType": 18
           }
         },
         "Maximum": {
           "Metric": {
-            "Value": 11.7,
+            "Value": 17.1,
             "Unit": "C",
             "UnitType": 17
           },
           "Imperial": {
-            "Value": 53,
+            "Value": 63,
             "Unit": "F",
             "UnitType": 18
           }
@@ -322,24 +322,24 @@ const currentWeatherMockData: any[] =[
       "Past12HourRange": {
         "Minimum": {
           "Metric": {
-            "Value": 8.9,
+            "Value": 15.8,
             "Unit": "C",
             "UnitType": 17
           },
           "Imperial": {
-            "Value": 48,
+            "Value": 60,
             "Unit": "F",
             "UnitType": 18
           }
         },
         "Maximum": {
           "Metric": {
-            "Value": 15.6,
+            "Value": 18.2,
             "Unit": "C",
             "UnitType": 17
           },
           "Imperial": {
-            "Value": 60,
+            "Value": 65,
             "Unit": "F",
             "UnitType": 18
           }
@@ -348,34 +348,35 @@ const currentWeatherMockData: any[] =[
       "Past24HourRange": {
         "Minimum": {
           "Metric": {
-            "Value": 3.3,
+            "Value": 15,
             "Unit": "C",
             "UnitType": 17
           },
           "Imperial": {
-            "Value": 38,
+            "Value": 59,
             "Unit": "F",
             "UnitType": 18
           }
         },
         "Maximum": {
           "Metric": {
-            "Value": 15.6,
+            "Value": 28.3,
             "Unit": "C",
             "UnitType": 17
           },
           "Imperial": {
-            "Value": 60,
+            "Value": 83,
             "Unit": "F",
             "UnitType": 18
           }
         }
       }
     },
-    "MobileLink": "http://m.accuweather.com/en/us/new-york-ny/10007/current-weather/349727?lang=en-us",
-    "Link": "http://www.accuweather.com/en/us/new-york-ny/10007/current-weather/349727?lang=en-us"
+    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us",
+    "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us"
   }
 ]
+
   export {
     currentWeatherMockData
   }

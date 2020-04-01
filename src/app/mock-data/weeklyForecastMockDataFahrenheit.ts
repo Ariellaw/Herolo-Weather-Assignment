@@ -1,5 +1,5 @@
 
-const weeklyForecastMockData: any={
+const weeklyForecastMockDataFahrenheit: any = {
   "Headline": {
     "EffectiveDate": "2020-04-01T08:00:00+03:00",
     "EffectiveEpochDate": 1585717200,
@@ -8,8 +8,8 @@ const weeklyForecastMockData: any={
     "Category": "rain",
     "EndDate": "2020-04-01T20:00:00+03:00",
     "EndEpochDate": 1585760400,
-    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/extended-weather-forecast/215854?unit=c&lang=en-us",
-    "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?unit=c&lang=en-us"
+    "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/extended-weather-forecast/215854?lang=en-us",
+    "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?lang=en-us"
   },
   "DailyForecasts": [
     {
@@ -31,51 +31,51 @@ const weeklyForecastMockData: any={
       },
       "Temperature": {
         "Minimum": {
-          "Value": 13.1,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 56,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 19.5,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 67,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperature": {
         "Minimum": {
-          "Value": 12.1,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 54,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 19.6,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 67,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperatureShade": {
         "Minimum": {
-          "Value": 12.1,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 54,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 17.6,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 64,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "HoursOfSun": 6.1,
       "DegreeDaySummary": {
         "Heating": {
-          "Value": 2,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 4,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Cooling": {
           "Value": 0,
-          "Unit": "C",
-          "UnitType": 17
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "AirAndPollen": [
@@ -132,9 +132,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 22.2,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 13.8,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 260,
@@ -144,9 +144,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 40.7,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 25.3,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 289,
@@ -155,24 +155,24 @@ const weeklyForecastMockData: any={
           }
         },
         "TotalLiquid": {
-          "Value": 3.6,
-          "Unit": "mm",
-          "UnitType": 3
+          "Value": 0.14,
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
-          "Value": 3.6,
-          "Unit": "mm",
-          "UnitType": 3
+          "Value": 0.14,
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 2.5,
         "HoursOfRain": 2.5,
@@ -195,9 +195,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 7.4,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 4.6,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 260,
@@ -207,9 +207,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 18.5,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 11.5,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 284,
@@ -218,24 +218,24 @@ const weeklyForecastMockData: any={
           }
         },
         "TotalLiquid": {
-          "Value": 0.5,
-          "Unit": "mm",
-          "UnitType": 3
+          "Value": 0.02,
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
-          "Value": 0.5,
-          "Unit": "mm",
-          "UnitType": 3
+          "Value": 0.02,
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0.5,
         "HoursOfRain": 0.5,
@@ -246,8 +246,8 @@ const weeklyForecastMockData: any={
       "Sources": [
         "AccuWeather"
       ],
-      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&unit=c&lang=en-us",
-      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&unit=c&lang=en-us"
+      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=1&lang=en-us"
     },
     {
       "Date": "2020-04-02T07:00:00+03:00",
@@ -268,51 +268,51 @@ const weeklyForecastMockData: any={
       },
       "Temperature": {
         "Minimum": {
-          "Value": 10.9,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 52,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 20.4,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 69,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperature": {
         "Minimum": {
-          "Value": 10.9,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 52,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 23.8,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 75,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperatureShade": {
         "Minimum": {
-          "Value": 10.9,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 52,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 18.9,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 66,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "HoursOfSun": 7.8,
       "DegreeDaySummary": {
         "Heating": {
-          "Value": 2,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 5,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Cooling": {
           "Value": 0,
-          "Unit": "C",
-          "UnitType": 17
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "AirAndPollen": [
@@ -367,9 +367,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 11.1,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 6.9,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 276,
@@ -379,9 +379,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 18.5,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 11.5,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 286,
@@ -391,23 +391,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -428,9 +428,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 5.6,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 3.5,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 84,
@@ -440,9 +440,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 13,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 8.1,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 341,
@@ -452,23 +452,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -479,8 +479,8 @@ const weeklyForecastMockData: any={
       "Sources": [
         "AccuWeather"
       ],
-      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&unit=c&lang=en-us",
-      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&unit=c&lang=en-us"
+      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=2&lang=en-us"
     },
     {
       "Date": "2020-04-03T07:00:00+03:00",
@@ -501,51 +501,51 @@ const weeklyForecastMockData: any={
       },
       "Temperature": {
         "Minimum": {
-          "Value": 13.4,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 56,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 22.5,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 72,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperature": {
         "Minimum": {
-          "Value": 13,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 55,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 27.2,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 81,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperatureShade": {
         "Minimum": {
-          "Value": 13,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 55,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 21.3,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 70,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "HoursOfSun": 10.9,
       "DegreeDaySummary": {
         "Heating": {
-          "Value": 0,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 1,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Cooling": {
           "Value": 0,
-          "Unit": "C",
-          "UnitType": 17
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "AirAndPollen": [
@@ -600,9 +600,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 9.3,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 5.8,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 261,
@@ -612,9 +612,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 16.7,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 10.4,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 327,
@@ -624,23 +624,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -661,9 +661,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 9.3,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 5.8,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 69,
@@ -673,9 +673,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 14.8,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 9.2,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 30,
@@ -685,23 +685,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -712,8 +712,8 @@ const weeklyForecastMockData: any={
       "Sources": [
         "AccuWeather"
       ],
-      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&unit=c&lang=en-us",
-      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&unit=c&lang=en-us"
+      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=3&lang=en-us"
     },
     {
       "Date": "2020-04-04T07:00:00+03:00",
@@ -734,51 +734,51 @@ const weeklyForecastMockData: any={
       },
       "Temperature": {
         "Minimum": {
-          "Value": 21.1,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 70,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 29.3,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 85,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperature": {
         "Minimum": {
-          "Value": 19.9,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 68,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 32.6,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 91,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperatureShade": {
         "Minimum": {
-          "Value": 19.9,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 68,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 28.2,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 83,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "HoursOfSun": 6.5,
       "DegreeDaySummary": {
         "Heating": {
           "Value": 0,
-          "Unit": "C",
-          "UnitType": 17
+          "Unit": "F",
+          "UnitType": 18
         },
         "Cooling": {
-          "Value": 7,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 12,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "AirAndPollen": [
@@ -833,9 +833,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 9.3,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 5.8,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 10,
@@ -845,9 +845,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 16.7,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 10.4,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 19,
@@ -857,23 +857,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -894,9 +894,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 9.3,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 5.8,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 114,
@@ -906,9 +906,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 16.7,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 10.4,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 42,
@@ -918,23 +918,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -945,8 +945,8 @@ const weeklyForecastMockData: any={
       "Sources": [
         "AccuWeather"
       ],
-      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=4&unit=c&lang=en-us",
-      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=4&unit=c&lang=en-us"
+      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=4&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=4&lang=en-us"
     },
     {
       "Date": "2020-04-05T07:00:00+03:00",
@@ -967,51 +967,51 @@ const weeklyForecastMockData: any={
       },
       "Temperature": {
         "Minimum": {
-          "Value": 16,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 61,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 28.7,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 84,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperature": {
         "Minimum": {
-          "Value": 15.8,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 60,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 31.3,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 88,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "RealFeelTemperatureShade": {
         "Minimum": {
-          "Value": 15.8,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 60,
+          "Unit": "F",
+          "UnitType": 18
         },
         "Maximum": {
-          "Value": 27.1,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 81,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "HoursOfSun": 5.3,
       "DegreeDaySummary": {
         "Heating": {
           "Value": 0,
-          "Unit": "C",
-          "UnitType": 17
+          "Unit": "F",
+          "UnitType": 18
         },
         "Cooling": {
-          "Value": 4,
-          "Unit": "C",
-          "UnitType": 17
+          "Value": 7,
+          "Unit": "F",
+          "UnitType": 18
         }
       },
       "AirAndPollen": [
@@ -1066,9 +1066,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 14.8,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 9.2,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 234,
@@ -1078,9 +1078,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 24.1,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 15,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 238,
@@ -1090,23 +1090,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -1127,9 +1127,9 @@ const weeklyForecastMockData: any={
         "IceProbability": 0,
         "Wind": {
           "Speed": {
-            "Value": 11.1,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 6.9,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 218,
@@ -1139,9 +1139,9 @@ const weeklyForecastMockData: any={
         },
         "WindGust": {
           "Speed": {
-            "Value": 22.2,
-            "Unit": "km/h",
-            "UnitType": 7
+            "Value": 13.8,
+            "Unit": "mi/h",
+            "UnitType": 9
           },
           "Direction": {
             "Degrees": 258,
@@ -1151,23 +1151,23 @@ const weeklyForecastMockData: any={
         },
         "TotalLiquid": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Rain": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "Snow": {
           "Value": 0,
-          "Unit": "cm",
-          "UnitType": 4
+          "Unit": "in",
+          "UnitType": 1
         },
         "Ice": {
           "Value": 0,
-          "Unit": "mm",
-          "UnitType": 3
+          "Unit": "in",
+          "UnitType": 1
         },
         "HoursOfPrecipitation": 0,
         "HoursOfRain": 0,
@@ -1178,10 +1178,10 @@ const weeklyForecastMockData: any={
       "Sources": [
         "AccuWeather"
       ],
-      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=5&unit=c&lang=en-us",
-      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=5&unit=c&lang=en-us"
+      "MobileLink": "http://m.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=5&lang=en-us",
+      "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=5&lang=en-us"
     }
   ]
 }
 
-export { weeklyForecastMockData }
+export { weeklyForecastMockDataFahrenheit }

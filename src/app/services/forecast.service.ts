@@ -3,7 +3,7 @@ import { weeklyForecastMockData } from '../mock-data/weeklyForecast'
 import { currentWeatherMockData } from '../mock-data/currentWeather'
 import { CurrentWeather } from '../models/current-weather.model'
 import { WeeklyForecast } from '../models/weekly-forecast.model'
-import { weeklyForecastMockDataFahrenheit } from '../mock-data/weeklyForecast2'
+import { weeklyForecastMockDataFahrenheit } from '../mock-data/weeklyForecastMockDataFahrenheit'
 @Injectable({
   providedIn: 'root'
 })
