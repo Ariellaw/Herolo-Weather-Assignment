@@ -34,10 +34,10 @@
       <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"
         *ngIf="isLoadingCurrentWeather || isLoadingWeeklyForecast" class="loading-image">
 
-      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast && !errorMessage"
+      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast"
         [forecast]="displayedDayForecast" [locationName]='location'></app-selected-forecast>
       <app-current-weather [currentWeather]="currentWeather" [units]='units' [locationName]='location'
-        *ngIf="currentWeatherDisplayed && !isLoadingCurrentWeather"></app-current-weather>
+        *ngIf="currentWeatherDisplayed && currentWeather"></app-current-weather>
     </div>
     <div class="weekly-forecast-container">
       <div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}" (click)="displayForecast(i)"
