@@ -17,7 +17,7 @@ export class ForecastDetailsComponent implements OnInit {
   ngOnInit (): void {
     this.route.queryParams.subscribe(queryParams => {
       const mode = queryParams.mode
-      this.darkmode = mode === constants.units.fahrenheit ? true : false
+      this.darkmode = mode === constants.theme.darkmode ? true : false
     })
   }
   closeWindow ($event) {

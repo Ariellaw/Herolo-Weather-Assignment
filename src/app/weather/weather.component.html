@@ -3,10 +3,10 @@
     <div class="header">
 
       <div class="search">
-        <input type="text" [ngClass]="{'bg-dark text-white light-border':darkmode}" id="locationInput" class="autocomplete"
+        <input type="text"  [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'" id="locationInput" class="autocomplete"
           (input)="onUserInput($event)" [value]="location" placeholder="Enter city...." list="locations"
           (change)="onUserSelection($event)" />
-        <button type="submit" class="searchButton" [ngClass]="{'bg-dark text-white light-border':darkmode}">
+        <button type="submit" class="searchButton" [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'">
           <i class="fa fa-search"></i>
         </button>
         <datalist id="locations">
@@ -15,12 +15,12 @@
           </option>
         </datalist>
       </div>
-      <button [ngClass]="{'bg-dark text-white light-border':darkmode}" *ngIf="!locationIsInFavorites"
+      <button [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'" *ngIf="!locationIsInFavorites"
         (click)="addLocationToFavorites()" class="favorites-button">
         <i class="far fa-heart red"></i>
         <span class="btn-text">  Add to Favorites</span>
       </button>
-      <button [ngClass]="{'bg-dark text-white light-border':darkmode}" *ngIf="locationIsInFavorites"
+      <button  [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'" *ngIf="locationIsInFavorites"
         (click)="removeLocationFromFavorites()" class="favorites-button">
         <i class="fas fa-heart red"></i>
         <span class="btn-text"> Remove from Favorites </span>

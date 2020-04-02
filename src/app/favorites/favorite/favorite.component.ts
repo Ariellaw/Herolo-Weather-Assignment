@@ -3,6 +3,7 @@ import { Locations } from '../../models/locations.model'
 import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from 'src/app/models/current-weather.model'
 import { Router, ActivatedRoute } from '@angular/router'
+import * as constants from '../../models/constants'
 
 @Component({
   selector: 'app-favorite',
@@ -29,7 +30,7 @@ export class FavoriteComponent implements OnInit {
 
     this.activatedRoute.queryParams.subscribe(queryParams => {
       const mode = queryParams.mode
-      this.darkmode = mode === 'dark-mode' ? true : false
+      this.darkmode = mode === constants.theme.darkmode ? true : false
     })
   }
 
