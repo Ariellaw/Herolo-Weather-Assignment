@@ -1,4 +1,4 @@
-@import '../../../variables.scss';
+@import "../../../variables.scss";
 
 .selected-forecast-container {
   height: 100%;
@@ -7,13 +7,17 @@
   align-items: stretch;
   justify-content: center;
 
-  @media screen and (max-height: 820px) and (min-width:  $smaller-mobile-screen-width) {
+  @media screen and (max-height: 820px) and (min-width: $smaller-mobile-screen-width) {
     flex-wrap: wrap;
   }
 
-  .selected-forecast-details {
-    font-size: 1.5rem;
-    font-weight: bold;
+  .selected-forecast-details-container {
+    padding-top: 1rem;
+    margin-top: 1rem;
+    .selected-forecast-details {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
   }
 
   .forecast-display-container {

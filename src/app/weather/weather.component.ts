@@ -7,6 +7,7 @@ import { Locations } from '../models/locations.model'
 import { CurrentWeather } from '../models/current-weather.model'
 import { FavoritesService } from '../services/favorites.service'
 import { ActivatedRoute, Router } from '@angular/router'
+import * as constants from '../models/constants'
 
 @Component({
   selector: 'app-weather',
@@ -26,7 +27,7 @@ export class WeatherComponent implements OnInit {
   errorMessage: string = null
   isLoadingCurrentWeather: boolean = true
   isLoadingWeeklyForecast: boolean = true
-  units: string = 'fahrenheit'
+  units: string = constants.units.fahrenheit
   darkmode: boolean
 
   constructor (
@@ -44,7 +45,7 @@ export class WeatherComponent implements OnInit {
     this.route.queryParams.subscribe(queryParams => {
       this.units = queryParams.units
       const mode = queryParams.mode
-      this.darkmode = mode === 'dark-mode' ? true : false
+      this.darkmode = mode === constants.theme.darkmode ? true : false
       this.loadForecast(id, location, this.units)
     })
   }

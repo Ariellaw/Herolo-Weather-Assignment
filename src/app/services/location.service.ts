@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core'
 import { selectedLocationMockData } from '../mock-data/selectedLocation'
 import { Locations } from '../models/locations.model'
+import * as constants from '../models/constants';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
-  //  apiKey:string = 'u3l9YgfcjX8dHIZH8x9mFVTNiGLuWh4y'
-   apiKey:string = 'KUf6QQD5JF8HgA7B11F4jna8eky8rZSA'
-   useMockData:boolean = false;
+
  
   constructor () {}
 
@@ -16,10 +16,10 @@ export class LocationService {
     let suggestLocations: Locations[] = []
     let dataPromise: Promise<any>
 
-    if (this.useMockData) {
+    if (constants.useMockData) {
       dataPromise = Promise.resolve(selectedLocationMockData)
     } else {
-      dataPromise = fetch(` https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apiKey}&q=${keyword}`).then(resp =>resp.json())
+      dataPromise = fetch(` https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${constants.apiKey}&q=${keyword}`).then(resp =>resp.json())
 
     }
       return dataPromise.then(data=>{

@@ -45,6 +45,7 @@
       @media screen and (min-width: $smaller-mobile-screen-width) {
         border-radius: 10%;
         height: 5rem;
+        min-height: 5rem;
         width: 15rem;
         border: 1px solid;
         font-size: 1.5rem;
@@ -200,7 +201,7 @@
 }
 
 .autocomplete:focus {
-  color: #00b4cc;
+  color: black;
 }
 
 .searchButton {

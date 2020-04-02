@@ -2,8 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 import { Locations } from '../../models/locations.model'
 import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from 'src/app/models/current-weather.model'
-import { Router, ActivatedRoute, Params } from '@angular/router'
-import { throwError } from 'rxjs'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-favorite',

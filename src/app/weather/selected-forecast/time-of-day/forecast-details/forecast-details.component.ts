@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 import { TimeOfDayForecast } from 'src/app/models/time-of-day-forecast.model'
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
+import * as constants from '../../../../models/constants'
 
 @Component({
   selector: 'app-forecast-details',
@@ -16,7 +17,7 @@ export class ForecastDetailsComponent implements OnInit {
   ngOnInit (): void {
     this.route.queryParams.subscribe(queryParams => {
       const mode = queryParams.mode
-      this.darkmode = mode === 'dark-mode' ? true : false
+      this.darkmode = mode === constants.units.fahrenheit ? true : false
     })
   }
   closeWindow ($event) {

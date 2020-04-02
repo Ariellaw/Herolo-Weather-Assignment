@@ -39,7 +39,7 @@
       <app-current-weather [currentWeather]="currentWeather" [units]='units' [locationName]='location'
         *ngIf="currentWeatherDisplayed && currentWeather"></app-current-weather>
     </div>
-    <div class="weekly-forecast-container">
+    <div class="weekly-forecast-container" *ngIf="weeklyForecast">
       <div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}" (click)="displayForecast(i)"
         *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i" [id]="'weekly-forecast-' + i">
         <img [src]="forecast.dayTime.icon" [alt]="forecast.dayTime.iconPhrase" class="card-img-top" />

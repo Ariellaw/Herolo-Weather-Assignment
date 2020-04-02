@@ -19,7 +19,6 @@ export class FavoritesService {
 
   removeLocationFromFavorites (locationKey: string) {
     let favorites = this.getFavoritesFromLocalStorage();
-
     const idx = favorites.findIndex(favorite => locationKey === favorite.locationKey)
 
     if (idx >= 0) {

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit} from '@angular/core'
 import { Router, ActivatedRoute, Params } from '@angular/router'
+import * as constants from '../models/constants'
+
 
 @Component({
   selector: 'app-header',
@@ -19,12 +21,12 @@ export class HeaderComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(queryParams => {
       const units = queryParams.units
       const mode = queryParams.mode
-      this.darkmode = mode === 'dark-mode' ? true : false
-      this.units = units === 'fahrenheit' ? 'fahrenheit' : 'celsius'
+      this.darkmode = mode === constants.theme.darkmode ? true : false
+      this.units = units === constants.units.fahrenheit? constants.units.fahrenheit : constants.units.celsius
     })
   }
   toggleLightDarkMode ($event) {
-    const mode = $event.target.checked ? 'dark-mode' : 'light-mode'
+    const mode = $event.target.checked ? constants.theme.darkmode : constants.theme.lightmode
     const queryParams: Params = { mode: mode }
 
     this.router.navigate([], {
@@ -34,7 +36,7 @@ export class HeaderComponent implements OnInit {
     })
   }
   togglefahrenheitCelsius ($event) {
-    const units = $event.target.checked ? 'fahrenheit' : 'celsius'
+    const units = $event.target.checked ? constants.units.fahrenheit : constants.units.celsius
 
     const queryParams: Params = { units: units }
 

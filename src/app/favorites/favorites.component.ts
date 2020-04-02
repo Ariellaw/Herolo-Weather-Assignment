@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { FavoritesService } from '../services/favorites.service'
 import { Locations } from '../models/locations.model'
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
+import * as constants from '../models/constants'
 
 @Component({
   selector: 'app-favorites',
@@ -14,7 +15,7 @@ export class FavoritesComponent implements OnInit {
   isLoadingFavorites: boolean = false
   isLoadingWeather: boolean = false
   displayMessage: boolean = false
-  units:string
+  units: string
 
   constructor (
     private favoritesService: FavoritesService,
@@ -25,7 +26,10 @@ export class FavoritesComponent implements OnInit {
     this.getFavorites()
 
     this.route.queryParams.subscribe(queryParams => {
-      this.units = queryParams.units === 'fahrenheit'? 'fahrenheit':'celsius'
+      this.units =
+        queryParams.units === constants.units.fahrenheit
+          ? constants.units.fahrenheit
+          : constants.units.celsius
     })
   }
 
