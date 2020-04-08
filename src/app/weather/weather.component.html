@@ -31,7 +31,10 @@
       <app-error-message [errorMessage]='errorMessage'>
       </app-error-message>
       <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"
-        *ngIf="isLoadingCurrentWeather || isLoadingWeeklyForecast" class="loading-image">
+        *ngIf="(isLoadingCurrentWeather || isLoadingWeeklyForecast) && !darkmode"  class="loading-image">
+        <img src="../../assets/images/gifs/loading-darkmode.gif" alt="Loading Image"
+        *ngIf="darkmode &&(isLoadingCurrentWeather || isLoadingWeeklyForecast)" class="loading-image">
+        
 
       <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast" [forecast]="displayedDayForecast"
         [locationName]='location'></app-selected-forecast>

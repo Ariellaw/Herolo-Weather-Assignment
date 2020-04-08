@@ -25,7 +25,7 @@ export class WeatherComponent implements OnInit {
   currentWeather: CurrentWeather = null
   currentWeatherDisplayed: boolean = true
   selectedWeatherForecast: number = null
-  errorMessage: string = null
+  errorMessage: string = "yayfkdsfskd lgdpglfa"
   isLoadingCurrentWeather: boolean = true
   isLoadingWeeklyForecast: boolean = true
   units: string = constants.units.fahrenheit
@@ -88,10 +88,13 @@ export class WeatherComponent implements OnInit {
       .then(currentWeather => {
         this.currentWeather = currentWeather
         this.isLoadingCurrentWeather = false
+        console.log("current weather was returned", currentWeather)
       })
       .catch(error => {
         this.errorMessage = error
         this.isLoadingCurrentWeather = false
+        console.log("current weather error", error)
+
       })
   }
 
@@ -114,7 +117,6 @@ export class WeatherComponent implements OnInit {
     this.currentWeatherDisplayed = false
     this.selectedWeatherForecast = idx
     this.displayedDayForecast = this.weeklyForecast.dailyForecasts[idx]
-    //TODO - temp needs to change on selected weather when F and C
   }
 
   addLocationToFavorites () {

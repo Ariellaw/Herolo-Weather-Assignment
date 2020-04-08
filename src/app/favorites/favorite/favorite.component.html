@@ -1,7 +1,12 @@
-<div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}" *ngIf="currentWeather && favorite"
-    (click)="seeFullForecast()">
-    <img [src]="currentWeather.icon" [alt]='currentWeather.weatherText' class="card-img-top" />
-    <div class="card-body">
+<div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}" (click)="seeFullForecast()">
+
+    <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image" *ngIf="isLoadingWeather && !darkmode"
+        class="loading-image">
+    <img src="../../../assets/images/gifs/loading-darkmode.gif" alt="Loading Image" *ngIf="isLoadingWeather && darkmode"
+        class="loading-image">
+
+    <img *ngIf="currentWeather" [src]="currentWeather.icon" [alt]='currentWeather.weatherText' class="card-img-top" />
+    <div *ngIf="currentWeather && favorite" class="card-body">
         <div class="header-text">
             <h4>{{favorite.cityName}}</h4>
             <h4>{{favorite.countryName}}</h4>

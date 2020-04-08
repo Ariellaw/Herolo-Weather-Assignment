@@ -4,18 +4,24 @@ import { currentWeatherMockData } from '../mock-data/currentWeather'
 import { CurrentWeather } from '../models/current-weather.model'
 import { WeeklyForecast } from '../models/weekly-forecast.model'
 import { weeklyForecastMockDataFahrenheit } from '../mock-data/weeklyForecastMockDataFahrenheit'
-import * as constants from '../models/constants';
+import * as constants from '../models/constants'
 @Injectable({
   providedIn: 'root'
 })
 export class ForecastService {
-  
   constructor () {}
+
+  delay (ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
 
   getCurrentWeather (locationKey: string): Promise<CurrentWeather> {
     let dataPromise: Promise<any>
     if (constants.useMockData) {
-      dataPromise = Promise.resolve(currentWeatherMockData)
+      var delay = Math.max(100, constants.mockDataDelay + Math.floor(Math.random() * 1000) - 500)
+        
+
+      dataPromise = this.delay(delay).then(() => currentWeatherMockData)
     } else {
       dataPromise = fetch(
         ` https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${constants.apiKey}&details=true`
@@ -33,7 +39,6 @@ export class ForecastService {
     locationKey: string,
     unitsOfMeasurment: string
   ): Promise<WeeklyForecast> {
-
     let dataPromise: Promise<any>
     const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false'
 

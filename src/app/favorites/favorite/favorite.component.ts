@@ -13,11 +13,11 @@ import * as constants from '../../models/constants'
 })
 export class FavoriteComponent implements OnInit {
   @Output() errorOccurred = new EventEmitter<{ errorMessage: string }>()
-  @Output() loadingWeatherComplete = new EventEmitter<void>()
   @Input() favorite: Locations
   @Input() units:string
   currentWeather: CurrentWeather
   darkmode: boolean = false
+  isLoadingWeather:boolean=false
 
   constructor (
     private forecastService: ForecastService,
@@ -27,7 +27,7 @@ export class FavoriteComponent implements OnInit {
 
   ngOnInit (): void {
     this.getCurrentWeather(this.favorite.locationKey)
-
+    
     this.activatedRoute.queryParams.subscribe(queryParams => {
       const mode = queryParams.mode
       this.darkmode = mode === constants.theme.darkmode ? true : false
@@ -35,14 +35,17 @@ export class FavoriteComponent implements OnInit {
   }
 
   getCurrentWeather (locationKey: string) {
+    this.isLoadingWeather=true
+
     this.forecastService
       .getCurrentWeather(locationKey)
       .then(currentWeather => {
         this.currentWeather = currentWeather
-        this.loadingWeatherComplete.emit()
+        this.isLoadingWeather = false;
       })
       .catch(error => {
         this.errorOccurred.emit({ errorMessage: error })
+        this.isLoadingWeather = false;
       })
   }
 

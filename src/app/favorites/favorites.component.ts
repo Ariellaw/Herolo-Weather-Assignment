@@ -13,7 +13,6 @@ export class FavoritesComponent implements OnInit {
   favorites: Locations[] = null
   errorMessage: string = null
   isLoadingFavorites: boolean = false
-  isLoadingWeather: boolean = false
   displayMessage: boolean = false
   units: string
 
@@ -35,15 +34,13 @@ export class FavoritesComponent implements OnInit {
 
   errorOccurred ($event) {
     this.errorMessage = $event.errorMessage
-    this.isLoadingWeather = false
   }
 
   getFavorites () {
     this.favorites = this.favoritesService.getFavoritesFromLocalStorage()
     if (this.favorites) {
-      this.isLoadingFavorites = false//todo
+      this.isLoadingFavorites = false
       if (this.favorites.length === 0) {
-        this.isLoadingWeather = false
         this.displayMessage = true
       }
     }

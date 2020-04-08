@@ -1,4 +1,4 @@
-@import '../../../variables.scss';
+@import "../../../variables.scss";
 .card {
   width: 100vw;
   height: 10rem;
@@ -13,6 +13,14 @@
     margin: 1rem;
   }
 
+  .loading-image {
+    height: 100%;
+    width: auto;
+    @media screen and (min-width: $smaller-mobile-screen-width) {
+      width: 100%;
+      height: auto;
+    }
+  }
   .card-img-top {
     width: 15%;
     height: auto;
