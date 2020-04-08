@@ -23,9 +23,8 @@ $lighter-header-color:white;
     height: 17vh;
   }
 
-  a {
+  a, h1 {
     color: $lighter-header-color;
-    cursor: pointer;
     font-size: 2rem;
     @media screen and (min-width: $smaller-mobile-screen-width) {
     }
