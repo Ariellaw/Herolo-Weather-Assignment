@@ -1,5 +1,7 @@
 @import '../../variables.scss';
+
 $emphasis-color: #b00ecd;
+$lighter-header-color:white;
 
 
 .navbar {
@@ -10,7 +12,7 @@ $emphasis-color: #b00ecd;
   display: flex;
   align-content: center;
   justify-content: flex-end;
-  color: white;
+  color: $lighter-header-color;
   font-size: 2rem;
   height: 10vh;
   width: 100vw;
@@ -22,7 +24,7 @@ $emphasis-color: #b00ecd;
   }
 
   a {
-    color: white;
+    color: $lighter-header-color;
     cursor: pointer;
     font-size: 2rem;
     @media screen and (min-width: $smaller-mobile-screen-width) {
@@ -109,7 +111,7 @@ $emphasis-color: #b00ecd;
   width: 15px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: $lighter-header-color;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }

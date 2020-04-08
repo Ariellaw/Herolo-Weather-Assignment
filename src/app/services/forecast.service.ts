@@ -33,6 +33,7 @@ export class ForecastService {
     locationKey: string,
     unitsOfMeasurment: string
   ): Promise<WeeklyForecast> {
+
     let dataPromise: Promise<any>
     const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false'
 

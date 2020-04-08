@@ -36,18 +36,19 @@
     }
 
     .favorites-button {
-      border: none;
+      border: 1px solid;
+      border-color: transparent;
       width: fit-content;
       font-size: 3rem;
       margin-right: 1rem;
       margin-left: 6rem;
-      background-color: white;
       @media screen and (min-width: $smaller-mobile-screen-width) {
+        border: 1px solid;
+        border-color: unset;
         border-radius: 10%;
         height: 5rem;
         min-height: 5rem;
         width: 15rem;
-        border: 1px solid;
         font-size: 1.5rem;
         font-weight: bold;
       }
@@ -210,7 +211,7 @@
   height: 4rem;
   border-bottom: 3px solid;
   text-align: center;
-  background-color: white;
+  // background-color: white;
   cursor: pointer;
   font-size: 20px;
 }

@@ -6,3 +6,4 @@ export class SelectedLocation {
     public readonly isInFavorites: boolean
   ) {}
 }
+//TODO - not in use - delete

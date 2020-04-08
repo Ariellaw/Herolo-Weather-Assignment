@@ -41,7 +41,7 @@ export class FavoritesComponent implements OnInit {
   getFavorites () {
     this.favorites = this.favoritesService.getFavoritesFromLocalStorage()
     if (this.favorites) {
-      this.isLoadingFavorites = false
+      this.isLoadingFavorites = false//todo
       if (this.favorites.length === 0) {
         this.isLoadingWeather = false
         this.displayMessage = true

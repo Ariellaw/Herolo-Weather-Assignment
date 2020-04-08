@@ -12,6 +12,7 @@ export class ForecastDetailsComponent implements OnInit {
   @Input() forecast: TimeOfDayForecast
   @Output() windowClosed = new EventEmitter()
   darkmode: boolean = false
+  
   constructor (private route: ActivatedRoute) {}
 
   ngOnInit (): void {
@@ -20,6 +21,7 @@ export class ForecastDetailsComponent implements OnInit {
       this.darkmode = mode === constants.theme.darkmode ? true : false
     })
   }
+  
   closeWindow ($event) {
     $event.preventDefault()
     this.windowClosed.emit()

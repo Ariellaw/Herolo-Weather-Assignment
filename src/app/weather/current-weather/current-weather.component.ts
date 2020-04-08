@@ -8,14 +8,10 @@ import { CurrentWeather } from '../../models/current-weather.model'
 })
 export class CurrentWeatherComponent implements OnInit {
   @Input() currentWeather: CurrentWeather
-  @Input() units:string
-  @Input() locationName:string
-
+  @Input() units: string
+  @Input() locationName: string
 
   constructor () {}
 
-  ngOnInit (): void {
-  }
-
-
+  ngOnInit (): void {}
 }

@@ -8,30 +8,32 @@ enum Location {
   providedIn: 'root'
 })
 export class FavoritesService {
-
   constructor () {}
 
   addLocationToFavorites (location: Locations) {
-    let favorites = this.getFavoritesFromLocalStorage();
+    let favorites = this.getFavoritesFromLocalStorage()
     favorites.splice(0, 0, location)
     this.storeFavoritesInLocalStorage(favorites)
   }
 
   removeLocationFromFavorites (locationKey: string) {
-    let favorites = this.getFavoritesFromLocalStorage();
-    const idx = favorites.findIndex(favorite => locationKey === favorite.locationKey)
+    let favorites = this.getFavoritesFromLocalStorage()
+    const idx = favorites.findIndex(
+      favorite => locationKey === favorite.locationKey
+    )
 
     if (idx >= 0) {
       favorites.splice(idx, 1)
     }
     this.storeFavoritesInLocalStorage(favorites)
-
   }
 
   isLocationInFavorites (locationKey: string): boolean {
-    let favorites = this.getFavoritesFromLocalStorage();
+    let favorites = this.getFavoritesFromLocalStorage()
 
-    const idx = favorites.findIndex(favorite => locationKey === favorite.locationKey)
+    const idx = favorites.findIndex(
+      favorite => locationKey === favorite.locationKey
+    )
     return idx >= 0
   }
 

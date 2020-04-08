@@ -1,11 +1,10 @@
 <div>
   <div class="display-container">
     <div class="header">
-
       <div class="search">
-        <input type="text"  [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'" id="locationInput" class="autocomplete"
-          (input)="onUserInput($event)" [value]="location" placeholder="Enter city...." list="locations"
-          (change)="onUserSelection($event)" />
+        <input type="text" [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'" id="locationInput"
+          class="autocomplete" (input)="onUserInput($event)" [value]="location" placeholder="Enter city...."
+          list="locations" (change)="onUserSelection($event)" />
         <button type="submit" class="searchButton" [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'">
           <i class="fa fa-search"></i>
         </button>
@@ -15,12 +14,12 @@
           </option>
         </datalist>
       </div>
-      <button [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'" *ngIf="!locationIsInFavorites"
+      <button [ngClass]="darkmode? 'dark-mode': 'light-mode'" *ngIf="!locationIsInFavorites"
         (click)="addLocationToFavorites()" class="favorites-button">
         <i class="far fa-heart red"></i>
-        <span class="btn-text">  Add to Favorites</span>
+        <span class="btn-text"> Add to Favorites</span>
       </button>
-      <button  [ngClass]="darkmode? 'dark-mode bg-dark text-white': 'light-mode'" *ngIf="locationIsInFavorites"
+      <button [ngClass]="darkmode? 'dark-mode': 'light-mode'" *ngIf="locationIsInFavorites"
         (click)="removeLocationFromFavorites()" class="favorites-button">
         <i class="fas fa-heart red"></i>
         <span class="btn-text"> Remove from Favorites </span>
@@ -34,11 +33,12 @@
       <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"
         *ngIf="isLoadingCurrentWeather || isLoadingWeeklyForecast" class="loading-image">
 
-      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast"
-        [forecast]="displayedDayForecast" [locationName]='location'></app-selected-forecast>
+      <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast" [forecast]="displayedDayForecast"
+        [locationName]='location'></app-selected-forecast>
       <app-current-weather [currentWeather]="currentWeather" [units]='units' [locationName]='location'
         *ngIf="currentWeatherDisplayed && currentWeather"></app-current-weather>
     </div>
+    
     <div class="weekly-forecast-container" *ngIf="weeklyForecast">
       <div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}" (click)="displayForecast(i)"
         *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i" [id]="'weekly-forecast-' + i">
@@ -54,5 +54,7 @@
         </div>
       </div>
     </div>
+
+
   </div>
 </div>

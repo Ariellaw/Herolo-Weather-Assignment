@@ -1,17 +1,16 @@
-@import '../../../../../variables.scss';
+@import "../../../../../variables.scss";
 
 .forecast-details-container {
-    border: 1px solid;
-    @include popup;
+  border: 1px solid;
+  @include popup;
 
-
-    .close-window-btn{
-        font-size: 2.5rem;
-        text-decoration: underline;
-    }
-    .fa-times{
-        align-self: flex-end;
-        font-size: 3rem;
-        cursor: pointer;
-    }
+  .close-window-btn {
+    font-size: 2.5rem;
+    text-decoration: underline;
+  }
+  .fa-times {
+    align-self: flex-end;
+    font-size: 3rem;
+    cursor: pointer;
+  }
 }
