@@ -40,7 +40,8 @@ export class ForecastService {
     unitsOfMeasurment: string
   ): Promise<WeeklyForecast> {
     let dataPromise: Promise<any>
-    const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false'
+    const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false';
+
 
     if (constants.useMockData) {
       if (unitsOfMeasurment === 'celsius') {
