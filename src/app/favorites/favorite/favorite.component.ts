@@ -44,6 +44,7 @@ export class FavoriteComponent implements OnInit {
         this.isLoadingWeather = false;
       })
       .catch(error => {
+        console.log("getCurrentWeather", error)
         this.errorOccurred.emit({ errorMessage: error })
         this.isLoadingWeather = false;
       })

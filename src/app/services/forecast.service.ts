@@ -18,10 +18,10 @@ export class ForecastService {
   getCurrentWeather (locationKey: string): Promise<CurrentWeather> {
     let dataPromise: Promise<any>
     if (constants.useMockData) {
-      var delay = Math.max(100, constants.mockDataDelay + Math.floor(Math.random() * 1000) - 500)
-        
+      const delay = Math.max(100, constants.mockDataDelay + Math.floor(Math.random() * 1000) - 500)
+      const idx =  Math.floor(Math.random() * currentWeatherMockData.length)
 
-      dataPromise = this.delay(delay).then(() => currentWeatherMockData)
+      dataPromise = this.delay(delay).then(() => currentWeatherMockData[idx])
     } else {
       dataPromise = fetch(
         ` https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${constants.apiKey}&details=true`
@@ -29,7 +29,7 @@ export class ForecastService {
     }
 
     return dataPromise.then(data => {
-      const currWeather = data[0]
+      const currWeather = data
       //as strange as it seems, the API returns an array with one element
       return CurrentWeather.fromJson(currWeather)
     })

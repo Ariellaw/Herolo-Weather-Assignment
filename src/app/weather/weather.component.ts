@@ -25,7 +25,7 @@ export class WeatherComponent implements OnInit {
   currentWeather: CurrentWeather = null
   currentWeatherDisplayed: boolean = true
   selectedWeatherForecast: number = null
-  errorMessage: string = "yayfkdsfskd lgdpglfa"
+  errorMessage: string = null
   isLoadingCurrentWeather: boolean = true
   isLoadingWeeklyForecast: boolean = true
   units: string = constants.units.fahrenheit
@@ -60,6 +60,7 @@ export class WeatherComponent implements OnInit {
           this.suggestedLocations = locations
         })
         .catch(error => {
+          console.log("onUserInput", error)
           this.errorMessage = error
         })
     }
@@ -77,6 +78,8 @@ export class WeatherComponent implements OnInit {
         }
       })
       .catch(error => {
+        console.log("getWeeklyForecast", error)
+
         this.errorMessage = error
         this.isLoadingWeeklyForecast = false
       })
@@ -88,7 +91,6 @@ export class WeatherComponent implements OnInit {
       .then(currentWeather => {
         this.currentWeather = currentWeather
         this.isLoadingCurrentWeather = false
-        console.log("current weather was returned", currentWeather)
       })
       .catch(error => {
         this.errorMessage = error
