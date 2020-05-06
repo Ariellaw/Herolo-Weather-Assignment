@@ -41,13 +41,16 @@ export class ForecastService {
   ): Promise<WeeklyForecast> {
     let dataPromise: Promise<any>
     const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false';
+    const idx =  Math.floor(Math.random() * weeklyForecastMockDataFahrenheit.length);
+    console.log("hihi",idx)
+
 
 
     if (constants.useMockData) {
       if (unitsOfMeasurment === 'celsius') {
-        dataPromise = Promise.resolve(weeklyForecastMockData)
+        dataPromise = Promise.resolve(weeklyForecastMockData[idx])
       } else {
-        dataPromise = Promise.resolve(weeklyForecastMockDataFahrenheit)
+        dataPromise = Promise.resolve(weeklyForecastMockDataFahrenheit[idx])
       }
     } else {
       dataPromise = fetch(
