@@ -31,32 +31,29 @@
       <app-error-message [errorMessage]='errorMessage'>
       </app-error-message>
       <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image"
-        *ngIf="(isLoadingCurrentWeather || isLoadingWeeklyForecast) && !darkmode"  class="loading-image">
-        <img src="../../assets/images/gifs/loading-darkmode.gif" alt="Loading Image"
-        *ngIf="darkmode &&(isLoadingCurrentWeather || isLoadingWeeklyForecast)" class="loading-image">
-        
+        *ngIf="isLoadingCurrentWeather && !darkmode" class="loading-image">
+      <img src="../../assets/images/gifs/loading-darkmode.gif" alt="Loading Image"
+        *ngIf="darkmode && isLoadingCurrentWeather" class="loading-image">
+
 
       <app-selected-forecast *ngIf="!currentWeatherDisplayed && displayedDayForecast" [forecast]="displayedDayForecast"
         [locationName]='location'></app-selected-forecast>
       <app-current-weather [currentWeather]="currentWeather" [units]='units' [locationName]='location'
         *ngIf="currentWeatherDisplayed && currentWeather"></app-current-weather>
     </div>
+
+    <div class="weekly-forecast-container" >
+      <!-- <app-daily-forecast (click)="displayForecast(i)"
+        *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i" [id]="'weekly-forecast-' + i"  [forecast]="weeklyForecast.dailyForecasts[i]" [darkmode]="darkmode"> -->
+        
+        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(0)" [forecast]="weeklyForecast.dailyForecasts[0]" [darkmode]="darkmode" [id]="'weekly-forecast-0'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast" ></app-daily-forecast>
+        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(1)" [forecast]="weeklyForecast.dailyForecasts[1]" [darkmode]="darkmode" [id]="'weekly-forecast-1'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(2)" [forecast]="weeklyForecast.dailyForecasts[2]" [darkmode]="darkmode"[id]="'weekly-forecast-2'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(3)" [forecast]="weeklyForecast.dailyForecasts[3]" [darkmode]="darkmode" [id]="'weekly-forecast-3'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(4)" [forecast]="weeklyForecast.dailyForecasts[4]" [darkmode]="darkmode" [id]="'weekly-forecast-4'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+
     
-    <div class="weekly-forecast-container" *ngIf="weeklyForecast">
-      <div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}" (click)="displayForecast(i)"
-        *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i" [id]="'weekly-forecast-' + i">
-        <img [src]="forecast.dayTime.icon" [alt]="forecast.dayTime.iconPhrase" class="card-img-top" />
-        <div class="card-body">
-          <h4 class="forecast-date">
-            <span class="forecast-day">{{ forecast.dayofWeek }} </span><span> {{ forecast.date }}</span>
-          </h4>
-          <h4 class="card-temp">
-            {{ forecast.tempMin }}°/{{ forecast.tempMax }}°
-          </h4>
-          <p class="card-text">{{ forecast.dayTime.shortText }}</p>
-        </div>
       </div>
-    </div>
 
 
   </div>

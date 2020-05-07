@@ -11,7 +11,8 @@ import { TimeOfDayComponent } from './weather/selected-forecast/time-of-day/time
 import { FavoriteComponent } from './favorites/favorite/favorite.component'
 import { RouterModule, Routes } from '@angular/router'
 import { ErrorMessageComponent } from './error-message/error-message.component'
-import { ForecastDetailsComponent } from './weather/selected-forecast/time-of-day/forecast-details/forecast-details.component'
+import { ForecastDetailsComponent } from './weather/selected-forecast/time-of-day/forecast-details/forecast-details.component';
+import { DailyForecastComponent } from './weather/daily-forecast/daily-forecast.component'
 
 // import { MatDatepickerModule } from '@angular/material'
 // import { MatNativeDateModule } from '@angular/material'
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     TimeOfDayComponent,
     FavoriteComponent,
     ErrorMessageComponent,
-    ForecastDetailsComponent
+    ForecastDetailsComponent,
+    DailyForecastComponent
   ],
   imports: [
     // MatDatepickerModule,

@@ -1,0 +1,17 @@
+<div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}">
+    <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image" *ngIf="isLoadingWeeklyForecast && !darkmode"
+        class="loading-weeklyforecast">
+    <img src="../../../assets/images/gifs/loading-darkmode.gif" alt="Loading Image" *ngIf="isLoadingWeeklyForecast && darkmode"
+        class="loading-weeklyforecast">
+    <img [src]="forecast.dayTime.icon" [alt]="forecast.dayTime.iconPhrase" *ngIf="forecast && !isLoadingWeeklyForecast" class="card-img-top" />
+    <div class="card-body" *ngIf="forecast && !isLoadingWeeklyForecast">
+        <h4 class="forecast-date">
+            <span class="forecast-day">{{ forecast.dayofWeek }} </span><span> {{ forecast.date }}</span>
+        </h4>
+        <h4 class="card-temp">
+            {{ forecast.tempMin }}°/{{ forecast.tempMax }}°
+        </h4>
+        <p class="card-text">{{ forecast.dayTime.shortText }}</p>
+    </div>
+
+</div>

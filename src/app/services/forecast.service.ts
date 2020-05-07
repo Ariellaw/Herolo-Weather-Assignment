@@ -42,15 +42,18 @@ export class ForecastService {
     let dataPromise: Promise<any>
     const isMetric: string = unitsOfMeasurment === 'celsius' ? 'true' : 'false';
     const idx =  Math.floor(Math.random() * weeklyForecastMockDataFahrenheit.length);
-    console.log("hihi",idx)
+    const delay = Math.max(100, constants.mockDataDelay + Math.floor(Math.random() * 1000) - 500)
 
-
+    
 
     if (constants.useMockData) {
       if (unitsOfMeasurment === 'celsius') {
-        dataPromise = Promise.resolve(weeklyForecastMockData[idx])
+        dataPromise = this.delay(delay).then(() => weeklyForecastMockData[idx])
+        // dataPromise = Promise.resolve(weeklyForecastMockData[idx])
       } else {
-        dataPromise = Promise.resolve(weeklyForecastMockDataFahrenheit[idx])
+        // dataPromise = Promise.resolve(weeklyForecastMockDataFahrenheit[idx])
+        dataPromise = this.delay(delay).then(() => weeklyForecastMockDataFahrenheit[idx])
+
       }
     } else {
       dataPromise = fetch(
