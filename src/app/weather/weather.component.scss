@@ -29,7 +29,7 @@
     justify-content: space-between;
     margin-bottom: 1rem;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: .5rem;
     @media screen and (min-width: $smaller-mobile-screen-width) {
       align-content: space-between;
       align-items: end;
@@ -107,7 +107,6 @@
   height: 4rem;
   border-bottom: 3px solid;
   border-right: none;
-  padding: 5px;
   outline: none;
   font-size: 2rem;
   font-weight: bold;
