@@ -1,8 +1,7 @@
-@import '../../variables.scss';
+@import "../../scss/variables.scss";
 
 $emphasis-color: #b00ecd;
-$lighter-header-color:white;
-
+$lighter-header-color: white;
 
 .navbar {
   background-image: url("../../assets/images/images/nav-background.jpg");
@@ -23,7 +22,8 @@ $lighter-header-color:white;
     height: 17vh;
   }
 
-  a, h1 {
+  a,
+  h1 {
     color: $lighter-header-color;
     font-size: 2rem;
     @media screen and (min-width: $smaller-mobile-screen-width) {

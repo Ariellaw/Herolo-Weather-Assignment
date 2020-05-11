@@ -30,7 +30,6 @@ export class ForecastService {
 
     return dataPromise.then(data => {
       const currWeather = data
-      //as strange as it seems, the API returns an array with one element
       return CurrentWeather.fromJson(currWeather)
     })
   }

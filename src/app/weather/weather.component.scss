@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../scss/variables.scss";
 
 .display-container {
   width: 95vw;
@@ -29,28 +29,42 @@
     justify-content: space-between;
     margin-bottom: 1rem;
     flex-wrap: wrap;
-    padding: .5rem;
+    padding: 0.5rem;
     @media screen and (min-width: $smaller-mobile-screen-width) {
       align-content: space-between;
       align-items: end;
     }
 
     .favorites-button {
-      border: 1px solid;
-      border-color: transparent;
+      border-width: 0;
       width: fit-content;
       font-size: 3rem;
       margin-right: 1rem;
       margin-left: 6rem;
+      outline: unset;
+      transition: all 0.1s;
+
       @media screen and (min-width: $smaller-mobile-screen-width) {
-        border: 1px solid;
-        border-color: unset;
+        border-width: 1px;
         border-radius: 10%;
         height: 5rem;
         min-height: 5rem;
         width: 15rem;
         font-size: 1.5rem;
         font-weight: bold;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+        &:hover {
+          // transform: translateY(-0.5rem);
+          &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+          }
+        }
+        &:active {
+          transform: translateY(3px);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        }
       }
       .btn-text {
         display: none;
@@ -82,10 +96,9 @@
       flex-direction: row;
       justify-content: space-evenly;
     }
-    .daily-forecast-container{
+    .daily-forecast-container {
       height: 20%;
       @media screen and (min-width: $smaller-mobile-screen-width) {
-
       }
     }
   }

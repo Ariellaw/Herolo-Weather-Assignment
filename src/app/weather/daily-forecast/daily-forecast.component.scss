@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+@import "../../../scss/variables.scss";
 
 .card {
   display: flex;
@@ -20,7 +20,7 @@
   .loading-weeklyforecast {
     height: 100%;
     width: auto;
-    margin:auto;
+    margin: auto;
     @media screen and (min-width: $smaller-mobile-screen-width) {
       width: 100%;
       height: auto;

@@ -14,12 +14,12 @@
           </option>
         </datalist>
       </div>
-      <button [ngClass]="darkmode? 'dark-mode': 'light-mode'" *ngIf="!locationIsInFavorites"
+      <button [ngClass]="darkmode ? 'dark-mode light-border': 'light-mode'" *ngIf="!locationIsInFavorites"
         (click)="addLocationToFavorites()" class="favorites-button">
         <i class="far fa-heart red"></i>
         <span class="btn-text"> Add to Favorites</span>
       </button>
-      <button [ngClass]="darkmode? 'dark-mode': 'light-mode'" *ngIf="locationIsInFavorites"
+      <button [ngClass]="darkmode? 'dark-mode light-border': 'light-mode'" *ngIf="locationIsInFavorites"
         (click)="removeLocationFromFavorites()" class="favorites-button">
         <i class="fas fa-heart red"></i>
         <span class="btn-text"> Remove from Favorites </span>
@@ -42,18 +42,28 @@
         *ngIf="currentWeatherDisplayed && currentWeather"></app-current-weather>
     </div>
 
-    <div class="weekly-forecast-container" >
+    <div class="weekly-forecast-container">
       <!-- <app-daily-forecast (click)="displayForecast(i)"
         *ngFor="let forecast of weeklyForecast.dailyForecasts; index as i" [id]="'weekly-forecast-' + i"  [forecast]="weeklyForecast.dailyForecasts[i]" [darkmode]="darkmode"> -->
-        
-        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(0)" [forecast]="weeklyForecast.dailyForecasts[0]" [darkmode]="darkmode" [id]="'weekly-forecast-0'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast" ></app-daily-forecast>
-        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(1)" [forecast]="weeklyForecast.dailyForecasts[1]" [darkmode]="darkmode" [id]="'weekly-forecast-1'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
-        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(2)" [forecast]="weeklyForecast.dailyForecasts[2]" [darkmode]="darkmode"[id]="'weekly-forecast-2'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
-        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(3)" [forecast]="weeklyForecast.dailyForecasts[3]" [darkmode]="darkmode" [id]="'weekly-forecast-3'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
-        <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(4)" [forecast]="weeklyForecast.dailyForecasts[4]" [darkmode]="darkmode" [id]="'weekly-forecast-4'" [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
 
-    
-      </div>
+      <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(0)"
+        [forecast]="weeklyForecast.dailyForecasts[0]" [darkmode]="darkmode" [id]="'weekly-forecast-0'"
+        [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+      <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(1)"
+        [forecast]="weeklyForecast.dailyForecasts[1]" [darkmode]="darkmode" [id]="'weekly-forecast-1'"
+        [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+      <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(2)"
+        [forecast]="weeklyForecast.dailyForecasts[2]" [darkmode]="darkmode" [id]="'weekly-forecast-2'"
+        [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+      <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(3)"
+        [forecast]="weeklyForecast.dailyForecasts[3]" [darkmode]="darkmode" [id]="'weekly-forecast-3'"
+        [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+      <app-daily-forecast class="daily-forecast-container" (click)="displayForecast(4)"
+        [forecast]="weeklyForecast.dailyForecasts[4]" [darkmode]="darkmode" [id]="'weekly-forecast-4'"
+        [isLoadingWeeklyForecast]="isLoadingWeeklyForecast"></app-daily-forecast>
+
+
+    </div>
 
 
   </div>
