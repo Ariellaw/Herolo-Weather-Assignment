@@ -1,7 +1,7 @@
-import { Component, OnInit} from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Router, ActivatedRoute, Params } from '@angular/router'
 import * as constants from '../models/constants'
-
+import { FavoritesService } from '../services/favorites.service'
 
 @Component({
   selector: 'app-header',
@@ -14,29 +14,28 @@ export class HeaderComponent implements OnInit {
 
   constructor (
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private favoritesService: FavoritesService
   ) {}
 
   ngOnInit (): void {
+    this.darkmode = this.favoritesService.getDarkMode()
     this.activatedRoute.queryParams.subscribe(queryParams => {
       const units = queryParams.units
-      const mode = queryParams.mode
-      this.darkmode = mode === constants.theme.darkmode ? true : false
-      this.units = units === constants.units.fahrenheit? constants.units.fahrenheit : constants.units.celsius
+      this.units =
+        units === constants.units.fahrenheit
+          ? constants.units.fahrenheit
+          : constants.units.celsius
     })
   }
   toggleLightDarkMode ($event) {
-    const mode = $event.target.checked ? constants.theme.darkmode : constants.theme.lightmode
-    const queryParams: Params = { mode: mode }
-
-    this.router.navigate([], {
-      relativeTo: this.activatedRoute,
-      queryParams: queryParams,
-      queryParamsHandling: 'merge'
-    })
+    const isDarkMode = $event.target.checked
+    this.favoritesService.toggleDarkMode(isDarkMode)
   }
   togglefahrenheitCelsius ($event) {
-    const units = $event.target.checked ? constants.units.fahrenheit : constants.units.celsius
+    const units = $event.target.checked
+      ? constants.units.fahrenheit
+      : constants.units.celsius
 
     const queryParams: Params = { units: units }
 

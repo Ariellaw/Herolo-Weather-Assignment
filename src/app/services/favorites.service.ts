@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable, EventEmitter } from '@angular/core'
 import { Locations } from '../models/locations.model'
 
 enum Location {
@@ -8,6 +8,9 @@ enum Location {
   providedIn: 'root'
 })
 export class FavoritesService {
+  darkModeChanged = new EventEmitter<boolean>()
+  darkmode: boolean = false
+
   constructor () {}
 
   addLocationToFavorites (location: Locations) {
@@ -51,5 +54,12 @@ export class FavoritesService {
       let favorites: Locations[] = []
       return favorites
     }
+  }
+  toggleDarkMode (isDarkMode) {
+    this.darkmode = isDarkMode
+    this.darkModeChanged.emit(this.darkmode);
+  }
+  getDarkMode(){
+    return this.darkmode;
   }
 }

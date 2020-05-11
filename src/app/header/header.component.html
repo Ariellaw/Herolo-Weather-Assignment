@@ -1,9 +1,9 @@
 <nav class="navbar">
   <h1 class="navbar-brand">Ariella's Weather App</h1>
   <form class=nav-buttons>
-    <a class="nav-btn" (click)="togglePage('home')" routerLink="/home" routerLinkActive="selected-link"
+    <a class="nav-button" (click)="togglePage('home')" routerLink="/home" routerLinkActive="selected-link"
       type="button">Home</a>
-    <a class="nav-btn" routerLink="/favorites" routerLinkActive="selected-link" (click)="togglePage('favorites')"
+    <a class="nav-button" routerLink="/favorites" routerLinkActive="selected-link" (click)="togglePage('favorites')"
       type="button">Favorites</a>
     <div class="header-container">
     <h4>C° - F°</h4>
@@ -21,4 +21,3 @@
     </div>
   </form>
 </nav>
-<!-- add animations to HOME and favorites make title not a link - fix CSS in general -->

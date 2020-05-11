@@ -4,6 +4,7 @@ import { ForecastService } from '../../services/forecast.service'
 import { CurrentWeather } from 'src/app/models/current-weather.model'
 import { Router, ActivatedRoute } from '@angular/router'
 import * as constants from '../../models/constants'
+import { FavoritesService } from 'src/app/services/favorites.service'
 
 @Component({
   selector: 'app-favorite',
@@ -22,15 +23,16 @@ export class FavoriteComponent implements OnInit {
   constructor (
     private forecastService: ForecastService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private favoritesService: FavoritesService
   ) {}
 
   ngOnInit (): void {
     this.getCurrentWeather(this.favorite.locationKey)
-    
-    this.activatedRoute.queryParams.subscribe(queryParams => {
-      const mode = queryParams.mode
-      this.darkmode = mode === constants.theme.darkmode ? true : false
+    this.darkmode = this.favoritesService.getDarkMode()
+
+    this.favoritesService.darkModeChanged.subscribe((darkmode: boolean) => {
+      this.darkmode = darkmode
     })
   }
 

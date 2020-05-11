@@ -42,12 +42,14 @@ export class WeatherComponent implements OnInit {
   ngOnInit () {
     let id = this.route.snapshot.paramMap.get('id')
     let location = this.route.snapshot.paramMap.get('locationName')
+    this.darkmode = this.favoritesService.getDarkMode()
 
     this.route.queryParams.subscribe(queryParams => {
       this.units = queryParams.units
-      const mode = queryParams.mode
-      this.darkmode = mode === constants.theme.darkmode ? true : false
       this.loadForecast(id, location, this.units)
+    })
+    this.favoritesService.darkModeChanged.subscribe((darkmode: boolean) => {
+      this.darkmode = darkmode
     })
   }
 
@@ -60,7 +62,7 @@ export class WeatherComponent implements OnInit {
           this.suggestedLocations = locations
         })
         .catch(error => {
-          console.log("onUserInput", error)
+          console.log('onUserInput', error)
           this.errorMessage = error
         })
     }
@@ -78,7 +80,7 @@ export class WeatherComponent implements OnInit {
         }
       })
       .catch(error => {
-        console.log("getWeeklyForecast", error)
+        console.log('getWeeklyForecast', error)
 
         this.errorMessage = error
         this.isLoadingWeeklyForecast = false
@@ -86,7 +88,7 @@ export class WeatherComponent implements OnInit {
   }
 
   getCurrentWeather (locationKey: string) {
-    this.currentWeather = null;
+    this.currentWeather = null
     this.forecastService
       .getCurrentWeather(locationKey)
       .then(currentWeather => {
@@ -96,8 +98,7 @@ export class WeatherComponent implements OnInit {
       .catch(error => {
         this.errorMessage = error
         this.isLoadingCurrentWeather = false
-        console.log("current weather error", error)
-
+        console.log('current weather error', error)
       })
   }
 

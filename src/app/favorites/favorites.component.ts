@@ -22,7 +22,8 @@ export class FavoritesComponent implements OnInit {
   ) {}
 
   ngOnInit () {
-    this.getFavorites()
+    this.getFavorites();
+  
 
     this.route.queryParams.subscribe(queryParams => {
       this.units =

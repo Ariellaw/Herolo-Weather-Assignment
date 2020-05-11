@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import * as constants from '../app/models/constants'
+import { FavoritesService } from './services/favorites.service'
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,17 @@ import * as constants from '../app/models/constants'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor (private route: ActivatedRoute, private router: Router) {}
+  constructor (
+    private route: ActivatedRoute,
+    private router: Router,
+    private favoritesService: FavoritesService
+  ) {}
   title = 'herolo-weather-assignment'
 
   ngOnInit () {
     const element = document.body
-    this.route.queryParams.subscribe(queryParams => {
-      const mode = queryParams.mode
-      if (mode === constants.theme.darkmode) {
+    this.favoritesService.darkModeChanged.subscribe((darkmode: boolean) => {
+      if (darkmode) {
         element.classList.add(constants.theme.darkmode)
         element.classList.remove(constants.theme.lightmode)
       } else {
