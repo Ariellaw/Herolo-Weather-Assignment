@@ -17,15 +17,20 @@ export class AppComponent implements OnInit {
   title = 'herolo-weather-assignment'
 
   ngOnInit () {
-    const element = document.body
-    this.favoritesService.darkModeChanged.subscribe((darkmode: boolean) => {
-      if (darkmode) {
-        element.classList.add(constants.theme.darkmode)
-        element.classList.remove(constants.theme.lightmode)
-      } else {
-        element.classList.add(constants.theme.lightmode)
-        element.classList.remove(constants.theme.darkmode)
-      }
+    this.toggleDarkMode(this.favoritesService.getDarkMode())
+    this.favoritesService.darkModeChanged.subscribe((isDarkMode: boolean) => {
+      this.toggleDarkMode(isDarkMode)
     })
+  }
+
+  toggleDarkMode (isDarkMode) {
+    const element = document.body
+    if (isDarkMode) {
+      element.classList.add(constants.theme.darkmode)
+      element.classList.remove(constants.theme.lightmode)
+    } else {
+      element.classList.add(constants.theme.lightmode)
+      element.classList.remove(constants.theme.darkmode)
+    }
   }
 }

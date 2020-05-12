@@ -9,7 +9,7 @@ enum Location {
 })
 export class FavoritesService {
   darkModeChanged = new EventEmitter<boolean>()
-  darkmode: boolean = false
+  darkmode: string = 'darkmode'
 
   constructor () {}
 
@@ -56,10 +56,18 @@ export class FavoritesService {
     }
   }
   toggleDarkMode (isDarkMode) {
-    this.darkmode = isDarkMode
-    this.darkModeChanged.emit(this.darkmode);
+    localStorage.setItem(this.darkmode, isDarkMode);
+    console.log("isDarkMode", isDarkMode)
+    this.darkModeChanged.emit(isDarkMode)
+
   }
-  getDarkMode(){
-    return this.darkmode;
+  getDarkMode () {
+    const darkmode = localStorage.getItem(this.darkmode)
+    if (darkmode) {
+      return JSON.parse(darkmode)
+    } else {
+      localStorage.setItem(this.darkmode, 'false')
+      return false
+    }
   }
 }
