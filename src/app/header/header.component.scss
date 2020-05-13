@@ -15,8 +15,11 @@ $lighter-header-color: white;
   font-size: 2rem;
   height: 10vh;
   width: 100vw;
+  color: white;
+
   @media screen and (min-width: $smaller-mobile-screen-width) {
-    height: 10vh;
+    display: block;
+    position: relative;
   }
   @media screen and (max-height: 500px) {
     height: 17vh;
@@ -43,6 +46,9 @@ $lighter-header-color: white;
 
     @media screen and (min-width: $smaller-mobile-screen-width) {
       display: block;
+      position: absolute;
+      top: 2rem;
+      left: 1rem;
     }
   }
 
@@ -55,15 +61,17 @@ $lighter-header-color: white;
     align-items: center;
     @media screen and (min-width: $smaller-mobile-screen-width) {
       width: 50%;
+      position: absolute;
+      right: .5rem;
+      top: 1rem;
     }
-    .nav-button{
-      transition: all .2s ease-in-out;
-      &:hover{
-        animation: shake .2s;
+    .nav-button {
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        animation: shake 0.2s;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-
       }
-      &:active{
+      &:active {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
       }
     }
@@ -128,7 +136,7 @@ $lighter-header-color: white;
 
 input:checked + .slider {
   // background-color: #2196f3;
-  background-color: lighten($emphasis-color, 30%);;
+  background-color: lighten($emphasis-color, 30%);
 }
 
 input:focus + .slider {
