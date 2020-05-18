@@ -1,5 +1,7 @@
 $light-border-color: rgb(173, 240, 236);
 $large-mobile-screen-width: 850px;
+$dark-gray:#8080808a;
+$light-gray:#dbcaca8a;
 $smaller-mobile-screen-width: 750px;
 
 @mixin popup {
@@ -23,6 +25,12 @@ $smaller-mobile-screen-width: 750px;
   z-index: 10;
 }
 
+.dark-gray-background{
+  background-color: $dark-gray;
+}
+.light-gray-background{
+  background-color: $light-gray;
+}
 
 @keyframes shake {
     0% { transform: rotate(0deg); }

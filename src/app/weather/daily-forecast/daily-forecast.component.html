@@ -1,9 +1,13 @@
-<div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode}">
-    <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image" *ngIf="isLoadingWeeklyForecast && !darkmode"
+<div class="card btn" [ngClass]="{'bg-dark text-white light-border':darkmode, 'dark-gray-background': isLoadingWeeklyForecast}">
+    <!-- <img src="../../../assets/images/gifs/loading-image.gif" alt="Loading Image" *ngIf="isLoadingWeeklyForecast && !darkmode"
         class="loading-weeklyforecast">
     <img src="../../../assets/images/gifs/loading-darkmode.gif" alt="Loading Image" *ngIf="isLoadingWeeklyForecast && darkmode"
-        class="loading-weeklyforecast">
-    <img [src]="forecast.dayTime.icon" [alt]="forecast.dayTime.iconPhrase" *ngIf="forecast && !isLoadingWeeklyForecast" class="card-img-top" />
+        class="loading-weeklyforecast">  -->
+    <img  src="https://developer.accuweather.com/sites/default/files/11-s.png"
+        *ngIf="isLoadingWeeklyForecast" alt="Partly sunny" class="loading-weeklyforecast">
+ 
+    <img [src]="forecast.dayTime.icon" [alt]="forecast.dayTime.iconPhrase" *ngIf="forecast && !isLoadingWeeklyForecast"
+        class="card-img-top" />
     <div class="card-body" *ngIf="forecast && !isLoadingWeeklyForecast">
         <h4 class="forecast-date">
             <span class="forecast-day">{{ forecast.dayofWeek }} </span><span> {{ forecast.date }}</span>

@@ -16,6 +16,7 @@ import * as constants from '../models/constants'
   providers: [LocationService, ForecastService]
 })
 export class WeatherComponent implements OnInit {
+  DAYS_IN_WEEK:number = 5;
   location: string = 'Tel Aviv, Israel'
   locationIsInFavorites: boolean = false
   locationKey: string = '215854'

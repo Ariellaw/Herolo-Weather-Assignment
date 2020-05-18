@@ -13,16 +13,19 @@
     margin: 1rem;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 
+    &:hover{
+      transform: translateY(-1px) scaleX(1.05) scaleY(1.05);
+    }
     &:active {
-      transform: translateY(3px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-      transform: scaleX(.95) scaleY(.95);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      transform:  translateY(3px) scaleX(.95) scaleY(.95);
     }
   }
 
   .loading-image {
     height: 100%;
     width: auto;
+    opacity: .3;
     @media screen and (min-width: $smaller-mobile-screen-width) {
       width: 100%;
       height: auto;
