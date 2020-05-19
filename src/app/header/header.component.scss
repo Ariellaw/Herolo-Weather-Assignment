@@ -21,8 +21,14 @@ $lighter-header-color: white;
     display: block;
     position: relative;
   }
-  @media screen and (max-height: 500px) {
-    height: 17vh;
+  @media screen and (max-height: 750px) {
+    height: 11vh;
+  }
+  @media screen and (max-height: 650px) {
+    height: 14vh;
+  }
+  @media screen and (max-height: 400px) {
+    height: 16vh;
   }
 
   a,
@@ -62,17 +68,19 @@ $lighter-header-color: white;
     @media screen and (min-width: $smaller-mobile-screen-width) {
       width: 50%;
       position: absolute;
-      right: .5rem;
-      top: 1rem;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
     .nav-button {
-      transition: all 0.2s ease-in-out;
+      transition: all 0.1s ease-in-out;
       &:hover {
         animation: shake 0.2s;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
       }
       &:active {
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+        transform:  translateY(3px) scaleX(.95) scaleY(.95);
       }
     }
     .selected-link {
@@ -83,6 +91,7 @@ $lighter-header-color: white;
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
+      align-items: center;
       @media screen and (min-width: $smaller-mobile-screen-width) {
         font-size: 2rem;
       }
@@ -126,7 +135,7 @@ $lighter-header-color: white;
   // left: 4px;
   // bottom: 4px;
   height: 15px;
-  width: 15px;
+  width:  15px;
   left: 3px;
   bottom: 3px;
   background-color: $lighter-header-color;
@@ -152,7 +161,7 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 3.4rem;
 }
 
 .slider.round:before {
