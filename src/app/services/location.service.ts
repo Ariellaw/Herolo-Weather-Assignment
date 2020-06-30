@@ -19,7 +19,7 @@ export class LocationService {
     if (constants.useMockData) {
       dataPromise = Promise.resolve(selectedLocationMockData)
     } else {
-      dataPromise = fetch(` https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${constants.apiKey}&q=${keyword}`).then(resp =>resp.json())
+      dataPromise = fetch(`https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${constants.apiKey}&q=${keyword}`).then(resp =>resp.json())
 
     }
       return dataPromise.then(data=>{

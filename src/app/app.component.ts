@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private favoritesService: FavoritesService
   ) {}
-  title = 'herolo-weather-assignment'
+  title = 'weather-app'
 
   ngOnInit () {
     this.toggleDarkMode(this.favoritesService.getDarkMode())

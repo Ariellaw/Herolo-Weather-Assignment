@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "herolo-weather-assignment": {
+    "weather-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/herolo-weather-assignment",
+            "outputPath": "dist/weather-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "herolo-weather-assignment:build"
+            "browserTarget": "weather-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "herolo-weather-assignment:build:production"
+              "browserTarget": "weather-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "herolo-weather-assignment:build"
+            "browserTarget": "weather-app:build"
           }
         },
         "test": {
@@ -114,18 +114,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "herolo-weather-assignment:serve"
+            "devServerTarget": "weather-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "herolo-weather-assignment:serve:production"
+              "devServerTarget": "weather-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "herolo-weather-assignment",
+  "defaultProject": "weather-app",
   "cli": {
     "analytics": false
   }

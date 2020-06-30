@@ -15,11 +15,11 @@ app.use(
   
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/herolo-weather-assignment'));
+app.use(express.static(__dirname + '/dist/weather-app'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/herolo-weather-assignment/index.html'));
+res.sendFile(path.join(__dirname+'/dist/weather-app/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
